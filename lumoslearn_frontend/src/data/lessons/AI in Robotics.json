@@ -1,0 +1,36 @@
+{
+  "title": "AI in Robotics",
+  "content": "The intersection of Artificial Intelligence (AI) and Robotics is a powerful one, leading to the creation of intelligent robots that can perceive their environment, make decisions, and perform tasks autonomously. AI provides the \"brain\" that enables robots to go beyond simple pre-programmed actions and adapt to complex, dynamic situations.<br><br>\n    Key applications of AI in robotics include:<br>\n    1.  <b>Perception:</b> AI, particularly computer vision and sensor fusion, allows robots to \"see\" and interpret their surroundings. This includes recognizing objects, mapping environments, and understanding depth and movement.<br>\n    2.  <b>Navigation and Localization:</b> AI algorithms enable robots to plan paths, avoid obstacles, and determine their precise location within an environment (Simultaneous Localization and Mapping - SLAM is a key technique).<br>\n    3.  <b>Manipulation:</b> AI helps robots manipulate objects, whether it's grasping and moving items in a warehouse, assembling products in a factory, or performing delicate tasks in surgery. Machine learning can enable robots to learn how to grasp and handle objects effectively.<br>\n    4.  <b>Human-Robot Interaction (HRI):</b> AI, especially natural language processing and computer vision, allows robots to understand and respond to human commands, gestures, and emotions, enabling more natural and intuitive collaboration.<br>\n    5.  <b>Robot Learning:</b> Robots can use machine learning techniques, particularly reinforcement learning, to learn new skills and improve their performance through trial and error or by observing human demonstrations.<br>\n    6.  <b>Decision Making:</b> AI provides robots with the ability to make decisions in uncertain or changing environments, allowing them to respond autonomously to unexpected events.<br>\n    7.  <b>Swarm Robotics:</b> AI can coordinate the actions of multiple robots (a swarm) to collectively perform complex tasks, such as exploration, mapping, or construction.<br><br>\n    AI-powered robots are being deployed in a wide range of industries, including manufacturing, logistics, healthcare, agriculture, and exploration, performing tasks that are dangerous, repetitive, or require high precision. The ongoing development of AI is crucial for unlocking the full potential of robotics.",
+  "quiz": [
+    {
+      "question": "What does AI primarily contribute to robotics?",
+      "options": [
+        "It makes robots less intelligent",
+        "It provides the \"brain\" that enables robots to perceive, decide, and act autonomously",
+        "It only controls the physical movement of robots",
+        "It is not used in modern robotics"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which AI technology is essential for robots to \"see\" and interpret their surroundings?",
+      "options": [
+        "Natural Language Processing",
+        "Algorithmic Trading",
+        "Computer Vision and sensor fusion",
+        "Sentiment Analysis"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "How can robots learn new skills using AI?",
+      "options": [
+        "Only by being manually programmed for every action",
+        "Through machine learning techniques like reinforcement learning",
+        "They cannot learn new skills",
+        "Only by observing other robots"
+      ],
+      "answer": 1
+    }
+  ]
+}

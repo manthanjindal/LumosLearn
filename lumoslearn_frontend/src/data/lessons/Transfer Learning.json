@@ -1,0 +1,36 @@
+{
+  "title": "Transfer Learning",
+  "content": "<b>Transfer Learning</b> is a machine learning technique where a model developed for a task is <span style=\"color:#A3F7BF\">reused as the starting point for a model on a second task</span>. It's particularly effective in Deep Learning, where training models from scratch can be computationally expensive and require vast amounts of data.<br><br>The core idea is that knowledge gained from solving one problem can be applied to a different but related problem. For example, a model trained on a large dataset of images (like ImageNet) to classify objects has learned to extract general features (edges, textures, shapes) that are useful for many other computer vision tasks.<br><br>Common approaches in transfer learning:<br><i>1. <b>Feature Extraction:</b></i> Using a pre-trained model as a fixed feature extractor. The pre-trained convolutional base (for CNNs) is kept, and only a new classifier is trained on top of it.<br><i>2. <b>Fine-tuning:</b></i> Unfreezing some or all layers of the pre-trained model and retraining them with a very small learning rate on the new dataset. This allows the model to adapt its learned features to the specific nuances of the new task.<br><br>Benefits include <span style=\"color:#A3F7BF\">reduced training time, less data requirement</span> for the new task, and often better performance.",
+  "quiz": [
+    {
+      "question": "What is the main concept behind Transfer Learning?",
+      "options": [
+        "Training a model from scratch for every new task",
+        "Reusing a pre-trained model as a starting point for a new task",
+        "Randomly initializing all model weights",
+        "Only training the output layer of a neural network"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is a key benefit of using Transfer Learning?",
+      "options": [
+        "It always requires more data",
+        "It significantly increases training time",
+        "It can reduce training time and data requirements for new tasks",
+        "It makes models less interpretable"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What does \"fine-tuning\" in Transfer Learning involve?",
+      "options": [
+        "Completely replacing the pre-trained model",
+        "Unfreezing and retraining some or all layers of the pre-trained model",
+        "Only training the input layer",
+        "Applying a new activation function to all layers"
+      ],
+      "answer": 1
+    }
+  ]
+}

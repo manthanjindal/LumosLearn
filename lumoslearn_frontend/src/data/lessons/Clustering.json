@@ -1,0 +1,26 @@
+{
+  "title": "Clustering",
+  "content": "<b>Clustering</b> is an unsupervised learning task that involves grouping a set of objects in such a way that objects in the same group (called a cluster) are more similar to each other than to those in other clusters. The goal is to discover the natural groupings in the data without any prior knowledge of the categories.<br><br>Imagine you have a dataset of customers, and you want to segment them into different groups based on their purchasing behavior. Clustering can help you identify these segments, such as \"high-spending loyal customers,\" \"budget-conscious shoppers,\" and \"occasional buyers.\" This information can then be used for targeted marketing campaigns.<br><br>Common clustering algorithms include:<br><i>1. <b>K-Means Clustering</b></i><br><i>2. <b>Hierarchical Clustering</b></i><br><i>3. <b>DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</b></i>",
+  "quiz": [
+    {
+      "question": "What is the main objective of clustering?",
+      "options": [
+        "To predict a target variable",
+        "To group similar objects together",
+        "To classify data into predefined categories",
+        "To reduce the number of features"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following is a popular clustering algorithm?",
+      "options": [
+        "Linear Regression",
+        "Logistic Regression",
+        "K-Means Clustering",
+        "Support Vector Machines"
+      ],
+      "answer": 2
+    }
+  ]
+}

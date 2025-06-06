@@ -1,0 +1,36 @@
+{
+  "title": "Perceptron Model",
+  "content": "The <span style=\"color:#A3F7BF\">Perceptron</span>, introduced by Frank Rosenblatt in 1957, is the simplest form of an artificial neural network. It's a binary linear classifier that can classify inputs into one of two categories.<br><br>It consists of a single layer of an artificial neuron (also known as a <span style=\"color:#A3F7BF\">McCulloch-Pitts neuron</span>). The perceptron takes multiple binary inputs, computes a weighted sum of these inputs, and then passes the sum through a <span style=\"color:#A3F7BF\">step activation function</span> to produce a binary output (0 or 1).<br><br>While revolutionary for its time, the single-layer perceptron has a significant limitation: it can only solve <span style=\"color:#A3F7BF\">linearly separable problems</span>. This means it cannot learn to classify data that cannot be separated by a single straight line, famously demonstrated by its inability to solve the <span style=\"color:#A3F7BF\">XOR problem</span>.",
+  "quiz": [
+    {
+      "question": "Who introduced the Perceptron model?",
+      "options": [
+        "Geoffrey Hinton",
+        "Yann LeCun",
+        "Frank Rosenblatt",
+        "Andrew Ng"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What type of problems can a single-layer Perceptron NOT solve?",
+      "options": [
+        "Linearly separable problems",
+        "Binary classification problems",
+        "Non-linearly separable problems",
+        "Regression problems"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Which activation function is typically used in a basic Perceptron?",
+      "options": [
+        "Sigmoid",
+        "ReLU",
+        "Step function",
+        "Softmax"
+      ],
+      "answer": 2
+    }
+  ]
+}

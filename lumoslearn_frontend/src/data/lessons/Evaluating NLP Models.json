@@ -1,0 +1,26 @@
+{
+  "title": "Evaluating NLP Models",
+  "content": "Evaluating Natural Language Processing (NLP) models is crucial to determine their effectiveness and reliability for specific tasks. Unlike some other AI domains, evaluating NLP can be complex due to the nuances and variability of human language. Both automatic metrics and human evaluation are often necessary.<br><br>\n    <b>Automatic Evaluation Metrics:</b> These metrics use algorithms to compare the model's output to a reference or ground truth. They are fast and objective but may not always capture the full quality of the output, especially for generative tasks.<br>\n    1.  <b>For Classification Tasks (e.g., Sentiment Analysis, Spam Detection):</b><br>\n        *   <b>Accuracy:</b> The proportion of correctly classified instances.<br>\n        *   <b>Precision:</b> Out of all instances the model predicted as positive, what proportion were actually positive.<br>\n        *   <b>Recall (Sensitivity):</b> Out of all actual positive instances, what proportion did the model correctly identify.<br>\n        *   <b>F1-Score:</b> The harmonic mean of precision and recall, providing a balance between the two.<br>\n        *   <b>Confusion Matrix:</b> A table summarizing the performance of a classification model, showing true positives, true negatives, false positives, and false negatives.<br>\n        *   <b>ROC-AUC:</b> Receiver Operating Characteristic - Area Under the Curve. Measures the ability of a binary classifier to distinguish between classes.<br><br>\n    2.  <b>For Generative Tasks (e.g., Machine Translation, Text Summarization, Text Generation):</b> Evaluating generated text is harder as there can be multiple valid outputs.<br>\n        *   <b>BLEU (Bilingual Evaluation Understudy):</b> Commonly used for machine translation. Measures the similarity of the generated text to one or more reference translations based on the overlap of n-grams (sequences of n words).<br>\n        *   <b>ROUGE (Recall-Oriented Understudy for Gisting Evaluation):</b> Commonly used for text summarization. Measures the overlap of n-grams, word sequences, and word pairs between the generated summary and reference summaries.<br>\n        *   <b>METEOR (Metric for Evaluation of Translation with Explicit ORdering):</b> Considers precision, recall, and how words are ordered. Includes stemming and synonymy.<br>\n        *   <b>Perplexity:</b> Measures how well a language model predicts a sample of text. Lower perplexity indicates a better model.<br><br>\n    <b>Human Evaluation:</b> This involves human judges assessing the quality of the NLP model's output. While more subjective and expensive, human evaluation is often necessary to capture nuances like fluency, coherence, relevance, and overall linguistic quality, especially for generative tasks where automatic metrics can be insufficient.<br>\n    *   Human judges can rate outputs based on criteria like fluency, adequacy (does it convey the meaning?), and quality.<br><br>\n    Choosing the right evaluation metric depends heavily on the specific NLP task and its goals. Often, a combination of automatic metrics and human evaluation provides the most comprehensive assessment of a model's performance.",
+  "quiz": [
+    {
+      "question": "Which automatic evaluation metric is commonly used for machine translation and measures n-gram overlap with reference translations?",
+      "options": [
+        "Accuracy",
+        "F1-Score",
+        "BLEU",
+        "Perplexity"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Why is Human Evaluation often considered the \"gold standard\" for generative NLP tasks?",
+      "options": [
+        "It is the fastest method",
+        "It is the cheapest method",
+        "It provides the most reliable assessment of linguistic quality, coherence, and relevance",
+        "It is the only automated method"
+      ],
+      "answer": 2
+    }
+  ]
+}

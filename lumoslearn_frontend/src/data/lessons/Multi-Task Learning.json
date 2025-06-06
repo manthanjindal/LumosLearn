@@ -1,0 +1,36 @@
+{
+  "title": "Multi-Task Learning",
+  "content": "<b>Multi-Task Learning (MTL)</b> is an approach in machine learning where a single model is trained to perform <span style=\"color:#A3F7BF\">multiple related tasks simultaneously</span>. Instead of training separate models for each task, MTL leverages the commonalities and differences between tasks to improve the learning efficiency and prediction accuracy for all tasks.<br><br>The core idea is that by learning multiple tasks in parallel, the model can develop a <span style=\"color:#A3F7BF\">shared representation</span> that captures general knowledge relevant to all tasks. This shared representation can act as a form of inductive bias, leading to better generalization, especially when data for some tasks is scarce.<br><br>For example, in computer vision, a single model might be trained to perform both <span style=\"color:#A3F7BF\">object detection and semantic segmentation</span>. The features learned for identifying objects can also be beneficial for delineating their exact boundaries. MTL can be implemented with hard parameter sharing (common layers for all tasks) or soft parameter sharing (task-specific layers with regularization to encourage similarity).",
+  "quiz": [
+    {
+      "question": "What is the main goal of Multi-Task Learning?",
+      "options": [
+        "To train separate models for each task",
+        "To train a single model for multiple related tasks simultaneously",
+        "To reduce the number of training examples",
+        "To solely focus on one complex task"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What benefit does a \"shared representation\" offer in Multi-Task Learning?",
+      "options": [
+        "It increases model complexity",
+        "It leads to worse generalization",
+        "It captures general knowledge relevant to all tasks",
+        "It requires more manual feature engineering"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "An example of Multi-Task Learning in computer vision could be training a model for:",
+      "options": [
+        "Only image classification",
+        "Object detection and semantic segmentation",
+        "Only facial recognition",
+        "Text generation"
+      ],
+      "answer": 1
+    }
+  ]
+}

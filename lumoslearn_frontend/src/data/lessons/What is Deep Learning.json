@@ -1,0 +1,36 @@
+{
+  "title": "What is Deep Learning?",
+  "content": "<b>Deep Learning</b> is a specialized <span style=\"color:#A3F7BF\">subset of Machine Learning</span> inspired by the structure and function of the human brain's neural networks.<br><br>It utilizes <span style=\"color:#A3F7BF\">Artificial Neural Networks (ANNs)</span> with multiple layers (hence 'deep') to learn representations of data with multiple levels of abstraction. Unlike traditional machine learning, deep learning models can automatically learn features from raw data, eliminating the need for manual feature engineering.<br><br>This hierarchical learning allows deep learning models to discover intricate patterns in large datasets, leading to breakthroughs in areas like image recognition, natural language processing, and speech recognition.",
+  "quiz": [
+    {
+      "question": "Which of the following best describes Deep Learning?",
+      "options": [
+        "A type of database management system",
+        "A subset of Machine Learning",
+        "A programming language",
+        "A hardware component"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Deep Learning models are primarily inspired by what?",
+      "options": [
+        "Traditional statistical methods",
+        "The human brain's neural networks",
+        "Simple linear regression",
+        "Rule-based expert systems"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is a key characteristic of Deep Learning models regarding features?",
+      "options": [
+        "They require extensive manual feature engineering",
+        "They can only process numerical features",
+        "They automatically learn features from raw data",
+        "They are limited to symbolic features"
+      ],
+      "answer": 2
+    }
+  ]
+}

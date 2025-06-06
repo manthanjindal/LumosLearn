@@ -1,0 +1,36 @@
+{
+  "title": "What is Machine Learning?",
+  "content": "Machine Learning (ML) is a <span style=\"color:#A3F7BF\"><b>subset of Artificial Intelligence (AI)</b></span> that focuses on building systems that can <span style=\"color:#A3F7BF\"><b>learn from data</b></span> without being explicitly programmed. Instead of following rigid, pre-defined instructions for every possible scenario, ML algorithms use statistical techniques to enable computers to <span style=\"color:#A3F7BF\"><b>\"learn\" from data and make predictions or decisions</b></span>.<br><br>\n    Think of it like teaching a child. You don't give them a rulebook for every single situation they might encounter. Instead, you provide them with examples and experiences, and they learn to recognize patterns and make appropriate responses. Similarly, ML algorithms are fed large datasets, and they learn to identify patterns, correlations, and relationships within that data. This learned knowledge is then used to make predictions or take actions on new, unseen data.<br><br>\n    The core idea behind Machine Learning is to enable computers to <span style=\"color:#A3F7BF\"><b>improve their performance on a task as they are exposed to more data</b></span>. The more data an ML model trains on, the better it typically becomes at that task.<br><br>\n    Machine Learning is the driving force behind many of the AI applications we see today, such as:<br>\n    *   Email spam filtering<br>\n    *   Product recommendations on e-commerce sites<br>\n    *   Fraud detection<br>\n    *   Image and speech recognition<br>\n    *   Medical diagnosis assistance<br><br>\n    In essence, Machine Learning provides the <span style=\"color:#A3F7BF\"><b>algorithms and techniques</b></span> that allow computers to learn from data, enabling them to perform tasks that would be difficult or impossible to program manually. It's a fundamental pillar of modern AI.",
+  "quiz": [
+    {
+      "question": "Machine Learning is a subset of which field?",
+      "options": [
+        "Robotics",
+        "Data Science",
+        "Artificial Intelligence (AI)",
+        "Computer Graphics"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What is the primary focus of Machine Learning?",
+      "options": [
+        "To build systems that follow rigid, pre-defined instructions",
+        "To build systems that can learn from data without being explicitly programmed",
+        "To only process structured data",
+        "To create static reports"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "How do ML algorithms typically improve their performance on a task?",
+      "options": [
+        "By receiving more explicit instructions",
+        "By being exposed to more data",
+        "By reducing the amount of data they process",
+        "Their performance is fixed and cannot improve"
+      ],
+      "answer": 1
+    }
+  ]
+}

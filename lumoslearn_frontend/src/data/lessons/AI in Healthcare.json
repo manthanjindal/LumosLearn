@@ -1,0 +1,36 @@
+{
+  "title": "AI in Healthcare",
+  "content": "<b>Artificial Intelligence in Healthcare</b> is revolutionizing how we diagnose, treat, and manage patient care. <span style=\"color:#A3F7BF\">AI systems are helping healthcare professionals make better decisions and improve patient outcomes</span>.<br><br>\n          \n          <b>Key Applications:</b><br>\n          * <b>Medical Imaging:</b> AI algorithms can analyze X-rays, MRIs, and CT scans to detect diseases like cancer, often with accuracy comparable to or better than human radiologists.<br>\n          * <b>Predictive Analytics:</b> AI can predict patient deterioration, readmission risks, and potential health complications before they occur.<br>\n          * <b>Drug Discovery:</b> AI is accelerating the development of new medications by analyzing vast amounts of molecular data.<br>\n          * <b>Personalized Medicine:</b> AI helps create tailored treatment plans based on a patient's unique genetic makeup and medical history.<br><br>\n          \n          <span style=\"color:#A3F7BF\"><b>Real-World Examples:</b></span><br>\n          * Google's DeepMind AI can detect eye diseases from retinal scans<br>\n          * IBM Watson helps oncologists identify personalized cancer treatments<br>\n          * AI-powered chatbots provide 24/7 patient support and triage<br><br>\n          \n          <b>Challenges and Considerations:</b><br>\n          * Ensuring patient data privacy and security<br>\n          * Maintaining human oversight in critical decisions<br>\n          * Addressing potential biases in AI algorithms<br>\n          * Managing the cost of implementing AI systems<br><br>\n          \n          <i>The future of healthcare is increasingly intertwined with AI, promising more efficient, accurate, and personalized care for patients worldwide.</i>",
+  "quiz": [
+    {
+      "question": "What is one of the main applications of AI in healthcare?",
+      "options": [
+        "Automated surgery without human supervision",
+        "Analysis of medical images like X-rays and MRIs",
+        "Complete replacement of human doctors",
+        "Manufacturing of medical equipment"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "How does AI contribute to personalized medicine?",
+      "options": [
+        "By replacing all traditional treatments",
+        "By creating treatment plans based on individual patient data",
+        "By eliminating the need for medical tests",
+        "By standardizing all treatments"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is a key challenge in implementing AI in healthcare?",
+      "options": [
+        "Making AI systems more expensive",
+        "Ensuring patient data privacy and security",
+        "Reducing the accuracy of diagnoses",
+        "Increasing the time needed for treatment"
+      ],
+      "answer": 1
+    }
+  ]
+}

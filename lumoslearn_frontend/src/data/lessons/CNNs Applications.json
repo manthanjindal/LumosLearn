@@ -1,0 +1,36 @@
+{
+  "title": "CNNs: Applications",
+  "content": "Due to their exceptional ability to process and understand visual data, Convolutional Neural Networks (CNNs) have revolutionized numerous applications across various industries.<br><br>Key applications of CNNs include:<br><i>1. <b>Image Classification:</b></i> Identifying the main object or category within an image (e.g., classifying an image as a \"cat\" or \"dog\").<br><i>2. <b>Object Detection:</b></i> Locating and identifying multiple objects within an image, often by drawing bounding boxes around them (e.g., detecting cars, pedestrians, and traffic signs in a street scene).<br><i>3. <b>Facial Recognition:</b></i> Identifying or verifying individuals from images or video frames.<br><i>4. <b>Medical Image Analysis:</b></i> Assisting in diagnosing diseases by analyzing X-rays, MRIs, and CT scans (e.g., detecting tumors or abnormalities).<br><i>5. <b>Autonomous Vehicles:</b></i> Enabling self-driving cars to perceive their environment by identifying other vehicles, pedestrians, lane markers, and obstacles.<br><i>6. <b>Image Segmentation:</b></i> Pixel-level classification to delineate the exact boundaries of objects or regions within an image.",
+  "quiz": [
+    {
+      "question": "Which application involves identifying the main object or category within an image?",
+      "options": [
+        "Object Detection",
+        "Image Segmentation",
+        "Image Classification",
+        "Machine Translation"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "How are CNNs primarily used in autonomous vehicles?",
+      "options": [
+        "For controlling engine speed",
+        "For perceiving the environment and identifying objects",
+        "For managing passenger entertainment systems",
+        "For calculating fuel efficiency"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which CNN application involves locating and identifying multiple objects within an image, often with bounding boxes?",
+      "options": [
+        "Facial Recognition",
+        "Image Classification",
+        "Object Detection",
+        "Style Transfer"
+      ],
+      "answer": 2
+    }
+  ]
+}

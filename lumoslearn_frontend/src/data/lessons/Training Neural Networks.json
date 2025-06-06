@@ -1,0 +1,36 @@
+{
+  "title": "Training Neural Networks",
+  "content": "Training a neural network is an <span style=\"color:#A3F7BF\">iterative process</span> where the network learns to map inputs to outputs by adjusting its internal parameters (weights and biases).<br><br>The typical training loop involves the following steps:<br><i>1. <b>Forward Pass:</b></i> Input data is fed through the network to produce predictions.<br><i>2. <b>Calculate Loss:</b></i> The loss function quantifies the error between the predictions and the actual target values.<br><i>3. <b>Backward Pass (Backpropagation):</b></i> The gradients of the loss with respect to the weights and biases are calculated.<br><i>4. <b>Parameter Update:</b></i> An <span style=\"color:#A3F7BF\">optimizer</span> (e.g., Stochastic Gradient Descent, Adam) uses these gradients to adjust the weights and biases in a direction that minimizes the loss.<br><br>This entire process is repeated for many <span style=\"color:#A3F7BF\">epochs</span>. An epoch represents one complete pass through the entire training dataset. The goal is for the network to converge to a state where the loss is minimized, and it can generalize well to unseen data.",
+  "quiz": [
+    {
+      "question": "Which of the following is NOT a core step in training a neural network?",
+      "options": [
+        "Forward Pass",
+        "Calculating Loss",
+        "Randomizing Inputs",
+        "Parameter Update"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What is the role of an optimizer during neural network training?",
+      "options": [
+        "To define the network architecture",
+        "To calculate the initial weights",
+        "To adjust weights and biases based on gradients",
+        "To select the activation function"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What does one \"epoch\" represent in neural network training?",
+      "options": [
+        "A single forward pass of one data point",
+        "One complete pass through the entire training dataset",
+        "The time taken for a single weight update",
+        "The number of hidden layers"
+      ],
+      "answer": 1
+    }
+  ]
+}

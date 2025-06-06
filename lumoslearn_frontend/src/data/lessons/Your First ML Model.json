@@ -1,0 +1,36 @@
+{
+  "title": "Your First ML Model",
+  "content": "Your First ML Model is a crucial step in practical AI learning. This involves understanding the basics of machine learning, selecting appropriate algorithms, and implementing a complete model. Key steps include data collection and preprocessing, model selection, training, evaluation, and deployment. Common first projects include image classification, sentiment analysis, or simple prediction tasks. The process teaches important concepts like feature engineering, model evaluation, and hyperparameter tuning. Building your first model helps develop practical skills and understanding of the ML workflow.",
+  "quiz": [
+    {
+      "question": "What is the first step in building an ML model?",
+      "options": [
+        "Deploying the model",
+        "Data collection and preprocessing",
+        "Model evaluation",
+        "Hyperparameter tuning"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following is a good first ML project?",
+      "options": [
+        "Complex reinforcement learning",
+        "Simple image classification",
+        "Advanced NLP system",
+        "Large-scale recommendation system"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What does building your first model help develop?",
+      "options": [
+        "Only theoretical knowledge",
+        "Practical skills and understanding of ML workflow",
+        "Only coding skills",
+        "Only mathematical skills"
+      ],
+      "answer": 1
+    }
+  ]
+}

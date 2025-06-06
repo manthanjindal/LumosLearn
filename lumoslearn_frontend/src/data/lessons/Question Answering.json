@@ -1,0 +1,36 @@
+{
+  "title": "Question Answering",
+  "content": "Question Answering (QA) is a Natural Language Processing (NLP) task that involves building systems capable of automatically answering questions posed in natural language. Unlike traditional search engines that return a list of relevant documents, a QA system aims to provide a direct and precise answer to a user's question. This field is at the intersection of information retrieval and natural language understanding.<br><br>\n    There are several types of Question Answering systems:<br>\n    1.  <b>Factoid QA:</b> Answers questions that seek specific facts (e.g., \"Who is the CEO of Google?\").<br>\n    2.  <b>List QA:</b> Provides a list of entities (e.g., \"Name three major cities in India.\").<br>\n    3.  <b>Definition QA:</b> Asks for definitions (e.g., \"What is photosynthesis?\").<br>\n    4.  <b>Complex/Non-Factoid QA:</b> Requires reasoning, aggregation, or synthesis of information from multiple sources (e.g., \"What are the long-term effects of climate change?\").<br><br>\n    QA systems typically operate in one of two main modes:<br>\n    *   <b>Open-Domain QA:</b> Can answer questions about almost anything, relying on a vast amount of general knowledge (e.g., the entire internet or a large knowledge base). Examples include Google's search snippets or virtual assistants.<br>\n    *   <b>Closed-Domain QA:</b> Restricted to a specific domain or knowledge base (e.g., a QA system for medical diagnoses, or for a company's internal documents).<br><br>\n    Modern QA systems, especially for open-domain tasks, heavily rely on deep learning and large pre-trained language models (LLMs) like BERT, T5, and GPT. These models can perform:<br>\n    *   <b>Passage Retrieval:</b> Identifying relevant paragraphs or documents that might contain the answer.<br>\n    *   <b>Reading Comprehension:</b> Reading the retrieved passages and extracting the exact answer span (Extractive QA) or generating a new answer (Abstractive QA).<br><br>\n    Applications of Question Answering:<br>\n    *   <b>Search Engines:</b> Providing direct answers in search results.<br>\n    *   <b>Virtual Assistants:</b> Powering intelligent assistants like Siri, Alexa, and Google Assistant.<br>\n    *   <b>Customer Support:</b> Automating answers to common customer queries.<br>\n    *   <b>Healthcare:</b> Helping doctors find answers to complex medical questions from research papers.<br>\n    *   <b>Education:</b> Providing instant answers to student questions.<br><br>\n    The ability of QA systems to understand questions and provide precise answers is transforming how we access and interact with information, making knowledge more readily available and actionable.",
+  "quiz": [
+    {
+      "question": "What is the main goal of Question Answering (QA) systems?",
+      "options": [
+        "To return a list of relevant documents for a query",
+        "To automatically answer questions posed in natural language directly and precisely",
+        "To summarize documents",
+        "To translate questions into another language"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which type of QA system is restricted to a specific domain or knowledge base?",
+      "options": [
+        "Open-Domain QA",
+        "Factoid QA",
+        "Closed-Domain QA",
+        "List QA"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Modern QA systems heavily rely on which type of models?",
+      "options": [
+        "Rule-based systems only",
+        "Traditional statistical models",
+        "Large pre-trained language models (LLMs) like BERT and T5",
+        "Simple Bag of Words models"
+      ],
+      "answer": 2
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "title": "History of Deep Learning",
+  "content": "The journey of Deep Learning began with early concepts like the <span style=\"color:#A3F7BF\">Perceptron in the 1950s and 60s</span>. However, limitations such as the inability of single-layer perceptrons to solve non-linear problems (like XOR) led to an 'AI winter' in the 1980s.<br><br>The resurgence began in the late 1980s with the development of <span style=\"color:#A3F7BF\">backpropagation</span>, which allowed training of multi-layer neural networks. Despite this, computational power and data availability remained significant bottlenecks.<br><br>The true explosion of Deep Learning occurred in the <span style=\"color:#A3F7BF\">2000s and 2010s</span>, driven by:<br><i>1. Vastly increased computational power (especially GPUs).<br>2. Availability of massive datasets.<br>3. Development of new algorithms and architectures (e.g., ReLU, CNNs, RNNs).</i><br><br>Landmark achievements like AlexNet's success in image recognition in 2012 cemented Deep Learning's position as a dominant force in AI.",
+  "quiz": [
+    {
+      "question": "Which early model marked a significant step in the history of Deep Learning?",
+      "options": [
+        "Support Vector Machine",
+        "Decision Tree",
+        "Perceptron",
+        "K-Means Clustering"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What algorithm was crucial for training multi-layer neural networks and contributed to the resurgence of Deep Learning?",
+      "options": [
+        "Linear Regression",
+        "Backpropagation",
+        "Gradient Boosting",
+        "Principal Component Analysis"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which factor was NOT a primary driver of the recent explosion in Deep Learning?",
+      "options": [
+        "Increased computational power",
+        "Availability of massive datasets",
+        "Decreased interest in AI research",
+        "Development of new algorithms"
+      ],
+      "answer": 2
+    }
+  ]
+}

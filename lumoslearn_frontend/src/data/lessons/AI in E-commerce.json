@@ -1,0 +1,36 @@
+{
+  "title": "AI in E-commerce",
+  "content": "Artificial Intelligence (AI) is transforming the e-commerce landscape, enhancing the online shopping experience for customers and optimizing operations for businesses. AI-powered tools personalize recommendations, improve customer service, streamline logistics, and detect fraud.<br><br>\n    Key applications of AI in e-commerce include:<br>\n    1.  <b>Personalized Product Recommendations:</b> AI analyzes customer browsing history, purchase behavior, and demographics to recommend products they are most likely to buy, increasing sales and customer satisfaction.<br>\n    2.  <b>Customer Service Chatbots:</b> AI-powered chatbots handle customer inquiries, provide order updates, assist with returns, and offer instant support 24/7, improving efficiency and freeing up human agents.<br>\n    3.  <b>Fraud Detection:</b> AI analyzes transaction patterns to identify and flag potentially fraudulent orders, protecting both the business and customers.<br>\n    4.  <b>Search and Discovery:</b> AI improves search results on e-commerce websites by understanding customer intent and matching it with relevant products, even for vague or misspelled queries.<br>\n    5.  <b>Inventory Management and Demand Forecasting:</b> AI analyzes historical sales data, market trends, and external factors to predict demand and optimize inventory levels, reducing stockouts and minimizing waste.<br>\n    6.  <b>Dynamic Pricing:</b> AI can analyze competitor pricing, demand, and other factors to dynamically adjust product prices in real-time to maximize revenue.<br>\n    7.  <b>Visual Search:</b> AI allows customers to search for products using images instead of text, making it easier to find items they've seen elsewhere.<br>\n    8.  <b>Supply Chain Optimization:</b> AI helps optimize logistics, warehousing, and delivery routes to ensure timely and cost-effective order fulfillment.<br><br>\n    AI in e-commerce is focused on creating a more personalized, efficient, and secure online shopping environment, driving sales and improving the overall customer experience.",
+  "quiz": [
+    {
+      "question": "How does AI personalize the e-commerce experience for customers?",
+      "options": [
+        "By showing the same products to everyone",
+        "By analyzing browsing history and purchase behavior to recommend products",
+        "By making the website slower",
+        "By requiring customers to manually search for everything"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which AI application provides instant 24/7 customer support in e-commerce?",
+      "options": [
+        "Personalized Recommendations",
+        "Fraud Detection",
+        "Customer Service Chatbots",
+        "Dynamic Pricing"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What is a benefit of using AI for inventory management in e-commerce?",
+      "options": [
+        "It increases stockouts",
+        "It makes inventory levels unpredictable",
+        "It helps predict demand and optimize inventory levels",
+        "It requires more manual inventory counting"
+      ],
+      "answer": 2
+    }
+  ]
+}

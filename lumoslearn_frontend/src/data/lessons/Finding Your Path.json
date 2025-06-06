@@ -1,0 +1,36 @@
+{
+  "title": "Finding Your Path",
+  "content": "Finding Your Path in AI involves exploring different areas and opportunities to discover what aligns with your interests and goals. This includes understanding various AI domains like machine learning, computer vision, natural language processing, and robotics. The path to a career in AI can be different for everyone, whether through formal education, self-study, or practical experience. Key steps include building a strong foundation in mathematics and programming, gaining hands-on experience through projects, and networking with professionals in the field. The AI field is constantly evolving, offering new opportunities and paths to explore.",
+  "quiz": [
+    {
+      "question": "What is the first step in finding your path in AI?",
+      "options": [
+        "Starting a job immediately",
+        "Building a strong foundation in mathematics and programming",
+        "Avoiding challenges",
+        "Focusing only on one area"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following is important for finding your path?",
+      "options": [
+        "Staying in one area",
+        "Exploring different AI domains",
+        "Avoiding new technologies",
+        "Following only one approach"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is a key aspect of finding your path in AI?",
+      "options": [
+        "Avoiding change",
+        "Gaining hands-on experience through projects",
+        "Sticking to theory only",
+        "Following others blindly"
+      ],
+      "answer": 1
+    }
+  ]
+}

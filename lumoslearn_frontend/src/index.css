@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-vscode-bg text-gray-900 dark:text-vscode-text;
+  }
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+.text-shadow-lg {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow-md {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pixel-border {
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-repeat: stretch;
+  border-image-source: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAZSURBVHjaYmBgYPgPxAwgwMSABAYGBgAAAAD//wMADIwDqYWf58IAAAAASUVORK5CYII=');
+}
+
+.font-sora {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+}
+
+.font-manrope {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}

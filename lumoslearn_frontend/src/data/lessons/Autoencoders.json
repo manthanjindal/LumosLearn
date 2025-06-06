@@ -1,0 +1,36 @@
+{
+  "title": "Autoencoders",
+  "content": "An <span style=\"color:#A3F7BF\">Autoencoder</span> is a type of artificial neural network used for <span style=\"color:#A3F7BF\">unsupervised learning</span>. Its primary goal is to learn an efficient, compressed representation (encoding) of input data.<br><br>The architecture of an autoencoder consists of two main parts:<br><i>1. <b>Encoder:</b></i> This part takes the input data and transforms it into a lower-dimensional representation, often called the <span style=\"color:#A3F7BF\">latent space</span> or code. This process compresses the input information.<br><i>2. <b>Decoder:</b></i> This part takes the compressed representation from the encoder and reconstructs the original input data from it.<br><br>The network is trained by minimizing the <span style=\"color:#A3F7BF\">reconstruction error</span>, which is the difference between the original input and its reconstructed output. By forcing the network to reconstruct its own input, it learns a meaningful and compact representation of the data in the latent space. Autoencoders are commonly used for <span style=\"color:#A3F7BF\">dimensionality reduction, feature learning, anomaly detection</span>, and even for generating new data (when combined with generative models).",
+  "quiz": [
+    {
+      "question": "What type of learning paradigm do Autoencoders primarily fall under?",
+      "options": [
+        "Supervised Learning",
+        "Reinforcement Learning",
+        "Unsupervised Learning",
+        "Semi-supervised Learning"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What is the primary goal of an Autoencoder?",
+      "options": [
+        "To classify data into categories",
+        "To predict future values in a time series",
+        "To learn an efficient, compressed representation of input data",
+        "To generate realistic images from noise"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Which component of an Autoencoder is responsible for transforming input data into a lower-dimensional representation?",
+      "options": [
+        "Decoder",
+        "Classifier",
+        "Encoder",
+        "Discriminator"
+      ],
+      "answer": 2
+    }
+  ]
+}

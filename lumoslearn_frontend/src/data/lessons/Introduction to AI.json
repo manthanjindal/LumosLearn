@@ -1,0 +1,36 @@
+{
+  "title": "Introduction to AI",
+  "content": "<b>Artificial Intelligence (AI)</b> is the <span style=\"color:#A3F7BF\"><b>science and engineering</b></span> of creating machines that can perform tasks that typically require <b>human intelligence</b>. These tasks include <b>learning</b>, <b>reasoning</b>, <b>problem-solving</b>, <b>perception</b>, and <b>language understanding</b>.<br><br><i>Imagine a world where your phone understands your voice, your car drives itself, and your favorite apps recommend exactly what you want to watch or listen to!</i> That's AI in action.<br><br><b>AI is everywhere:</b> From the <span style=\"color:#A3F7BF\">voice assistants</span> in our phones to the <span style=\"color:#A3F7BF\">recommendation systems</span> on streaming platforms, AI is making life easier, smarter, and more fun.<br><br>The field of AI combines <b>computer science</b>, <b>mathematics</b>, <b>psychology</b>, and more to build systems that can <b>adapt and improve over time</b>. As technology advances, AI is becoming an <b>essential part of our daily lives</b>, helping us work more efficiently, make better decisions, and even entertain ourselves.<br><br><span style=\"color:#A3F7BF\"><b>Fun Fact:</b></span> Did you know that AI can beat world chess champions, but it still can't fold your laundry? <i>Yet!</i><br><br><b>Why learn AI?</b> Understanding AI is crucial for anyone interested in the <span style=\"color:#A3F7BF\">future of technology</span>, as it continues to shape the way we live and interact with the world. <i>Are you ready to explore the amazing world of AI?</i>",
+  "quiz": [
+    {
+      "question": "What is the main goal of Artificial Intelligence?",
+      "options": [
+        "To create machines that can perform tasks requiring human intelligence",
+        "To make computers run faster",
+        "To replace all human jobs",
+        "To build only robots"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Which of the following is an example of AI in daily life?",
+      "options": [
+        "Using a calculator",
+        "Unlocking your phone with your face",
+        "Reading a book",
+        "Riding a bicycle"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "AI combines which of the following fields?",
+      "options": [
+        "Computer Science",
+        "Mathematics",
+        "Psychology",
+        "All of the above"
+      ],
+      "answer": 3
+    }
+  ]
+} 

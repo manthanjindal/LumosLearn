@@ -1,0 +1,36 @@
+{
+  "title": "Hackathons & Competitions",
+  "content": "Hackathons and Competitions are excellent opportunities to apply AI skills in real-world scenarios and learn from others. These events range from local hackathons to international competitions like Kaggle. They provide a platform to work on challenging problems, collaborate with others, and receive feedback from experts. Participating in these events helps develop practical skills, build a network, and create portfolio-worthy projects. Key aspects include problem understanding, solution design, implementation, and presentation. These events also offer opportunities to win prizes, gain recognition, and potentially find job opportunities.",
+  "quiz": [
+    {
+      "question": "What is the main benefit of participating in hackathons and competitions?",
+      "options": [
+        "Winning prizes only",
+        "Applying skills in real-world scenarios and learning",
+        "Avoiding challenges",
+        "Working alone"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following is important in hackathons?",
+      "options": [
+        "Working alone",
+        "Collaboration and problem-solving",
+        "Avoiding deadlines",
+        "Ignoring feedback"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What can you gain from these events?",
+      "options": [
+        "Only prizes",
+        "Practical skills, network, and portfolio projects",
+        "Only recognition",
+        "Only job offers"
+      ],
+      "answer": 1
+    }
+  ]
+}

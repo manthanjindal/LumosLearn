@@ -1,0 +1,36 @@
+{
+  "title": "Cognitive Computing vs AI",
+  "content": "While often used interchangeably, Cognitive Computing and Artificial Intelligence (AI) have distinct focuses. Understanding the difference helps clarify the goals and applications of each field.<br><br>\n    <b>Artificial Intelligence (AI):</b><br>\n    *   <b>Focus:</b> The broad science of mimicking human intelligence processes, such as learning, reasoning, and problem-solving, in machines. The goal is to create systems that can perform tasks requiring human-like intelligence.<br>\n    *   <b>Approach:</b> Can involve various techniques, including rule-based systems, statistical models, machine learning, and deep learning.<br>\n    *   <b>Output:</b> Often aims for a specific outcome or decision based on data and algorithms.<br>\n    *   <b>Goal:</b> To build intelligent agents that can perceive their environment and take actions to maximize their chances of achieving their goals.<br>\n    *   <b>Examples:</b> Image recognition, natural language processing, game playing, recommendation systems.<br><br>\n    <b>Cognitive Computing:</b><br>\n    *   <b>Focus:</b> A subset of AI that aims to create systems that simulate human thought processes in a computer model. It focuses on building systems that can interact with humans naturally, learn from their interactions, and help humans make better decisions by understanding complex, unstructured data.<br>\n    *   <b>Approach:</b> Emphasizes self-learning, natural language processing, human-computer interaction, and understanding context.<br>\n    *   <b>Output:</b> Provides insights and recommendations to augment human decision-making, rather than making decisions autonomously.<br>\n    *   <b>Goal:</b> To build systems that can understand, reason, learn, and interact, enabling humans to solve complex problems more effectively.<br>\n    *   <b>Examples:</b> IBM Watson is a prominent example, used in healthcare, finance, and other fields to assist experts by processing vast amounts of information and providing evidence-based insights.<br><br>\n    <b>Key Differences Summarized:</b><br>\n    *   <b>Scope:</b> AI is a broader field, while Cognitive Computing is a specific approach within AI.<br>\n    *   <b>Goal:</b> AI aims to create intelligent systems, while Cognitive Computing aims to augment human intelligence and decision-making by simulating human-like reasoning and interaction.<br>\n    *   <b>Interaction:</b> Cognitive Computing systems are designed for more natural, human-like interaction and understanding of unstructured data.<br><br>\n    Think of AI as building intelligent tools, and Cognitive Computing as building intelligent assistants that collaborate with humans to solve problems. Both are important aspects of the quest to create more capable and useful machines.",
+  "quiz": [
+    {
+      "question": "What is the primary focus of Cognitive Computing?",
+      "options": [
+        "To create machines that can beat humans at games",
+        "To build systems that simulate human thought processes to augment human decision-making",
+        "To develop robots that can perform physical tasks",
+        "To process structured data only"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which field is broader, AI or Cognitive Computing?",
+      "options": [
+        "Artificial Intelligence (AI)",
+        "Cognitive Computing",
+        "They are the same",
+        "Neither"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Cognitive Computing systems are designed to primarily:",
+      "options": [
+        "Replace human decision-makers entirely",
+        "Provide insights and recommendations to augment human decision-making",
+        "Only perform repetitive tasks",
+        "Interact only with other machines"
+      ],
+      "answer": 1
+    }
+  ]
+}

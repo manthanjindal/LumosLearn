@@ -1,0 +1,36 @@
+{
+  "title": "Deep Learning vs Traditional ML",
+  "content": "The choice between Deep Learning (DL) and Traditional Machine Learning (ML) often depends on the nature of the problem and the available data.<br><br><b>Deep Learning:</b><br><i>1. <b>Data Scale:</b></i> Excels with <span style=\"color:#A3F7BF\">very large datasets</span>, where its ability to learn complex patterns shines.<br><i>2. <b>Feature Engineering:</b></i> Performs <span style=\"color:#A3F7BF\">automatic feature extraction</span>. Given raw data (e.g., pixels in an image), it learns relevant features hierarchically.<br><i>3. <b>Performance:</b></i> Often achieves state-of-the-art performance in domains like computer vision, NLP, and speech recognition.<br><i>4. <b>Interpretability:</b></i> Generally less interpretable (\"black box\") compared to traditional ML models.<br><br><b>Traditional Machine Learning:</b><br><i>1. <b>Data Scale:</b></i> Can perform well with <span style=\"color:#A3F7BF\">smaller datasets</span>.<br><i>2. <b>Feature Engineering:</b></i> Typically requires <span style=\"color:#A3F7BF\">manual feature engineering</span>, where domain experts design features from raw data.<br><i>3. <b>Performance:</b></i> Effective for many structured data tasks (e.g., tabular data) and when interpretability is crucial.<br><i>4. <b>Interpretability:</b></i> Many models (e.g., Decision Trees, Linear Regression) are more interpretable.",
+  "quiz": [
+    {
+      "question": "What is a key advantage of Deep Learning over Traditional ML when dealing with very large datasets?",
+      "options": [
+        "It requires less computational power",
+        "It performs automatic feature extraction",
+        "It is always more interpretable",
+        "It is less prone to overfitting"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which type of machine learning typically requires manual feature engineering?",
+      "options": [
+        "Deep Learning",
+        "Reinforcement Learning",
+        "Traditional Machine Learning",
+        "Transfer Learning"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "When might Traditional Machine Learning models be preferred over Deep Learning?",
+      "options": [
+        "When dealing with petabytes of unstructured data",
+        "When interpretability of the model is crucial",
+        "When state-of-the-art performance in image recognition is needed",
+        "When automatic feature extraction is desired"
+      ],
+      "answer": 1
+    }
+  ]
+}

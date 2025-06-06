@@ -1,0 +1,36 @@
+{
+  "title": "Forward Propagation",
+  "content": "<b>Forward propagation</b> (or forward pass) is the process where input data is fed through the neural network, layer by layer, to produce an output.<br><br>It's the first step in the training process and also how a trained network makes predictions. For each neuron in a layer, the following steps occur:<br><i>1. Each input from the previous layer is multiplied by its corresponding <span style=\"color:#A3F7BF\">weight</span>.</i><br><i>2. These weighted inputs are summed together.</i><br><i>3. A <span style=\"color:#A3F7BF\">bias</span> term is added to the sum.</i><br><i>4. The result is passed through an <span style=\"color:#A3F7BF\">activation function</span>.</i><br><br>This output then becomes the input for the neurons in the next layer, and the process continues until the data reaches the output layer, producing the network's final prediction. No learning or weight updates occur during forward propagation; it's purely about calculating the output based on current weights and biases.",
+  "quiz": [
+    {
+      "question": "In which direction does data flow during forward propagation?",
+      "options": [
+        "From output to input layer",
+        "From input to output layer",
+        "Only within hidden layers",
+        "Randomly between layers"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is the final step for each neuron's calculation during forward propagation?",
+      "options": [
+        "Adding a bias",
+        "Multiplying by weights",
+        "Summing inputs",
+        "Passing through an activation function"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "Does learning or weight updates occur during forward propagation?",
+      "options": [
+        "Yes, always",
+        "Only if the loss is high",
+        "No, it's only for prediction",
+        "Only in the output layer"
+      ],
+      "answer": 2
+    }
+  ]
+}

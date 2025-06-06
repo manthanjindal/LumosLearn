@@ -1,0 +1,26 @@
+{
+  "title": "Model Evaluation",
+  "content": "<b>Model Evaluation</b> is a crucial step in the machine learning workflow that involves assessing the performance of your trained model. It helps you understand how well your model is generalizing to new, unseen data and allows you to compare different models to select the best one for your problem.<br><br>You can't just assume that a model is good because it performs well on the data it was trained on. You need to evaluate it on a separate test set to get an unbiased estimate of its performance. This is like giving a student an exam with questions they haven't seen before to truly test their knowledge.<br><br>Common evaluation metrics depend on the type of task:<br><i>1. <b>For Classification:</b></i> Accuracy, Precision, Recall, F1-Score, and the Confusion Matrix.<br><i>2. <b>For Regression:</b></i> Mean Absolute Error (MAE), Mean Squared Error (MSE), and R-squared.",
+  "quiz": [
+    {
+      "question": "Why is model evaluation important?",
+      "options": [
+        "To train the model faster",
+        "To assess how well a model performs on unseen data",
+        "To increase the complexity of the model",
+        "To gather more training data"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following is a common evaluation metric for classification tasks?",
+      "options": [
+        "Mean Absolute Error (MAE)",
+        "Accuracy, Precision, and Recall",
+        "R-squared",
+        "Mean Squared Error (MSE)"
+      ],
+      "answer": 1
+    }
+  ]
+}

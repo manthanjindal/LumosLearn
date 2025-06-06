@@ -1,0 +1,36 @@
+{
+  "title": "GANs: Applications",
+  "content": "Generative Adversarial Networks (GANs) have opened up a new frontier in generative AI, capable of producing remarkably realistic and diverse data. Their applications span various domains, particularly in computer vision.<br><br>Key applications of GANs include:<br><i>1. <b>Realistic Image Generation:</b></i> Creating highly convincing images of faces, landscapes, objects, etc., that have never existed.<br><i>2. <b>Style Transfer:</b></i> Applying the artistic style of one image to the content of another (e.g., turning a photo into a painting in the style of Van Gogh).<br><i>3. <b>Image-to-Image Translation:</b></i> Transforming images from one domain to another (e.g., converting satellite images to maps, day to night images).<br><i>4. <b>Data Augmentation:</b></i> Generating synthetic training data to expand datasets, which is especially useful when real data is scarce.<br><i>5. <b>Super-Resolution:</b></i> Enhancing the resolution and quality of low-resolution images.<br><i>6. <b>Text-to-Image Synthesis:</b></i> Generating images from textual descriptions.<br><i>7. <b>Drug Discovery:</b></i> Designing new molecules with desired properties.<br><br>The ability of GANs to learn complex data distributions and generate novel samples makes them a powerful tool for creative and practical applications.",
+  "quiz": [
+    {
+      "question": "Which of the following is a common application of GANs?",
+      "options": [
+        "Predicting stock prices",
+        "Generating realistic images",
+        "Classifying text sentiment",
+        "Performing regression analysis"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "How can GANs be used for data augmentation?",
+      "options": [
+        "By manually labeling more data",
+        "By generating synthetic training data",
+        "By reducing the size of the dataset",
+        "By removing noisy data"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which GAN application involves applying the artistic style of one image to another?",
+      "options": [
+        "Image Classification",
+        "Object Detection",
+        "Style Transfer",
+        "Image Segmentation"
+      ],
+      "answer": 2
+    }
+  ]
+}

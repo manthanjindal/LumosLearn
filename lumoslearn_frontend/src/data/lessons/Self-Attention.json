@@ -1,0 +1,36 @@
+{
+  "title": "Self-Attention",
+  "content": "<b>Self-Attention</b> (also known as intra-attention) is a specific type of attention mechanism that relates different positions of a <span style=\"color:#A3F7BF\">single sequence</span> to compute a representation of the same sequence. Unlike traditional attention which focuses on an input sequence to generate an output sequence, self-attention helps a model understand the relationships between different words within the same sentence.<br><br>For example, in the sentence \"The animal didn't cross the street because it was too tired\", self-attention helps the model understand that \"it\" refers to \"the animal\". It does this by calculating attention weights between \"it\" and every other word in the sentence, giving a higher weight to \"the animal\".<br><br>The core idea is to compute a weighted sum of all elements in the input sequence for each element, where the weights are learned based on the <span style=\"color:#A3F7BF\">relevance between elements</span>. This allows the model to capture long-range dependencies within a sequence without relying on recurrence (like RNNs) or convolutions (like CNNs). Self-attention is a fundamental building block of the <span style=\"color:#A3F7BF\">Transformer architecture</span>.",
+  "quiz": [
+    {
+      "question": "What does Self-Attention primarily focus on?",
+      "options": [
+        "Relating different positions within a single sequence",
+        "Relating an input sequence to an output sequence",
+        "Generating new sequences from noise",
+        "Classifying images into categories"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Which neural network architecture is built entirely on Self-Attention?",
+      "options": [
+        "Recurrent Neural Networks (RNNs)",
+        "Convolutional Neural Networks (CNNs)",
+        "Long Short-Term Memory (LSTM) networks",
+        "Transformers"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "What is a key benefit of Self-Attention regarding dependencies?",
+      "options": [
+        "It only captures short-term dependencies",
+        "It captures long-range dependencies without recurrence or convolution",
+        "It requires more manual feature engineering",
+        "It makes the model less interpretable"
+      ],
+      "answer": 1
+    }
+  ]
+}

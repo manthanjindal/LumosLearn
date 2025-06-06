@@ -1,0 +1,36 @@
+{
+  "title": "Dropout Techniques",
+  "content": "<b>Dropout</b> is a powerful and widely used <span style=\"color:#A3F7BF\">regularization technique</span> specifically designed for neural networks. It addresses overfitting by randomly \"dropping out\" (setting to zero) a proportion of neurons during each training iteration.<br><br>During training, for each update of the network, individual neurons are temporarily removed from the network with a certain probability (e.g., 0.5). This means that their connections to other neurons are also removed. This process is done randomly and independently for each neuron.<br><br>The benefits of dropout include:<br><i>1. <b>Prevents Co-adaptation:</b></i> It forces neurons to learn more robust features that are useful in conjunction with different random subsets of other neurons, rather than relying too heavily on specific connections.<br><i>2. <b>Ensemble Effect:</b></i> Dropout can be seen as training an ensemble of many different neural networks, where each network is a sub-network of the original. At test time, all neurons are active, but their outputs are scaled by the dropout probability.",
+  "quiz": [
+    {
+      "question": "What does Dropout randomly do during training?",
+      "options": [
+        "Adds new neurons",
+        "Drops out (sets to zero) a proportion of neurons",
+        "Changes the learning rate",
+        "Initializes weights"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is a key benefit of using Dropout?",
+      "options": [
+        "It speeds up forward propagation",
+        "It prevents co-adaptation of neurons",
+        "It increases the model's complexity",
+        "It reduces the need for activation functions"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "When is Dropout typically applied?",
+      "options": [
+        "Only during inference",
+        "Only during data preprocessing",
+        "During each training iteration",
+        "After the model has fully converged"
+      ],
+      "answer": 2
+    }
+  ]
+}

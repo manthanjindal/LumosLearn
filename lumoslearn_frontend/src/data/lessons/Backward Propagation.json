@@ -1,0 +1,36 @@
+{
+  "title": "Backward Propagation",
+  "content": "<b>Backward propagation</b> (or backpropagation) is the algorithm that allows neural networks to learn by efficiently calculating the <span style=\"color:#A3F7BF\">gradients of the loss function</span> with respect to the network's weights and biases.<br><br>After a forward pass computes the output and the loss, backpropagation works by propagating the error backwards from the output layer through the hidden layers to the input layer. It uses the <span style=\"color:#A3F7BF\">chain rule of calculus</span> to determine how much each weight and bias contributed to the overall error.<br><br>The calculated gradients indicate the direction and magnitude by which the weights and biases should be adjusted to minimize the loss. This process is iterative: forward pass, calculate loss, backward pass (calculate gradients), and then <span style=\"color:#A3F7BF\">update the parameters</span> using an optimizer. Backpropagation is fundamental to training most deep neural networks.",
+  "quiz": [
+    {
+      "question": "What is the primary purpose of backward propagation?",
+      "options": [
+        "To feed input data forward",
+        "To calculate gradients of the loss function",
+        "To activate neurons",
+        "To initialize network weights"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which mathematical rule is fundamental to backpropagation?",
+      "options": [
+        "Pythagorean theorem",
+        "Chain rule of calculus",
+        "Newton's laws",
+        "Law of cosines"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What happens to the network's parameters (weights and biases) after gradients are calculated in backpropagation?",
+      "options": [
+        "They are randomly reinitialized",
+        "They remain unchanged",
+        "They are adjusted to minimize the loss",
+        "They are removed from the network"
+      ],
+      "answer": 2
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "title": "CNNs: Theory",
+  "content": "<b>Convolutional Neural Networks (CNNs)</b> are a specialized class of neural networks primarily designed for <span style=\"color:#A3F7BF\">processing grid-like data</span>, such as images. Their architecture is inspired by the organization of the animal visual cortex.<br><br>Key components of a CNN:<br><i>1. <b>Convolutional Layers:</b></i> These layers apply <span style=\"color:#A3F7BF\">filters (or kernels)</span> to the input data to detect specific features (e.g., edges, textures, shapes). Each filter slides over the input, performing a dot product, creating a feature map.<br><i>2. <b>Activation Functions:</b></i> Typically ReLU, applied after convolution to introduce non-linearity.<br><i>3. <b>Pooling Layers:</b></i> These layers perform <span style=\"color:#A3F7BF\">downsampling</span> (e.g., Max Pooling, Average Pooling) to reduce the spatial dimensions of the feature maps, thereby reducing computational complexity and helping to make the detected features more robust to slight shifts or distortions.<br><i>4. <b>Fully Connected Layers:</b></i> After several convolutional and pooling layers, the learned features are flattened and fed into traditional fully connected layers for classification or regression.<br><br>CNNs are highly effective because they can automatically learn a <span style=\"color:#A3F7BF\">hierarchy of features</span>, from simple low-level features to complex high-level representations.",
+  "quiz": [
+    {
+      "question": "For what type of data are CNNs primarily designed?",
+      "options": [
+        "Sequential data like text",
+        "Tabular data",
+        "Grid-like data such as images",
+        "Time-series data"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What is the role of \"filters\" or \"kernels\" in a convolutional layer?",
+      "options": [
+        "To reduce the number of layers",
+        "To detect specific features in the input",
+        "To normalize the data",
+        "To combine different activation functions"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is the main purpose of pooling layers in a CNN?",
+      "options": [
+        "To increase the spatial dimensions",
+        "To add more features",
+        "To perform downsampling and reduce dimensionality",
+        "To apply an activation function"
+      ],
+      "answer": 2
+    }
+  ]
+}

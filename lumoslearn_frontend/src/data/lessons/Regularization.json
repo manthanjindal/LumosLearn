@@ -1,0 +1,36 @@
+{
+  "title": "Regularization",
+  "content": "<b>Regularization</b> techniques are crucial in Deep Learning to prevent <span style=\"color:#A3F7BF\">overfitting</span>. Overfitting occurs when a model learns the training data too well, including noise and specific patterns, leading to poor performance on new, unseen data.<br><br>Regularization methods work by adding a <span style=\"color:#A3F7BF\">penalty term to the loss function</span> during training. This penalty discourages the model from assigning excessively large weights to features, thereby reducing the model's complexity and making it more robust.<br><br>Common types of regularization include:<br><i>1. <b>L1 Regularization (Lasso):</b></i> Adds the absolute value of the weights to the loss function. It can lead to <span style=\"color:#A3F7BF\">sparse models</span>, effectively setting some weights to zero and performing feature selection.<br><i>2. <b>L2 Regularization (Ridge):</b></i> Adds the squared magnitude of the weights to the loss function. It encourages smaller weights, distributing the importance across all features.",
+  "quiz": [
+    {
+      "question": "What problem does regularization primarily aim to prevent?",
+      "options": [
+        "Underfitting",
+        "Overfitting",
+        "Slow training",
+        "Vanishing gradients"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "How does regularization typically work?",
+      "options": [
+        "By increasing the learning rate",
+        "By adding a penalty term to the loss function",
+        "By reducing the number of training epochs",
+        "By using a different activation function"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which type of regularization can lead to sparse models by setting some weights to zero?",
+      "options": [
+        "L2 Regularization",
+        "Dropout",
+        "L1 Regularization",
+        "Batch Normalization"
+      ],
+      "answer": 2
+    }
+  ]
+}

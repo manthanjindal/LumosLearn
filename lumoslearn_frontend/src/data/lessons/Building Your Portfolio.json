@@ -1,0 +1,36 @@
+{
+  "title": "Building Your Portfolio",
+  "content": "Building Your Portfolio is crucial for showcasing your AI skills and projects to potential employers or clients. A strong portfolio should include diverse projects that demonstrate different skills and technologies. Key elements include project descriptions, code repositories, documentation, and visualizations. The portfolio should highlight both technical skills and problem-solving abilities. It's important to maintain and update the portfolio regularly with new projects and improvements. A well-organized portfolio can help stand out in job applications and attract opportunities.",
+  "quiz": [
+    {
+      "question": "What should a strong AI portfolio include?",
+      "options": [
+        "Only one project",
+        "Diverse projects showing different skills",
+        "Only theoretical knowledge",
+        "Only certifications"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following is important in a portfolio?",
+      "options": [
+        "Complex jargon",
+        "Clear project descriptions and documentation",
+        "Only code",
+        "Only results"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "How should you maintain your portfolio?",
+      "options": [
+        "Never update it",
+        "Regularly update with new projects",
+        "Keep it static",
+        "Only show old projects"
+      ],
+      "answer": 1
+    }
+  ]
+}

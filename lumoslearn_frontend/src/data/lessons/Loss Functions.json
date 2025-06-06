@@ -1,0 +1,36 @@
+{
+  "title": "Loss Functions",
+  "content": "A <span style=\"color:#A3F7BF\">loss function</span> (also known as a cost function or objective function) quantifies the discrepancy between the predicted output of a neural network and the actual target output. It's a measure of how well the model is performing.<br><br>The goal during training is to <span style=\"color:#A3F7BF\">minimize this loss function</span>. By calculating the loss, the network understands how much its predictions deviate from the truth, and this error signal is then used to adjust the model's internal parameters (weights and biases) during backpropagation.<br><br>Different types of tasks require different loss functions:<br><i>1. <b>Mean Squared Error (MSE):</b></i> Commonly used for <span style=\"color:#A3F7BF\">regression problems</span>, it calculates the average of the squared differences between predicted and actual values.<br><i>2. <b>Cross-Entropy Loss:</b></i> Widely used for <span style=\"color:#A3F7BF\">classification problems</span>. It measures the difference between two probability distributions (the predicted and true distributions). Binary Cross-Entropy for binary classification and Categorical Cross-Entropy for multi-class classification.",
+  "quiz": [
+    {
+      "question": "What is the primary role of a loss function in Deep Learning?",
+      "options": [
+        "To speed up training",
+        "To quantify the error between predicted and actual outputs",
+        "To select the best activation function",
+        "To increase the number of hidden layers"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What does a lower value of the loss function indicate?",
+      "options": [
+        "The model is overfitting",
+        "The model is performing worse",
+        "The model is performing better",
+        "The learning rate is too high"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Which loss function is typically used for regression problems?",
+      "options": [
+        "Cross-Entropy Loss",
+        "Mean Squared Error (MSE)",
+        "Softmax Loss",
+        "Hinge Loss"
+      ],
+      "answer": 1
+    }
+  ]
+}

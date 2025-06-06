@@ -1,0 +1,36 @@
+{
+  "title": "AI in Smart Homes",
+  "content": "Artificial Intelligence (AI) is transforming our homes into \"smart\" environments, where devices and systems can learn from our habits, respond to our needs, and automate tasks to improve comfort, convenience, and energy efficiency.<br><br>\n    Key applications of AI in smart homes include:<br>\n    1.  <b>Voice Assistants (e.g., Amazon Echo, Google Home):</b> These devices use AI for speech recognition and natural language processing, allowing us to control smart home devices, get information, play music, and manage tasks using voice commands.<br>\n    2.  <b>Smart Thermostats (e.g., Nest, Ecobee):</b> AI learns our heating and cooling preferences and daily routines to automatically adjust the thermostat for optimal comfort and energy savings. They can also respond to voice commands or integrate with other smart home systems.<br>\n    3.  <b>Smart Lighting Systems:</b> AI can learn our presence and preferences to automatically turn lights on or off, adjust brightness, and even change colors based on the time of day or activity. Some systems can simulate occupancy when we're away.<br>\n    4.  <b>Smart Security Systems:</b> AI-powered cameras can distinguish between people, pets, and vehicles, reducing false alarms. AI can also analyze patterns to detect suspicious activity and alert homeowners. Facial recognition can be used for access control.<br>\n    5.  <b>Smart Appliances:</b> Refrigerators, ovens, washing machines, and other appliances are incorporating AI for features like inventory management (suggesting groceries), optimized cooking cycles, predictive maintenance, and remote control.<br>\n    6.  <b>Energy Management:</b> AI systems can monitor energy consumption patterns across the home and optimize the usage of appliances and systems to reduce electricity bills.<br>\n    7.  <b>Personalized Entertainment:</b> Smart TVs and audio systems use AI to recommend content based on viewing and listening history.<br><br>\n    The goal of AI in smart homes is to create a more intuitive, responsive, and efficient living environment that adapts to the needs and preferences of its occupants.",
+  "quiz": [
+    {
+      "question": "Which AI technology is fundamental to voice assistants in smart homes?",
+      "options": [
+        "Computer Vision",
+        "Natural Language Processing and speech recognition",
+        "Algorithmic Trading",
+        "Predictive Maintenance"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "How do smart thermostats use AI to improve energy efficiency?",
+      "options": [
+        "By keeping the temperature constant at all times",
+        "By learning routines and preferences to automatically adjust heating and cooling",
+        "By only responding to manual adjustments",
+        "They do not use AI"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What can AI-powered cameras in smart security systems do?",
+      "options": [
+        "They can only record video",
+        "They can distinguish between people, pets, and vehicles to reduce false alarms",
+        "They cannot detect any movement",
+        "They require constant manual monitoring"
+      ],
+      "answer": 1
+    }
+  ]
+}

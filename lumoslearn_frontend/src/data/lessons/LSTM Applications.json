@@ -1,0 +1,36 @@
+{
+  "title": "LSTM: Applications",
+  "content": "Due to their ability to effectively capture long-term dependencies in sequential data, Long Short-Term Memory (LSTM) networks have become the go-to architecture for a wide range of advanced applications, particularly in Natural Language Processing (NLP) and time series analysis.<br><br>Key applications of LSTMs include:<br><i>1. <b>Language Modeling and Generation:</b></i> Predicting the next word in a sentence, or generating entire coherent paragraphs of text.<br><i>2. <b>Machine Translation:</b></i> Translating sentences from one language to another, maintaining context over long phrases.<br><i>3. <b>Speech Recognition:</b></i> Accurately transcribing spoken audio into text, handling varying speaking speeds and accents.<br><i>4. <b>Video Captioning:</b></i> Generating descriptive captions for video content by understanding the sequence of events.<br><i>5. <b>Sentiment Analysis:</b></i> More nuanced understanding of sentiment in longer texts.<br><i>6. <b>Stock Market Prediction:</b></i> Forecasting stock prices or market trends based on historical time-series data.<br><i>7. <b>Drug Discovery:</b></i> Analyzing molecular sequences.<br><br>LSTMs' robustness to the vanishing gradient problem makes them highly effective in scenarios where understanding context over extended periods is critical.",
+  "quiz": [
+    {
+      "question": "Which application is a common use case for LSTMs in generating human-like text?",
+      "options": [
+        "Image Classification",
+        "Language Modeling and Generation",
+        "Object Detection",
+        "Tabular Data Analysis"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "LSTMs are particularly well-suited for which type of forecasting?",
+      "options": [
+        "Weather forecasting in a single location",
+        "Predicting the outcome of a coin flip",
+        "Stock market prediction based on historical data",
+        "Forecasting the number of hidden layers in a CNN"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Which of the following is an application where LSTMs excel due to their ability to handle long sequences?",
+      "options": [
+        "Simple image classification",
+        "Machine translation",
+        "Basic arithmetic calculations",
+        "Generating random numbers"
+      ],
+      "answer": 1
+    }
+  ]
+}

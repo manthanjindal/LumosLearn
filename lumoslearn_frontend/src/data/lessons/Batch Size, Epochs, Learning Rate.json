@@ -1,0 +1,36 @@
+{
+  "title": "Batch Size, Epochs, Learning Rate",
+  "content": "These three terms are crucial <span style=\"color:#A3F7BF\">hyperparameters</span> that significantly influence the training process and performance of a neural network:<br><br><i>1. <b>Batch Size:</b></i> The number of training examples utilized in one <span style=\"color:#A3F7BF\">iteration</span>. Instead of updating the model's weights after every single training example (which is Stochastic Gradient Descent), or after processing the entire dataset (which is Batch Gradient Descent), we process data in smaller batches. A larger batch size provides a more stable estimate of the gradient but requires more memory and can lead to slower convergence.<br><br><i>2. <b>Epochs:</b></i> One <span style=\"color:#A3F7BF\">epoch</span> means one complete pass through the entire training dataset. During one epoch, the model processes every training example once, performs forward propagation, calculates loss, backpropagates, and updates weights. Training typically involves many epochs until the model converges.<br><br><i>3. <b>Learning Rate:</b></i> A critical hyperparameter that determines the <span style=\"color:#A3F7BF\">step size</span> at each iteration while moving towards a minimum of the loss function. A high learning rate can cause the model to overshoot the minimum, while a very low learning rate can lead to slow convergence or getting stuck in local minima.",
+  "quiz": [
+    {
+      "question": "What does \"Batch Size\" refer to in neural network training?",
+      "options": [
+        "The total number of training examples",
+        "The number of hidden layers",
+        "The number of training examples processed in one iteration",
+        "The size of the output layer"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What is an \"Epoch\" in the context of neural network training?",
+      "options": [
+        "A single forward pass of one data point",
+        "One complete pass through the entire training dataset",
+        "The time taken for a single weight update",
+        "The number of neurons in a layer"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What does the \"Learning Rate\" control during training?",
+      "options": [
+        "The number of epochs",
+        "The step size for weight updates",
+        "The batch size",
+        "The activation function choice"
+      ],
+      "answer": 1
+    }
+  ]
+}

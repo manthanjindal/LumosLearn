@@ -1,0 +1,36 @@
+{
+  "title": "GRU: Theory",
+  "content": "The <span style=\"color:#A3F7BF\">Gated Recurrent Unit (GRU)</span> is another type of recurrent neural network that, like LSTM, was designed to address the <span style=\"color:#A3F7BF\">vanishing gradient problem</span> and improve the memory of RNNs for sequential data.<br><br>Introduced in 2014, GRUs are considered a <span style=\"color:#A3F7BF\">simpler alternative to LSTMs</span>. While LSTMs have three gates (input, forget, output) and a separate cell state, GRUs combine the cell state and hidden state, and they only have two gates:<br><br><i>1. <b>Update Gate:</b></i> Controls how much of the past information (from the previous hidden state) should be carried over to the current hidden state. It acts like both the input and forget gates of an LSTM.<br><i>2. <b>Reset Gate:</b></i> Determines how much of the previous hidden state to <span style=\"color:#A3F7BF\">forget</span>. It decides how to combine the new input with the previous memory.<br><br>The simplicity of GRUs means they have <span style=\"color:#A3F7BF\">fewer parameters</span> than LSTMs, which can lead to faster training times and sometimes better performance on smaller datasets, while still being effective at capturing long-term dependencies.",
+  "quiz": [
+    {
+      "question": "What problem do GRUs, like LSTMs, aim to solve in RNNs?",
+      "options": [
+        "Overfitting",
+        "Exploding gradients",
+        "Vanishing gradient problem",
+        "Computational inefficiency"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "How many gates does a Gated Recurrent Unit (GRU) typically have?",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "Four"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is a potential advantage of GRUs over LSTMs?",
+      "options": [
+        "They are more complex",
+        "They have more parameters",
+        "They can lead to faster training times due to fewer parameters",
+        "They cannot handle long-term dependencies"
+      ],
+      "answer": 2
+    }
+  ]
+}

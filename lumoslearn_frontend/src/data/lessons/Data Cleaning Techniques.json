@@ -1,0 +1,26 @@
+{
+  "title": "Data Cleaning Techniques",
+  "content": "<b>Data Cleaning</b> (or data preprocessing) is the process of preparing raw data for machine learning. Raw data is often messy, incomplete, and inconsistent, which can lead to misleading or inaccurate model results. This step involves identifying and correcting errors, handling missing values, and transforming the data into a usable format.<br><br>Common data cleaning techniques include:<br><i>1. <b>Handling Missing Values:</b></i> You can either remove records with missing values or impute them using statistical methods like mean, median, or more advanced techniques like regression.<br><i>2. <b>Correcting Errors:</b></i> This involves identifying and fixing typos, inconsistencies, or impossible values (e.g., an age of 200).<br><i>3. <b>Removing Duplicates:</b></i> Duplicate records can skew your analysis and should be removed.<br><i>4. <b>Standardizing Formats:</b></i> Ensure that data like dates, addresses, or categorical values are consistent across the dataset.",
+  "quiz": [
+    {
+      "question": "What is the main purpose of data cleaning?",
+      "options": [
+        "To increase the size of the dataset",
+        "To prepare raw data for modeling",
+        "To introduce noise into the data",
+        "To make the data more complex"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which technique is used to handle missing data?",
+      "options": [
+        "Removing all records",
+        "Imputation with mean or median",
+        "Ignoring the missing values",
+        "Adding more features"
+      ],
+      "answer": 1
+    }
+  ]
+}

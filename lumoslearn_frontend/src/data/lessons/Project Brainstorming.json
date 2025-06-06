@@ -1,0 +1,36 @@
+{
+  "title": "Project Brainstorming",
+  "content": "Project Brainstorming in AI involves generating and evaluating ideas for practical projects that can help develop skills and build a portfolio. Effective brainstorming considers factors like project scope, available resources, and learning objectives. Good AI projects should be challenging yet achievable, relevant to current trends, and demonstrate practical skills. The process includes identifying problems to solve, researching existing solutions, and planning implementation steps. Project ideas can come from personal interests, industry needs, or academic research. A well-planned project can serve as a valuable learning experience and portfolio piece.",
+  "quiz": [
+    {
+      "question": "What is the main purpose of project brainstorming in AI?",
+      "options": [
+        "Creating perfect solutions",
+        "Generating and evaluating project ideas",
+        "Avoiding challenges",
+        "Following existing projects only"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What should a good AI project be?",
+      "options": [
+        "Extremely complex",
+        "Challenging yet achievable",
+        "Simple and basic",
+        "Theoretical only"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Where can project ideas come from?",
+      "options": [
+        "Only from textbooks",
+        "Personal interests and industry needs",
+        "Only from mentors",
+        "Only from online courses"
+      ],
+      "answer": 1
+    }
+  ]
+}

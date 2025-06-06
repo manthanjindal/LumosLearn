@@ -1,0 +1,36 @@
+{
+  "title": "Mentors & Role Models",
+  "content": "Mentors and Role Models play a crucial role in AI career development. Mentors can provide guidance, share experiences, and help navigate challenges in the field. Role models inspire and demonstrate what's possible in AI careers. Finding mentors can be done through professional networks, online communities, and educational institutions. Effective mentorship involves clear communication, setting goals, and regular feedback. Role models in AI include researchers, entrepreneurs, and practitioners who have made significant contributions to the field. Learning from others' experiences can accelerate your growth and help avoid common pitfalls.",
+  "quiz": [
+    {
+      "question": "What is the main benefit of having a mentor in AI?",
+      "options": [
+        "Getting a job immediately",
+        "Receiving guidance and sharing experiences",
+        "Avoiding all challenges",
+        "Following someone else's path exactly"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Where can you find mentors in AI?",
+      "options": [
+        "Only in universities",
+        "Professional networks and online communities",
+        "Only in companies",
+        "Only in research labs"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is important in a mentor-mentee relationship?",
+      "options": [
+        "Following instructions only",
+        "Clear communication and regular feedback",
+        "Avoiding challenges",
+        "Staying in comfort zone"
+      ],
+      "answer": 1
+    }
+  ]
+}

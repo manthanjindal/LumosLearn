@@ -1,0 +1,36 @@
+{
+  "title": "Neural Network Structure",
+  "content": "A typical Artificial Neural Network (ANN) is organized into layers of interconnected <span style=\"color:#A3F7BF\">neurons</span> (also called nodes).<br><br>The basic structure includes:<br><i>1. <b>Input Layer:</b></i> Receives the raw data. The number of neurons here corresponds to the number of features in the input.<br><i>2. <b>Hidden Layers:</b></i> One or more layers between the input and output layers. These layers perform the bulk of the computation, learning complex patterns and representations from the data. Deep learning refers to networks with many hidden layers.<br><i>3. <b>Output Layer:</b></i> Produces the final result of the network. The number of neurons and the activation function depend on the specific task (e.g., one neuron for binary classification, multiple for multi-class classification).<br><br>Each connection between neurons has an associated <span style=\"color:#A3F7BF\">weight</span>, which determines the strength of the connection, and each neuron typically has a <span style=\"color:#A3F7BF\">bias</span>, which allows the activation function to be shifted.",
+  "quiz": [
+    {
+      "question": "Which layer in a neural network is responsible for receiving the raw data?",
+      "options": [
+        "Hidden Layer",
+        "Output Layer",
+        "Input Layer",
+        "Recurrent Layer"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What determines the strength of the connection between neurons in a neural network?",
+      "options": [
+        "Bias",
+        "Activation Function",
+        "Weight",
+        "Loss Function"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What is the primary function of hidden layers in a neural network?",
+      "options": [
+        "To receive input data",
+        "To produce the final output",
+        "To learn complex patterns and representations",
+        "To define the network's architecture"
+      ],
+      "answer": 2
+    }
+  ]
+}

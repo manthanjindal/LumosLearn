@@ -1,0 +1,36 @@
+{
+  "title": "History of AI",
+  "content": "The journey of Artificial Intelligence began long before computers as we know them existed, with myths and stories of artificial beings. However, the <span style=\"color:#A3F7BF\">formal birth of AI as a field of research is often attributed to the Dartmouth Workshop in 1956</span>. It was here that the term \"Artificial Intelligence\" was coined by John McCarthy. Early AI research was filled with optimism, focusing on problem-solving and symbolic reasoning. Early successes included programs that could play checkers or solve algebra word problems.<br><br>The 1970s and 1980s saw the rise of \"expert systems,\" AI programs designed to mimic the decision-making ability of a human expert in a specific domain, like medical diagnosis (e.g., MYCIN for blood infections). However, progress slowed down during periods known as \"AI winters,\" often due to limitations in computing power and unmet expectations. A significant shift occurred in the 1990s and 2000s with the <span style=\"color:#A3F7BF\">ascendance of machine learning</span>, where systems learn from data rather than being explicitly programmed for every task. The availability of large datasets (Big Data) and increased computational power, particularly GPUs, fueled breakthroughs in areas like image recognition and natural language processing. Deep learning, a subfield of machine learning using neural networks with many layers, has been responsible for many of the recent AI marvels, from voice assistants to self-driving car technologies. Today, AI is a vibrant and rapidly evolving field, building upon decades of foundational work and breakthroughs.<br><br><b>Thought-provoking question:</b> If early AI researchers could see today's AI capabilities, what do you think would surprise them the most?",
+  "quiz": [
+    {
+      "question": "When and where was the term \"Artificial Intelligence\" coined?",
+      "options": [
+        "At Harvard University in 1960",
+        "At the Dartmouth Workshop in 1956",
+        "At Stanford University in 1950",
+        "At MIT in 1965"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What were AI programs designed to mimic human expert decision-making in specific domains called?",
+      "options": [
+        "General problem solvers",
+        "Neural networks",
+        "Expert systems",
+        "Machine learning algorithms"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What factors significantly fueled the breakthroughs in AI in recent decades?",
+      "options": [
+        "A decrease in research funding.",
+        "The exclusive focus on symbolic reasoning.",
+        "Large datasets (Big Data) and increased computational power (GPUs).",
+        "The abandonment of machine learning principles."
+      ],
+      "answer": 2
+    }
+  ]
+}

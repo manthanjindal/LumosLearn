@@ -1,0 +1,36 @@
+{
+  "title": "Show & Tell",
+  "content": "Show & Tell in AI involves effectively presenting your projects and ideas to others. This includes creating engaging presentations, demonstrating working prototypes, and explaining technical concepts clearly. Good presentations should highlight the problem, solution, and impact of your work. Visual aids, code demonstrations, and real-world examples can make presentations more effective. The ability to communicate technical concepts to both technical and non-technical audiences is crucial. Show & Tell sessions provide opportunities for feedback and networking.",
+  "quiz": [
+    {
+      "question": "What is the main purpose of Show & Tell in AI?",
+      "options": [
+        "Showing off",
+        "Effectively presenting projects and ideas",
+        "Avoiding feedback",
+        "Working alone"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following is important in presentations?",
+      "options": [
+        "Using complex language only",
+        "Creating engaging presentations and explaining concepts clearly",
+        "Avoiding visual aids",
+        "Not practicing beforehand"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What can effective Show & Tell sessions provide?",
+      "options": [
+        "Only criticism",
+        "Opportunities for feedback and networking",
+        "No benefits",
+        "A way to avoid explaining your work"
+      ],
+      "answer": 1
+    }
+  ]
+}

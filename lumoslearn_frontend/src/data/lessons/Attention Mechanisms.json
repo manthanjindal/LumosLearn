@@ -1,0 +1,36 @@
+{
+  "title": "Attention Mechanisms",
+  "content": "<b>Attention Mechanisms</b> are a powerful innovation in neural networks, particularly in sequence-to-sequence models (like those used in NLP). They allow a model to <span style=\"color:#A3F7BF\">dynamically focus on specific, relevant parts of the input sequence</span> when processing or generating an output.<br><br>Before attention, models like RNNs and LSTMs had to encode the entire input sequence into a single fixed-size vector, which often struggled with very long sequences (the \"bottleneck\" problem). Attention solves this by:<br><i>1. Providing a <span style=\"color:#A3F7BF\">context vector</span> for each output step.</i><br><i>2. This context vector is a weighted sum of all input elements.</i><br><i>3. The weights are learned by the network, indicating the <span style=\"color:#A3F7BF\">\"importance\"</span> of each input element for the current output.</i><br><br>For example, in machine translation, when translating a word, the attention mechanism allows the model to look back at all words in the source sentence and assign higher importance (attention) to the words most relevant to the current translation. This significantly improves performance on long sequences and complex tasks.",
+  "quiz": [
+    {
+      "question": "What is the primary purpose of Attention Mechanisms in neural networks?",
+      "options": [
+        "To reduce the number of layers",
+        "To randomly drop out neurons",
+        "To allow the model to focus on relevant parts of the input sequence",
+        "To increase the learning rate"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "How does an attention mechanism typically determine the \"importance\" of input elements?",
+      "options": [
+        "By assigning random values",
+        "By using fixed weights for all inputs",
+        "By learning dynamic weights for each input element",
+        "By ignoring irrelevant inputs"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What problem do Attention Mechanisms help to overcome in sequence-to-sequence models?",
+      "options": [
+        "Overfitting",
+        "The vanishing gradient problem",
+        "The bottleneck problem with long sequences",
+        "The need for more training data"
+      ],
+      "answer": 2
+    }
+  ]
+}

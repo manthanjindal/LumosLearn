@@ -1,0 +1,36 @@
+{
+  "title": "GRU: Applications",
+  "content": "Gated Recurrent Units (GRUs) share many applications with LSTMs, as both are designed to handle sequential data and mitigate the vanishing gradient problem. However, GRUs often offer a <span style=\"color:#A3F7BF\">computationally lighter</span> alternative due to their simpler architecture.<br><br>Common applications of GRUs include:<br><i>1. <b>Machine Translation:</b></i> Translating text between languages, often used in encoder-decoder architectures.<br><i>2. <b>Speech Recognition:</b></i> Converting spoken words into text, similar to LSTMs.<br><i>3. <b>Natural Language Understanding (NLU):</b></i> Tasks like sentiment analysis, text summarization, and question answering, where understanding context is crucial.<br><i>4. <b>Time Series Prediction:</b></i> Forecasting in various domains, from financial markets to weather.<br><i>5. <b>Music Modeling:</b></i> Generating musical sequences or classifying genres.<br><br>While LSTMs might offer slightly better performance on very complex, long sequences, GRUs are often preferred when computational resources are a concern or when the dataset is not extremely large, as they can achieve comparable results with faster training.",
+  "quiz": [
+    {
+      "question": "Which of the following is a common application for GRUs?",
+      "options": [
+        "Image Classification",
+        "Machine Translation",
+        "Object Detection",
+        "Genetic Algorithm Optimization"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is a benefit of GRUs compared to LSTMs in terms of computational resources?",
+      "options": [
+        "They require more memory",
+        "They are computationally heavier",
+        "They are computationally lighter due to fewer parameters",
+        "They are only suitable for CPU training"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "In which scenario might GRUs be preferred over LSTMs?",
+      "options": [
+        "When maximum possible accuracy is the only concern",
+        "When computational resources are limited or faster training is desired",
+        "When dealing with extremely short sequences",
+        "When the vanishing gradient problem is not a concern"
+      ],
+      "answer": 1
+    }
+  ]
+}

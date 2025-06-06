@@ -1,0 +1,36 @@
+{
+  "title": "RNNs: Applications",
+  "content": "Recurrent Neural Networks (RNNs) are particularly well-suited for tasks involving sequential data, where context and order are crucial. Their ability to process inputs one element at a time while maintaining an internal state makes them invaluable.<br><br>Key applications of RNNs include:<br><i>1. <b>Natural Language Processing (NLP):</b></i><br>    - <i>Language Modeling:</i> Predicting the next word in a sequence.<br>    - <i>Machine Translation:</i> Translating text from one language to another.<br>    - <i>Sentiment Analysis:</i> Determining the emotional tone of a piece of text.<br><i>2. <b>Speech Recognition:</b></i> Converting spoken language into text.<br><i>3. <b>Time Series Prediction:</b></i> Forecasting future values based on historical data (e.g., stock prices, weather patterns).<br><i>4. <b>Handwriting Recognition:</b></i> Interpreting handwritten text.<br><i>5. <b>Music Generation:</b></i> Creating new musical sequences.<br><br>While basic RNNs have limitations with long sequences, their more advanced variants (LSTMs and GRUs) are widely used in these domains to achieve state-of-the-art results.",
+  "quiz": [
+    {
+      "question": "Which of the following is a common application of RNNs in Natural Language Processing?",
+      "options": [
+        "Image Classification",
+        "Object Detection",
+        "Machine Translation",
+        "Medical Image Analysis"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "How are RNNs used in speech recognition?",
+      "options": [
+        "To generate images from text",
+        "To convert spoken language into text",
+        "To classify types of sounds",
+        "To compress audio files"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which application involves forecasting future values based on historical data using RNNs?",
+      "options": [
+        "Sentiment Analysis",
+        "Handwriting Recognition",
+        "Time Series Prediction",
+        "Music Generation"
+      ],
+      "answer": 2
+    }
+  ]
+}

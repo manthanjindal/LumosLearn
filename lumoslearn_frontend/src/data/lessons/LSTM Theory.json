@@ -1,0 +1,36 @@
+{
+  "title": "LSTM: Theory",
+  "content": "<b>Long Short-Term Memory (LSTM)</b> networks are a special type of Recurrent Neural Network (RNN) designed to overcome the <span style=\"color:#A3F7BF\">vanishing gradient problem</span> that plagues traditional RNNs when learning long-term dependencies.<br><br>LSTMs achieve this by introducing a more complex internal structure called a <span style=\"color:#A3F7BF\">\"cell state\"</span> (or cell memory) and several \"gates\" that regulate the flow of information into and out of the cell state.<br><br>The three main types of gates in an LSTM unit are:<br><i>1. <b>Forget Gate:</b></i> Decides what information to <span style=\"color:#A3F7BF\">discard</span> from the cell state. It looks at the previous hidden state and the current input and outputs a number between 0 and 1 for each number in the cell state.<br><i>2. <b>Input Gate:</b></i> Decides what new information to <span style=\"color:#A3F7BF\">store</span> in the cell state. It has two parts: a sigmoid layer that decides which values to update, and a tanh layer that creates a vector of new candidate values.<br><i>3. <b>Output Gate:</b></i> Decides what part of the cell state to <span style=\"color:#A3F7BF\">output</span> as the new hidden state. It filters the cell state and applies a tanh function.<br><br>These gates allow LSTMs to selectively remember or forget information over long sequences, making them highly effective for tasks requiring understanding of long-range context.",
+  "quiz": [
+    {
+      "question": "What problem do LSTMs primarily address that basic RNNs struggle with?",
+      "options": [
+        "Overfitting",
+        "Exploding gradients",
+        "Vanishing gradient problem",
+        "Computational inefficiency"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Which of the following is NOT a type of gate found in an LSTM unit?",
+      "options": [
+        "Forget Gate",
+        "Input Gate",
+        "Recurrent Gate",
+        "Output Gate"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What is the function of the \"Forget Gate\" in an LSTM?",
+      "options": [
+        "To add new information to the cell state",
+        "To determine what information to discard from the cell state",
+        "To decide what to output as the hidden state",
+        "To initialize the cell state"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Key Milestones in AI",
+  "content": "The history of Artificial Intelligence is a fascinating journey marked by periods of significant progress and occasional setbacks (\"AI winters\"). Understanding these key milestones helps us appreciate how the field has evolved and where it might be heading.<br><br>\n    Here are some of the pivotal moments in AI history:<br><br>\n    1.  <b>The Dartmouth Workshop (1956):</b> Considered the birthplace of AI as an academic field. Organized by John McCarthy, Marvin Minsky, Claude Shannon, and Nathaniel Rochester, this workshop brought together researchers interested in \"artificial intelligence.\" The proposal for the workshop stated the goal of exploring how machines could be made to \"use language, form abstractions and concepts, solve kinds of problems now reserved for humans, and improve themselves.\"<br><br>\n    2.  <b>Early AI Programs (Late 1950s - 1960s):</b><br>\n        *   <b>Logic Theorist (1956):</b> Developed by Allen Newell and Herbert Simon, this program is considered the first AI program. It was designed to mimic the problem-solving skills of a human and proved 38 of the first 52 theorems in Whitehead and Russell's *Principia Mathematica*.<br>\n        *   <b>General Problem Solver (GPS) (1959):</b> Also by Newell and Simon, GPS was a more general problem-solving AI system based on the idea of means-ends analysis.<br>\n        *   <b>ELIZA (1966):</b> Developed by Joseph Weizenbaum, ELIZA was an early natural language processing program that simulated a Rogerian psychotherapist. While simple, it demonstrated the potential of computers to process and respond to human language.<br><br>\n    3.  <b>The First AI Winter (Late 1970s):</b> Funding for AI research decreased significantly due to a lack of promised breakthroughs and the limitations of early AI systems in handling real-world complexity. The Automatic Language Processing Advisory Committee (ALPAC) report in 1966 was particularly critical of machine translation efforts, contributing to reduced funding.<br><br>\n    4.  <b>Expert Systems Boom (1980s):</b> A resurgence of AI research and investment, driven by the success of \"expert systems\" – AI programs designed to mimic the decision-making ability of a human expert in a specific domain (e.g., MYCIN for medical diagnosis). These systems used rule-based reasoning.<br><br>\n    5.  <b>The Second AI Winter (Late 1980s - Early 1990s):</b> The expert systems boom ended as these systems proved expensive to maintain and update, and they struggled with knowledge acquisition. Funding and interest in AI waned again.<br><br>\n    6.  <b>Machine Learning Resurgence (1990s - Early 2000s):</b> Advances in machine learning algorithms, increased computational power, and the availability of larger datasets led to significant progress. Key developments included the rise of algorithms like Support Vector Machines (SVMs) and the success of data mining applications.<br><br>\n    7.  <b>Deep Learning Revolution (2010s - Present):</b> Fueled by massive datasets, powerful GPUs, and algorithmic innovations, deep learning (a subset of machine learning using multi-layered neural networks) has led to breakthroughs in image recognition (e.g., ImageNet competition successes), natural language processing (e.g., development of transformer models like BERT and GPT), and speech recognition. This era has seen AI move from research labs into mainstream applications.<br><br>\n    The history of AI is a testament to the perseverance of researchers and the transformative power of new ideas and technologies. Each winter has been followed by a spring of renewed progress, and the current era of deep learning is arguably the most impactful yet.",
+  "quiz": [
+    {
+      "question": "What event is considered the birthplace of AI as an academic field?",
+      "options": [
+        "The invention of the computer",
+        "The Dartmouth Workshop",
+        "The first expert system",
+        "The development of the internet"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What characterized the AI winters?",
+      "options": [
+        "Periods of extreme cold weather",
+        "Significant decreases in AI research funding and interest due to unfulfilled promises and limitations",
+        "Times when AI achieved human-level intelligence",
+        "Periods of rapid AI progress"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which era saw a resurgence of AI driven by the success of \"expert systems\"?",
+      "options": [
+        "The 1950s",
+        "The 1970s",
+        "The 1980s",
+        "The 2010s"
+      ],
+      "answer": 2
+    }
+  ]
+}

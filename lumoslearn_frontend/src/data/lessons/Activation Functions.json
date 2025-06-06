@@ -1,0 +1,36 @@
+{
+  "title": "Activation Functions",
+  "content": "An <span style=\"color:#A3F7BF\">activation function</span> is a crucial component of an artificial neural network, placed at the output of each neuron. Its primary purpose is to introduce <span style=\"color:#A3F7BF\">non-linearity</span> into the network.<br><br>Without activation functions, a neural network, no matter how many layers it has, would simply be performing linear transformations, making it equivalent to a single-layer perceptron. Non-linearity allows the network to learn complex patterns and map non-linear relationships between inputs and outputs.<br><br>Common activation functions include:<br><i>1. <b>Sigmoid:</b></i> Squashes values between 0 and 1, often used in output layers for binary classification.<br><i>2. <b>ReLU (Rectified Linear Unit):</b></i> Outputs the input directly if it's positive, otherwise outputs zero. Very popular in hidden layers due to its computational efficiency.<br><i>3. <b>Tanh (Hyperbolic Tangent):</b></i> Squashes values between -1 and 1.<br><i>4. <b>Softmax:</b></i> Used in the output layer for multi-class classification, converting outputs into probabilities that sum to 1.",
+  "quiz": [
+    {
+      "question": "What is the primary purpose of an activation function in a neural network?",
+      "options": [
+        "To normalize input data",
+        "To introduce non-linearity",
+        "To reduce the number of layers",
+        "To calculate the loss"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which activation function outputs the input directly if positive, otherwise zero?",
+      "options": [
+        "Sigmoid",
+        "Tanh",
+        "Softmax",
+        "ReLU"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "If a neural network did not use activation functions, what would be its limitation?",
+      "options": [
+        "It could only solve classification problems",
+        "It would be equivalent to a single-layer perceptron",
+        "It would require more training data",
+        "It would be unable to perform forward propagation"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Types of Machine Learning",
+  "content": "Machine Learning (ML) approaches are broadly categorized based on the nature of the data they learn from and the type of problem they are designed to solve. The three main types of Machine Learning are Supervised Learning, Unsupervised Learning, and Reinforcement Learning.<br><br>\n    1.  <b>Supervised Learning:</b><br>\n        *   <b>Concept:</b> In supervised learning, the algorithm is trained on a dataset that is \"labeled,\" meaning the data includes both the input and the corresponding correct output. The algorithm learns to map inputs to outputs.\n        *   <b>Goal:</b> To predict the output for new, unseen inputs based on the patterns learned from the labeled training data.\n        *   <b>Tasks:</b> Common tasks include Classification (predicting a category, e.g., spam or not spam) and Regression (predicting a continuous value, e.g., housing prices).\n        *   <b>Examples:</b> Email spam detection, image recognition, predicting stock prices.<br><br>\n    2.  <b>Unsupervised Learning:</b><br>\n        *   <b>Concept:</b> In unsupervised learning, the algorithm is given data that is \"unlabeled,\" meaning there are no correct output labels provided. The algorithm's goal is to find hidden patterns, structures, or relationships within the data.\n        *   <b>Goal:</b> To explore the data and discover interesting structures or group data points.\n        *   <b>Tasks:</b> Common tasks include Clustering (grouping similar data points, e.g., customer segmentation) and Dimensionality Reduction (reducing the number of features while retaining important information).\n        *   <b>Examples:</b> Customer segmentation, anomaly detection, topic modeling.<br><br>\n    3.  <b>Reinforcement Learning:</b><br>\n        *   <b>Concept:</b> In reinforcement learning, an agent learns to make decisions by interacting with an environment. The agent receives rewards or penalties based on its actions, and its goal is to learn a policy (a strategy) that maximizes the cumulative reward over time.\n        *   <b>Goal:</b> To learn optimal behavior in an environment through trial and error and delayed rewards.\n        *   <b>Tasks:</b> Common tasks include game playing, robotics control, and resource management.\n        *   <b>Examples:</b> Training a robot to walk, teaching an AI to play chess or Go, optimizing control systems.<br><br>\n    Understanding these different types of machine learning is fundamental to selecting the appropriate algorithms and approaches for a given problem. Many real-world AI applications combine elements of these different learning types.",
+  "quiz": [
+    {
+      "question": "Which type of Machine Learning is trained on labeled data?",
+      "options": [
+        "Unsupervised Learning",
+        "Reinforcement Learning",
+        "Supervised Learning",
+        "Deep Learning"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What is the goal of Unsupervised Learning?",
+      "options": [
+        "To predict a continuous value",
+        "To classify data into predefined categories",
+        "To find hidden patterns or structures in unlabeled data",
+        "To learn optimal behavior through rewards and penalties"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "In Reinforcement Learning, what guides the agent's learning process?",
+      "options": [
+        "Labeled data",
+        "Pre-defined rules",
+        "Rewards and penalties from interacting with the environment",
+        "Human instruction only"
+      ],
+      "answer": 2
+    }
+  ]
+}

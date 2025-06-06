@@ -1,0 +1,36 @@
+{
+  "title": "Transformers: Theory",
+  "content": "The <span style=\"color:#A3F7BF\">Transformer architecture</span>, introduced in 2017 by Google Brain, revolutionized sequence modeling, particularly in Natural Language Processing (NLP). Its groundbreaking aspect is that it relies <span style=\"color:#A3F7BF\">entirely on attention mechanisms</span>, specifically self-attention, rather than traditional recurrence (RNNs) or convolutions (CNNs).<br><br>Key components and concepts:<br><i>1. <b>Encoder-Decoder Structure:</b></i> Like many sequence-to-sequence models, Transformers typically consist of an encoder stack and a decoder stack.<br><i>2. <b>Multi-Head Self-Attention:</b></i> This is the core building block. It allows the model to jointly attend to information from different representation subspaces at different positions. It's like having multiple independent self-attention layers running in parallel.<br><i>3. <b>Positional Encoding:</b></i> Since Transformers do not use recurrence or convolution, they lack an inherent understanding of the order of words in a sequence. <span style=\"color:#A3F7BF\">Positional encodings</span> are added to the input embeddings to inject information about the relative or absolute position of tokens in the sequence.<br><i>4. <b>Feed-Forward Networks:</b></i> Each attention sub-layer is followed by a simple, position-wise fully connected feed-forward network.<br><br>Transformers' parallelizability (due to lack of recurrence) and ability to capture long-range dependencies effectively have led to state-of-the-art results in machine translation, text generation, and many other NLP tasks.",
+  "quiz": [
+    {
+      "question": "What is the core mechanism upon which the Transformer architecture is built?",
+      "options": [
+        "Recurrent connections",
+        "Convolutional filters",
+        "Attention mechanisms",
+        "Pooling layers"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What do Transformers primarily replace in sequence modeling compared to previous architectures?",
+      "options": [
+        "Activation functions",
+        "Loss functions",
+        "Recurrence and convolution",
+        "Input layers"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "How do Transformers incorporate information about the order of words in a sequence?",
+      "options": [
+        "Through recurrent connections",
+        "By using convolutional filters",
+        "By adding positional encodings to input embeddings",
+        "They do not consider word order"
+      ],
+      "answer": 2
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Data Collection",
+  "content": "<b>Data Collection</b> is the foundational step in any machine learning project. The quality and quantity of data you collect will directly impact the performance and reliability of your model. It involves gathering raw data from various sources, which can be anything from simple text files to large-scale databases or real-time data streams.<br><br>Effective data collection requires a clear understanding of the problem you are trying to solve. You need to identify what kind of data is relevant and how you can obtain it. This may involve using APIs, web scraping, accessing public datasets, or setting up your own data-gathering experiments.<br><br>Key considerations in data collection include:<br><i>1. <b>Relevance:</b></i> Ensure the data is directly related to the problem you are addressing.<br><i>2. <b>Bias:</b></i> Be aware of potential biases in your data sources that could lead to an unfair or inaccurate model.<br><i>3. <b>Privacy:</b></i> Always consider the ethical implications and privacy concerns, especially when dealing with user data.",
+  "quiz": [
+    {
+      "question": "What is the most critical factor in data collection for a machine learning project?",
+      "options": [
+        "The speed of data retrieval",
+        "The volume of data collected",
+        "The relevance and quality of the data",
+        "The cost of data storage"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Which of the following is a potential source of bias in data collection?",
+      "options": [
+        "Using a diverse range of data sources",
+        "Collecting data from a single demographic group",
+        "Anonymizing user data",
+        "Using a large dataset"
+      ],
+      "answer": 1
+    }
+  ]
+}

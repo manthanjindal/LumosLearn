@@ -1,0 +1,36 @@
+{
+  "title": "Speech Recognition",
+  "content": "Speech Recognition, also known as Automatic Speech Recognition (ASR) or speech-to-text, is a technology that enables computers to identify and process human speech and convert it into written text. This technology is fundamental to how we interact with many modern devices and services, from voice assistants to dictation software.<br><br>\n    The process of speech recognition typically involves several stages:<br>\n    1.  <b>Audio Input:</b> Capturing the spoken audio signal.<br>\n    2.  <b>Feature Extraction:</b> Converting the raw audio waveform into a sequence of numerical features that represent the characteristics of the speech sounds (e.g., Mel-frequency cepstral coefficients - MFCCs).<br>\n    3.  <b>Acoustic Model:</b> This model learns the relationship between the audio features and the phonemes (basic units of sound) or words of a language. It determines the probability of a sound sequence corresponding to a particular word.<br>\n    4.  <b>Pronunciation Model (Lexicon):</b> This model maps phonemes to words, specifying how words are pronounced.<br>\n    5.  <b>Language Model:</b> This model predicts the likelihood of a sequence of words occurring in a given language, helping to resolve ambiguities (e.g., \"recognize speech\" is more likely than \"wreck a nice beach\"). It provides context.<br>\n    6.  <b>Decoding:</b> Combining the outputs of the acoustic, pronunciation, and language models to find the most probable sequence of words that matches the input audio.<br><br>\n    Historically, ASR systems relied on Hidden Markov Models (HMMs) and Gaussian Mixture Models (GMMs). However, the field has been revolutionized by deep learning, particularly with the use of:<br>\n    *   <b>Recurrent Neural Networks (RNNs), LSTMs, and GRUs:</b> Excellent for modeling sequential data and capturing temporal dependencies in speech.<br>\n    *   <b>Convolutional Neural Networks (CNNs):</b> Can be used to extract robust features from audio spectrograms.<br>\n    *   <b>Transformers:</b> Increasingly used for state-of-the-art ASR, leveraging their attention mechanisms to capture long-range dependencies in speech signals.<br><br>\n    Applications of Speech Recognition are ubiquitous:<br>\n    *   <b>Voice Assistants:</b> Siri, Alexa, Google Assistant, etc.<br>\n    *   <b>Dictation Software:</b> Converting spoken words into written documents.<br>\n    *   <b>Call Centers:</b> Transcribing customer calls for analysis and automation.<br>\n    *   <b>Voice Control:</b> Controlling smart home devices, cars, or industrial equipment with voice commands.<br>\n    *   <b>Accessibility:</b> Providing text alternatives for individuals with hearing impairments.<br>\n    *   <b>Medical Transcription:</b> Converting doctor's notes into text.<br><br>\n    As deep learning models continue to improve, speech recognition systems are becoming more accurate, robust, and capable of understanding diverse accents and speaking styles.",
+  "quiz": [
+    {
+      "question": "What is the primary function of Speech Recognition technology?",
+      "options": [
+        "To generate new audio",
+        "To convert human speech into written text",
+        "To translate text to another language",
+        "To analyze the sentiment of audio"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which type of model predicts the likelihood of a sequence of words occurring in a given language?",
+      "options": [
+        "Acoustic Model",
+        "Pronunciation Model",
+        "Language Model",
+        "Feature Extraction Model"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Which deep learning architectures have revolutionized Speech Recognition?",
+      "options": [
+        "Only Feedforward Neural Networks",
+        "RNNs, LSTMs, GRUs, CNNs, and Transformers",
+        "Only Support Vector Machines",
+        "Only Rule-based systems"
+      ],
+      "answer": 1
+    }
+  ]
+}

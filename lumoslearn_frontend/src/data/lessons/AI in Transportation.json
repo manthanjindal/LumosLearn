@@ -1,0 +1,36 @@
+{
+  "title": "AI in Transportation",
+  "content": "Artificial Intelligence (AI) is revolutionizing the transportation sector, paving the way for safer, more efficient, and more convenient ways to travel and move goods. From self-driving cars to optimizing traffic flow, AI is at the core of the future of transportation.<br><br>\n    Key applications of AI in transportation include:<br>\n    1.  <b>Autonomous Vehicles (Self-Driving Cars):</b> AI is fundamental to self-driving cars, enabling them to perceive their environment (using computer vision, lidar, radar), make decisions, and navigate without human intervention. Machine learning algorithms are trained on vast amounts of data to recognize objects, predict behavior, and plan routes.<br>\n    2.  <b>Traffic Management and Optimization:</b> AI systems analyze real-time traffic data from sensors, cameras, and GPS to optimize traffic signal timings, manage traffic flow, and reduce congestion in urban areas.<br>\n    3.  <b>Ride-Sharing and Logistics Optimization:</b> AI algorithms are used by ride-sharing companies (like Uber and Lyft) and logistics companies to match passengers/goods with vehicles, optimize routes, predict demand, and manage fleets efficiently.<br>\n    4.  <b>Predictive Maintenance for Vehicles:</b> AI can analyze data from vehicle sensors to predict potential mechanical failures, allowing for proactive maintenance and preventing breakdowns.<br>\n    5.  <b>Passenger Safety and Monitoring:</b> AI-powered systems can monitor driver behavior to detect drowsiness or distraction and alert them. In public transportation, AI can be used for passenger flow analysis and security monitoring.<br>\n    6.  <b>Route Planning and Navigation:</b> AI-powered navigation apps (like Google Maps and Waze) use real-time data and predictive algorithms to suggest the fastest and most efficient routes, taking into account traffic conditions, road closures, and other factors.<br>\n    7.  <b>Smart Public Transportation:</b> AI can optimize public transit schedules, predict ridership, and provide real-time information to passengers, making public transportation more efficient and user-friendly.<br><br>\n    The integration of AI in transportation holds the promise of reducing accidents, lowering fuel consumption, decreasing travel times, and creating more accessible transportation options.",
+  "quiz": [
+    {
+      "question": "What is a fundamental application of AI in transportation that allows vehicles to perceive their environment and make decisions without human input?",
+      "options": [
+        "Traffic Signal Control",
+        "Predictive Maintenance",
+        "Autonomous Vehicles (Self-Driving Cars)",
+        "Route Planning"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "How does AI help in traffic management?",
+      "options": [
+        "By increasing traffic congestion",
+        "By analyzing real-time data to optimize traffic flow and reduce congestion",
+        "By ignoring traffic signals",
+        "By making traffic patterns random"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which application of AI is used by ride-sharing companies to match passengers with vehicles and optimize routes?",
+      "options": [
+        "Autonomous Driving",
+        "Traffic Management",
+        "Logistics Optimization",
+        "Predictive Maintenance"
+      ],
+      "answer": 2
+    }
+  ]
+}

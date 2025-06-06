@@ -1,0 +1,36 @@
+{
+  "title": "RNNs: Theory",
+  "content": "<b>Recurrent Neural Networks (RNNs)</b> are a class of neural networks designed to process <span style=\"color:#A3F7BF\">sequential data</span>, where the order of elements matters. Unlike traditional feedforward networks, RNNs have connections that loop back, allowing them to maintain an internal \"memory\" of previous inputs.<br><br>Key characteristics of RNNs:<br><i>1. <b>Internal Memory (Hidden State):</b></i> At each time step, an RNN takes an input and combines it with its current <span style=\"color:#A3F7BF\">hidden state</span> (which represents information from previous time steps) to produce an output and a new hidden state. This hidden state is passed to the next time step.<br><i>2. <b>Recurrence:</b></i> The same set of weights is applied across all time steps, enabling the network to learn patterns that unfold over time.<br><i>3. <b>Variable-Length Sequences:</b></i> RNNs can handle sequences of arbitrary length, making them suitable for tasks like natural language processing, where sentences can vary in length.<br><br>However, basic RNNs suffer from the <span style=\"color:#A3F7BF\">vanishing gradient problem</span>, making it difficult for them to learn long-term dependencies. This led to the development of more advanced recurrent architectures like LSTMs and GRUs.",
+  "quiz": [
+    {
+      "question": "What type of data are Recurrent Neural Networks (RNNs) primarily designed to process?",
+      "options": [
+        "Image data",
+        "Tabular data",
+        "Sequential data",
+        "Unstructured data"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What mechanism allows RNNs to maintain an internal \"memory\" of previous inputs?",
+      "options": [
+        "Convolutional filters",
+        "Pooling layers",
+        "Hidden state",
+        "Fully connected layers"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What is a common problem faced by basic RNNs when learning long-term dependencies?",
+      "options": [
+        "Exploding gradients",
+        "Overfitting problem",
+        "Vanishing gradient problem",
+        "Underfitting problem"
+      ],
+      "answer": 2
+    }
+  ]
+}
