@@ -14,6 +14,13 @@ interface Lesson {
   title: string;
   content: string;
   quiz: QuizQuestion[];
+  title_hi?: string;
+  content_hi?: string;
+  quiz_hi?: {
+    question: string;
+    options: string[];
+    answer: number;
+  }[];
 }
 
 const COLORS = {
@@ -29,7 +36,7 @@ const LessonDetail: React.FC = () => {
   const { topic, lessonIndex } = useParams<{ topic: string; lessonIndex: string }>();
   const navigate = useNavigate();
   const idx = parseInt(lessonIndex || '0', 10);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const [lesson, setLesson] = useState<Lesson | null>(null);
   const [loading, setLoading] = useState(true);
@@ -82,15 +89,16 @@ const LessonDetail: React.FC = () => {
   };
 
   const handleQuizSubmit = () => {
-    if (userAnswer !== undefined && lesson?.quiz) {
-      const isCorrect = lesson.quiz[currentQ].answer === userAnswer;
+    const currentQuiz = language === 'hi' && lesson?.quiz_hi ? lesson.quiz_hi : lesson?.quiz;
+    if (userAnswer !== undefined && currentQuiz) {
+      const isCorrect = currentQuiz[currentQ].answer === userAnswer;
       if (isCorrect) {
         toast.success(t('lesson.quiz.correct'));
       } else {
         toast.error(t('lesson.quiz.incorrect'));
       }
       
-      if (currentQ < lesson.quiz.length - 1) {
+      if (currentQ < currentQuiz.length - 1) {
         setCurrentQ(currentQ + 1);
         setUserAnswer(undefined);
       } else {
@@ -147,13 +155,17 @@ const LessonDetail: React.FC = () => {
     }
   };
 
+  const displayTitle = language === 'hi' && lesson.title_hi ? lesson.title_hi : lesson.title;
+  const displayContent = language === 'hi' && lesson.content_hi ? lesson.content_hi : lesson.content || '';
+  const displayQuiz = language === 'hi' && lesson.quiz_hi ? lesson.quiz_hi : lesson.quiz;
+
   return (
     <div style={{ backgroundColor: COLORS.background, color: COLORS.lightGrey, fontFamily: "'Nunito', sans-serif" }} className="min-h-screen">
       <div className="container mx-auto px-4 py-8">
-        <h1 style={{ fontFamily: "'Baloo 2', cursive", color: COLORS.mint }} className="text-4xl font-bold mb-6">{lesson.title}</h1>
-        <div className="prose prose-invert max-w-none mb-8" dangerouslySetInnerHTML={{ __html: lesson.content || '' }} />
+        <h1 style={{ fontFamily: "'Baloo 2', cursive", color: COLORS.mint }} className="text-4xl font-bold mb-6">{displayTitle}</h1>
+        <div className="prose prose-invert max-w-none mb-8" dangerouslySetInnerHTML={{ __html: displayContent }} />
         
-        {lesson.quiz && lesson.quiz.length > 0 && (
+        {displayQuiz && displayQuiz.length > 0 && (
           <div className="mt-8 p-6 rounded-lg" style={{ backgroundColor: COLORS.contentBox }}>
             <h2 style={{ fontFamily: "'Baloo 2', cursive", color: COLORS.mint }} className="text-3xl font-bold mb-4">{t('lesson.quiz.title')}</h2>
             {!isQuizActive ? (
@@ -166,9 +178,9 @@ const LessonDetail: React.FC = () => {
               </button>
             ) : (
               <div>
-                <h3 className="text-xl mb-4">{lesson.quiz[currentQ].question}</h3>
+                <h3 className="text-xl mb-4">{displayQuiz[currentQ].question}</h3>
                 <div className="space-y-4">
-                  {lesson.quiz[currentQ].options.map((option, index) => (
+                  {displayQuiz[currentQ].options.map((option, index) => (
                     <button
                       key={index}
                       onClick={() => handleAnswerSelect(index)}
@@ -188,7 +200,7 @@ const LessonDetail: React.FC = () => {
                     style={{ backgroundColor: COLORS.mint, color: COLORS.background, marginTop: '1.5rem' }}
                     className="font-bold py-2 px-6 rounded-lg"
                   >
-                    {currentQ < lesson.quiz.length - 1 ? t('lesson.quiz.next') : t('lesson.quiz.finish')}
+                    {currentQ < displayQuiz.length - 1 ? t('lesson.quiz.next') : t('lesson.quiz.finish')}
                   </button>
                 )}
               </div>
@@ -219,4 +231,4 @@ const LessonDetail: React.FC = () => {
   );
 };
 
-export default LessonDetail; 
+export default LessonDetail;

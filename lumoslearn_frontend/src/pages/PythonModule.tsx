@@ -229,12 +229,12 @@ const PythonModule: React.FC = () => {
   const [output, setOutput] = useState('');
   const [isRunning, setIsRunning] = useState(false);
   const [showStory, setShowStory] = useState(true);
-  
+
   const pyodide = useRef<any>(null);
 
   useEffect(() => {
     const loadPyodide = async () => {
-      setIsRunning(true);
+    setIsRunning(true);
       setOutput(t('pythonModule.loading'));
       try {
         const { loadPyodide } = await import('pyodide');
@@ -250,7 +250,7 @@ const PythonModule: React.FC = () => {
         pyodideInstance.setStderr({
             batched: (msg: string) => {
                 setOutput(prev => prev + msg + '\\n');
-            }
+          }
         });
 
         pyodide.current = pyodideInstance as any;
@@ -304,116 +304,116 @@ const PythonModule: React.FC = () => {
         <div className="flex items-center mb-6">
           <Trophy className="text-yellow-400 mr-3 h-8 w-8" />
           <h1 className="text-2xl font-bold text-gray-100">{t('pythonModule.title')}</h1>
-        </div>
+      </div>
         <p className="text-gray-400 mb-6">{t('pythonModule.subtitle')}</p>
         <nav>
           <ul>
-            {pythonLessons.map((lesson) => (
+                {pythonLessons.map((lesson) => (
               <li key={lesson.id}>
-                <button
-                  onClick={() => handleLessonChange(lesson)}
-                  className={`w-full text-left px-4 py-3 rounded-lg transition-colors duration-200 ${
-                    selectedLesson.id === lesson.id
-                      ? 'bg-[#264f78] text-white'
-                      : 'hover:bg-[#2d2d2d] text-[#cccccc]'
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-medium">{lesson.title}</h3>
-                    <span className="text-xs px-2 py-1 rounded-full bg-opacity-20 bg-yellow-500 text-yellow-300">
-                      {lesson.difficulty}
-                    </span>
-                  </div>
-                  <p className="text-xs opacity-80 mt-1">
-                    {lesson.description}
-                  </p>
-                  <div className="flex items-center mt-2 text-xs">
-                    <Trophy className="w-3 h-3 mr-1" />
-                    <span>{lesson.xpReward} XP</span>
-                  </div>
-                </button>
+                  <button
+                    onClick={() => handleLessonChange(lesson)}
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-colors duration-200 ${
+                      selectedLesson.id === lesson.id
+                        ? 'bg-[#264f78] text-white'
+                        : 'hover:bg-[#2d2d2d] text-[#cccccc]'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-medium">{lesson.title}</h3>
+                      <span className="text-xs px-2 py-1 rounded-full bg-opacity-20 bg-yellow-500 text-yellow-300">
+                        {lesson.difficulty}
+                      </span>
+                    </div>
+                    <p className="text-xs opacity-80 mt-1">
+                      {lesson.description}
+                    </p>
+                    <div className="flex items-center mt-2 text-xs">
+                      <Trophy className="w-3 h-3 mr-1" />
+                      <span>{lesson.xpReward} XP</span>
+                    </div>
+                  </button>
               </li>
-            ))}
+                ))}
           </ul>
         </nav>
       </aside>
 
-      {/* Main content area */}
+        {/* Main content area */}
       <main className="w-3/4 p-6 overflow-y-auto">
-        {/* Story section */}
-        {showStory && (
-          <div className="bg-[#1e1e1e] rounded-xl shadow-md overflow-hidden border border-[#323232] mb-6">
-            <div className="px-6 py-4 border-b border-[#323232] flex justify-between items-center">
-              <h2 className="font-bold text-xl text-[#cccccc] flex items-center">
-                <Star className="w-5 h-5 mr-2 text-yellow-500" />
+          {/* Story section */}
+          {showStory && (
+            <div className="bg-[#1e1e1e] rounded-xl shadow-md overflow-hidden border border-[#323232] mb-6">
+              <div className="px-6 py-4 border-b border-[#323232] flex justify-between items-center">
+                <h2 className="font-bold text-xl text-[#cccccc] flex items-center">
+                  <Star className="w-5 h-5 mr-2 text-yellow-500" />
                 {t('pythonModule.chapterIntro')}
-              </h2>
-              <button
-                onClick={() => setShowStory(false)}
-                className="text-[#cccccc] hover:text-white transition-colors duration-200"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="p-6">
-              <p className="text-[#cccccc] leading-relaxed">
-                {selectedLesson.story}
-              </p>
-            </div>
-          </div>
-        )}
-
-        {/* Code editor and output */}
-        <div className="bg-[#1e1e1e] rounded-xl shadow-md overflow-hidden border border-[#323232]">
-          <div className="px-6 py-4 border-b border-[#323232] flex justify-between items-center">
-            <h2 className="font-bold text-xl text-[#cccccc]">
-              {selectedLesson.title}
-            </h2>
-            <div className="flex space-x-2">
-              <button
-                onClick={resetCode}
-                className="px-3 py-1.5 border border-[#323232] rounded-lg text-sm font-medium text-[#cccccc] hover:bg-[#2d2d2d] transition-colors duration-200 flex items-center"
-              >
-                <RotateCcw className="h-4 w-4 mr-1" />
-                {t('pythonModule.resetCode')}
-              </button>
-              <button
-                onClick={runCode}
-                disabled={isRunning}
-                className="px-3 py-1.5 bg-[#0e639c] text-white rounded-lg text-sm font-medium hover:bg-[#1177bb] transition-colors duration-200 flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <Play className="h-4 w-4 mr-1" />
-                {isRunning ? t('pythonModule.running') : t('pythonModule.run')}
-              </button>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 h-[600px]">
-            {/* Code editor */}
-            <div className="border-r border-[#323232] relative">
-              <div className="absolute top-0 left-0 right-0 px-4 py-2 bg-[#252526] text-xs font-medium text-[#cccccc]">
-                Python Editor
+                </h2>
+                <button
+                  onClick={() => setShowStory(false)}
+                  className="text-[#cccccc] hover:text-white transition-colors duration-200"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
-              <textarea
-                value={code}
-                onChange={(e) => setCode(e.target.value)}
-                className="w-full h-full pt-10 px-4 pb-4 font-mono text-sm bg-[#1e1e1e] text-[#d4d4d4] resize-none focus:outline-none"
-                spellCheck="false"
-              ></textarea>
+              <div className="p-6">
+                <p className="text-[#cccccc] leading-relaxed">
+                  {selectedLesson.story}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Code editor and output */}
+          <div className="bg-[#1e1e1e] rounded-xl shadow-md overflow-hidden border border-[#323232]">
+            <div className="px-6 py-4 border-b border-[#323232] flex justify-between items-center">
+              <h2 className="font-bold text-xl text-[#cccccc]">
+                {selectedLesson.title}
+              </h2>
+              <div className="flex space-x-2">
+                <button
+                  onClick={resetCode}
+                  className="px-3 py-1.5 border border-[#323232] rounded-lg text-sm font-medium text-[#cccccc] hover:bg-[#2d2d2d] transition-colors duration-200 flex items-center"
+                >
+                  <RotateCcw className="h-4 w-4 mr-1" />
+                {t('pythonModule.resetCode')}
+                </button>
+                <button
+                  onClick={runCode}
+                  disabled={isRunning}
+                  className="px-3 py-1.5 bg-[#0e639c] text-white rounded-lg text-sm font-medium hover:bg-[#1177bb] transition-colors duration-200 flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Play className="h-4 w-4 mr-1" />
+                {isRunning ? t('pythonModule.running') : t('pythonModule.run')}
+                </button>
+              </div>
             </div>
             
-            {/* Output console */}
-            <div className="relative">
-              <div className="absolute top-0 left-0 right-0 px-4 py-2 bg-[#252526] text-xs font-medium text-[#cccccc] flex items-center">
-                <Terminal className="h-3.5 w-3.5 mr-1.5" />
-                Console Output
+            <div className="grid grid-cols-1 md:grid-cols-2 h-[600px]">
+              {/* Code editor */}
+              <div className="border-r border-[#323232] relative">
+                <div className="absolute top-0 left-0 right-0 px-4 py-2 bg-[#252526] text-xs font-medium text-[#cccccc]">
+                  Python Editor
+                </div>
+                <textarea
+                  value={code}
+                  onChange={(e) => setCode(e.target.value)}
+                  className="w-full h-full pt-10 px-4 pb-4 font-mono text-sm bg-[#1e1e1e] text-[#d4d4d4] resize-none focus:outline-none"
+                  spellCheck="false"
+                ></textarea>
               </div>
-              <div className="w-full h-full pt-10 px-4 pb-4 font-mono text-sm bg-[#1e1e1e] text-[#d4d4d4] overflow-auto whitespace-pre-wrap">
-                {output || 'Click "Run Code" to see the output here.'}
+              
+              {/* Output console */}
+              <div className="relative">
+                <div className="absolute top-0 left-0 right-0 px-4 py-2 bg-[#252526] text-xs font-medium text-[#cccccc] flex items-center">
+                  <Terminal className="h-3.5 w-3.5 mr-1.5" />
+                  Console Output
+                </div>
+                <div className="w-full h-full pt-10 px-4 pb-4 font-mono text-sm bg-[#1e1e1e] text-[#d4d4d4] overflow-auto whitespace-pre-wrap">
+                  {output || 'Click "Run Code" to see the output here.'}
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
         {/* Output section */}
         <div className="h-1/3 bg-gray-900 border-t border-gray-700 p-4 overflow-y-auto">
