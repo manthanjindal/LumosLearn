@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Zap, Languages } from 'lucide-react';
+import { Menu, X, Languages } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -65,10 +65,7 @@ const Navbar: React.FC = () => {
 
           <div className="hidden md:flex items-center space-x-4">
             <button onClick={toggleLanguage} className="p-2 rounded-full text-white hover:bg-gray-700/50">
-              <Languages size={20} />
-            </button>
-            <button onClick={() => {}} className="p-2 rounded-full text-white hover:bg-gray-700/50">
-              <Zap size={20} />
+              <Languages size={26} />
             </button>
             <button
               onClick={toggleTheme}
@@ -89,7 +86,7 @@ const Navbar: React.FC = () => {
               aria-expanded={isMenuOpen}
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
             </button>
           </div>
         </div>
@@ -114,10 +111,7 @@ const Navbar: React.FC = () => {
           <div className="py-4 border-t border-gray-700">
             <div className="flex items-center justify-center space-x-4">
               <button onClick={toggleLanguage} className="p-2 rounded-full text-white hover:bg-gray-700/50">
-                <Languages size={22} />
-              </button>
-              <button onClick={() => {}} className="p-2 rounded-full text-white hover:bg-gray-700/50">
-                <Zap size={22} />
+                <Languages size={28} />
               </button>
               <button
                 onClick={toggleTheme}
