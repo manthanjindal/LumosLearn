@@ -1,28 +1,20 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Sun, Moon, Menu, X, Globe } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { useAuth } from '../../contexts/AuthContext';
 
 const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, translate } = useLanguage();
-  const { user, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    await logout();
-    navigate('/');
-  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'es' : 'en');
+    setLanguage(language === 'en' ? 'hi' : 'en');
   };
 
   return (
@@ -53,11 +45,6 @@ const Navbar: React.FC = () => {
             <Link to="/python" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-vscode-highlight transition-colors duration-200">
               {translate('nav.pythonModule')}
             </Link>
-            {user && (
-              <Link to="/dashboard" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-vscode-highlight transition-colors duration-200">
-                {translate('nav.dashboard')}
-              </Link>
-            )}
           </div>
 
           <div className="hidden md:flex md:items-center md:space-x-4">
@@ -77,30 +64,6 @@ const Navbar: React.FC = () => {
             >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-
-            {user ? (
-              <button
-                onClick={handleLogout}
-                className="px-4 py-2 rounded-md text-sm font-medium text-white bg-vscode-button hover:bg-vscode-button-hover transition-colors duration-200"
-              >
-                {translate('nav.logout')}
-              </button>
-            ) : (
-              <div className="flex space-x-2">
-                <Link
-                  to="/login"
-                  className="px-4 py-2 rounded-md text-sm font-medium text-vscode-button border border-vscode-button hover:bg-vscode-highlight transition-colors duration-200"
-                >
-                  {translate('nav.login')}
-                </Link>
-                <Link
-                  to="/register"
-                  className="px-4 py-2 rounded-md text-sm font-medium text-white bg-vscode-button hover:bg-vscode-button-hover transition-colors duration-200"
-                >
-                  {translate('nav.register')}
-                </Link>
-              </div>
-            )}
           </div>
 
           <div className="md:hidden flex items-center">
@@ -147,60 +110,23 @@ const Navbar: React.FC = () => {
             >
               {translate('nav.pythonModule')}
             </Link>
-            {user && (
-              <Link
-                to="/dashboard"
-                className="block px-3 py-2 rounded-md text-base font-medium hover:bg-vscode-highlight transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {translate('nav.dashboard')}
-              </Link>
-            )}
           </div>
           <div className="px-4 py-3 border-t dark:border-vscode-border">
-            <div className="flex items-center justify-between">
-              <div className="flex space-x-2">
-                <button 
-                  onClick={toggleLanguage}
-                  className="p-2 rounded-md hover:bg-vscode-highlight transition-colors duration-200"
-                >
-                  <Globe size={20} />
-                  <span className="ml-1 text-sm font-medium">{language.toUpperCase()}</span>
-                </button>
-                
-                <button 
-                  onClick={toggleTheme}
-                  className="p-2 rounded-md hover:bg-vscode-highlight transition-colors duration-200"
-                >
-                  {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-                </button>
-              </div>
+            <div className="flex items-center">
+              <button 
+                onClick={toggleLanguage}
+                className="p-2 rounded-md hover:bg-vscode-highlight transition-colors duration-200"
+              >
+                <Globe size={20} />
+                <span className="ml-1 text-sm font-medium">{language.toUpperCase()}</span>
+              </button>
               
-              {user ? (
-                <button
-                  onClick={handleLogout}
-                  className="px-4 py-2 rounded-md text-sm font-medium text-white bg-vscode-button hover:bg-vscode-button-hover transition-colors duration-200"
-                >
-                  {translate('nav.logout')}
-                </button>
-              ) : (
-                <div className="flex space-x-2">
-                  <Link
-                    to="/login"
-                    className="px-3 py-2 rounded-md text-sm font-medium text-vscode-button border border-vscode-button hover:bg-vscode-highlight transition-colors duration-200"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {translate('nav.login')}
-                  </Link>
-                  <Link
-                    to="/register"
-                    className="px-4 py-2 rounded-md text-sm font-medium text-white bg-vscode-button hover:bg-vscode-button-hover transition-colors duration-200"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {translate('nav.register')}
-                  </Link>
-                </div>
-              )}
+              <button 
+                onClick={toggleTheme}
+                className="p-2 rounded-md hover:bg-vscode-highlight transition-colors duration-200"
+              >
+                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
             </div>
           </div>
         </div>
