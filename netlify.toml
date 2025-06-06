@@ -4,8 +4,8 @@
   base = "lumoslearn_frontend"
   # The command to build the site
   command = "npm run build"
-  # The folder containing the built site
-  publish = "lumoslearn_frontend/dist"
+  # The folder containing the built site, relative to the base directory
+  publish = "dist"
 
 # Redirect rule for Single Page Applications (SPAs)
 [[redirects]]
