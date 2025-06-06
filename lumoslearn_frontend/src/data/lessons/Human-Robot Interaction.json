@@ -32,5 +32,39 @@
       ],
       "answer": 0
     }
+  ],
+  "title_hi": "मानव रोबोट परस्पर क्रिया",
+  "content_hi": "> इस पाठ में, हम मानव-रोबोट इंटरैक्शन के पीछे मुख्य अवधारणाओं का पता लगाते हैं, ज��समें इसकी परिभाषा, ऐतिहासिक पृष्ठभूमि और वास्तविक दुनिया के उदाहरण शामिल हैं। Understanding Human-Robot Interaction requires examining its theoretical foundations as well as how it is applied in various domains. इस सामग्री के दौरान, आप आधुनिक संदर्भों में मानव-रोबोट बातचीत के महत्व के बारे में जानेंगे और यह अकादमिक अध्ययन और पेशेवर अभ्यास दोनों के लिए क्यों मायने रखता है। The lesson will delve into the methodologies associated with Human-Robot Interaction, highlighting essential techniques and best practices. By the end of this lesson, you should be able to explain what Human-Robot Interaction entails and how it contributes to broader subject areas. मानव-रोबोट इंटरैक्शन के एप्लिकेशन विविध हैं, परिचयात्मक उपयोग के मामलों से लेकर उन्नत परिदृश्यों तक फैले हुए हैं जो वर्तमान ज्ञान की सीमाओं को धक्का देते हैं। We will also cover common challenges and pitfalls when working with Human-Robot Interaction, along with strategies to overcome them. इस पाठ में प्रदान किए गए उदाहरण बताएंगे कि मानव-रोबोट इंटरैक्शन संबंधित विषयों के साथ कैसे बातचीत करता है और यह अधिक जटिल वर्कफ़्लो का समर्थन करता है। जैसा कि आप अभ्यास और उदाहरणों के साथ संलग्न हैं, आप समकालीन अध्ययन और अभ्यास में मानव-रोबोट बातचीत की भूमिका के लिए एक गहरी प्रशंसा विकसित करेंगे। Throughout the explanations, key terms will be highlighted to help reinforce your comprehension of Human-Robot Interaction. The lesson content is structured to guide you from foundational aspects to more nuanced considerations related to Human-Robot Interaction. A comprehensive understanding of Human-Robot Interaction provides a solid framework",
+  "quiz_hi": [
+    {
+      "question": "कौन सा कथन मानव-रोबोट बातचीत का सबसे अच्छा वर्णन करता है?",
+      "options": [
+        "यह एक ऐसी तकनीक है जिसमें प्रमुख सिद्धांतों को समझना और लागू करना शामिल है।",
+        "यह एक ऐसी विधि है जिसका कोई व्यावहारिक उपयोग नहीं है।",
+        "यह पूरी तरह से हार्डवेयर कार्यान्वयन को संदर्भित करता है।",
+        "यह विशेष रूप से सैद्धांतिक है जिसमें कोई वास्तविक दुनिया नहीं है।"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "मानव-रोबोट बातचीत के बारे में सीखने का एक महत्वपूर्ण लाभ क्या है?",
+      "options": [
+        "यह व्यावहारिक स्थितियों में अवधारणाओं को लागू करने की आपकी क्षमता को बढ़ाता है।",
+        "यह आगे के अध्ययन के बिना सभी क्षेत्रों में सफलता की गारंटी देता है।",
+        "यह मूलभूत ज्ञान की आवश्यकता को बदल देता है।",
+        "यह पेशेवर अभ्यास से असंबंधित है।"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "किस डोमेन में आप सबसे अधिक संभावना मानव-रोबोट इंटरैक्शन का सामना करेंगे?",
+      "options": [
+        "इसके सैद्धांतिक और व्यावहारिक अनुप्रयोगों से संबंधित क्षेत्रों में।",
+        "प्राचीन इतिहास में आधुनिक संदर्भों से असंबंधित।",
+        "तकनीकी प्रासंगिकता के बिना असंबंधित कलाओं में।",
+        "ऐसे संदर्भों में जिन्हें किसी भी विश्लेषण की आवश्यकता नहीं है।"
+      ],
+      "answer": 0
+    }
   ]
 }
