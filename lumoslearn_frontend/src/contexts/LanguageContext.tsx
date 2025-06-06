@@ -5,7 +5,7 @@ const translations = {
   en: {
     'home.title': 'Learn AI & Python with Interactive Lessons',
     'home.subtitle': 'Your journey to mastering technology starts here—with bite-sized, bilingual, AI-driven learning',
-    'home.cta': 'Start Learning Now',
+    'home.cta': 'Start Learning Free',
     'home.stats.learners': 'Learners',
     'home.stats.rating': 'Avg. Rating',
     'home.stats.lessons': 'Micro-Lessons',
@@ -74,7 +74,7 @@ const translations = {
   hi: {
     'home.title': 'इंटरैक्टिव पाठों के साथ AI और Python सीखें',
     'home.subtitle': 'प्रौद्योगिकी में महारत हासिल करने की आपकी यात्रा यहाँ से शुरू होती है—छोटे, द्विभाषी, AI-संचालित सीखने के साथ',
-    'home.cta': 'अभी सीखना शुरू करें',
+    'home.cta': 'मुफ्त सीखना शुरू करें',
     'home.stats.learners': 'शिक्षार्थी',
     'home.stats.rating': 'औसत रेटिंग',
     'home.stats.lessons': 'छोटे-पाठ',
