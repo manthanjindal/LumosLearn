@@ -1,0 +1,14 @@
+# Netlify build settings
+[build]
+  # Tell Netlify to run the build command from the frontend folder
+  base = "lumoslearn_frontend"
+  # The command to build the site
+  command = "npm run build"
+  # The folder containing the built site
+  publish = "lumoslearn_frontend/dist"
+
+# Redirect rule for Single Page Applications (SPAs)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 
