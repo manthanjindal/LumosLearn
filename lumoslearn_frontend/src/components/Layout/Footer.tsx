@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
               className="flex items-center px-4 py-2 rounded-md text-white bg-[#7c3aed] hover:bg-[#6d28d9] focus:bg-[#a78bfa] transition-colors duration-200"
             >
               <MessageSquare size={18} className="mr-2" />
-              {translate('home.joinDiscord')}
+              {translate('home.community.joinDiscord')}
             </a>
           </div>
           

@@ -52,7 +52,24 @@ const translations = {
     'pythonModule.chapterIntro': 'Chapter Introduction',
     'pythonModule.loading': 'Loading Python Environment...',
     'pythonModule.ready': 'Python Environment Ready!',
-    'pythonModule.running': 'Running...'
+    'pythonModule.running': 'Running...',
+    'aiTutor.error': 'Sorry, I encountered an error. Please try again.',
+    'aiTutor.connectionError': 'Unable to connect to the AI service. Please try again later.',
+    'aiTutor.stopListening': 'Stop Listening',
+    'aiTutor.speak': 'Speak',
+    'lesson.quiz.correct': 'Correct answer!',
+    'lesson.quiz.incorrect': 'Incorrect answer. Try again!',
+    'lesson.quiz.completed': 'Quiz completed!',
+    'lesson.loading': 'Loading lesson...',
+    'lesson.notFound.title': 'Lesson Not Found',
+    'lesson.notFound.description': 'The lesson content you are looking for hasn\'t been created yet or could not be loaded.',
+    'lesson.notFound.backButton': 'Back to Lessons',
+    'lesson.quiz.title': 'Quiz',
+    'lesson.quiz.start': 'Start Quiz',
+    'lesson.quiz.next': 'Next Question',
+    'lesson.quiz.finish': 'Finish Quiz',
+    'lesson.previous': 'Previous',
+    'lesson.next': 'Next'
   },
   hi: {
     'home.title': 'इंटरैक्टिव पाठों के साथ AI और Python सीखें',
@@ -104,7 +121,24 @@ const translations = {
     'pythonModule.chapterIntro': 'अध्याय परिचय',
     'pythonModule.loading': 'पायथन वातावरण लोड हो रहा है...',
     'pythonModule.ready': 'पायथन वातावरण तैयार है!',
-    'pythonModule.running': 'चल रहा है...'
+    'pythonModule.running': 'चल रहा है...',
+    'aiTutor.error': 'क्षमा करें, मुझे एक त्रुटि मिली। कृपया पुनः प्रयास करें।',
+    'aiTutor.connectionError': 'AI सेवा से कनेक्ट नहीं हो पा रहा है। कृपया बाद में पुनः प्रयास करें।',
+    'aiTutor.stopListening': 'सुनना बंद करें',
+    'aiTutor.speak': 'बोलें',
+    'lesson.quiz.correct': 'सही जवाब!',
+    'lesson.quiz.incorrect': 'गलत जवाब। फिर से कोशिश करें!',
+    'lesson.quiz.completed': 'प्रश्नोत्तरी पूरी हुई!',
+    'lesson.loading': 'पाठ लोड हो रहा है...',
+    'lesson.notFound.title': 'पाठ नहीं मिला',
+    'lesson.notFound.description': 'आप जिस पाठ सामग्री की तलाश कर रहे हैं वह अभी तक नहीं बनाई गई है या लोड नहीं हो सकी है।',
+    'lesson.notFound.backButton': 'पाठों पर वापस जाएं',
+    'lesson.quiz.title': 'प्रश्नोत्तरी',
+    'lesson.quiz.start': 'प्रश्नोत्तरी शुरू करें',
+    'lesson.quiz.next': 'अगला सवाल',
+    'lesson.quiz.finish': 'प्रश्नोत्तरी समाप्त करें',
+    'lesson.previous': 'पिछला',
+    'lesson.next': 'अगला'
   }
 };
 

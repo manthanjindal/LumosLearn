@@ -48,4 +48,33 @@ export const sendChatMessage = async (
     console.error('Error sending chat message:', error);
     throw error;
   }
+};
+
+/**
+ * Translates a given text to a target language using the backend API.
+ * @param {string} text - The text to translate.
+ * @param {string} targetLanguage - The language to translate to (e.g., 'hi').
+ * @returns {Promise<string>} The translated text.
+ */
+export const translateText = async (
+  text: string,
+  targetLanguage: string
+): Promise<string> => {
+  try {
+    const response = await fetch('/api/translate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text, targetLanguage }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.translatedText;
+  } catch (error) {
+    console.error('Error translating text:', error);
+    throw error;
+  }
 }; 

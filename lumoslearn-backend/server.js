@@ -46,6 +46,33 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
+app.post('/api/translate', async (req, res) => {
+  const { text, targetLanguage } = req.body;
+
+  if (!text || !targetLanguage) {
+    return res.status(400).json({ error: 'Text and targetLanguage are required.' });
+  }
+
+  try {
+    const model = ai.models.create({ model: 'gemini-2.0-flash' });
+    const prompt = `Translate the following text to ${targetLanguage}. Do not add any extra commentary, notes, or formatting. Just return the translated text directly:\n\n---\n\n${text}`;
+    const result = await model.generateContent({
+      prompt,
+      config: {
+        temperature: 0.2
+      }
+    });
+
+    res.json({ translatedText: result.text });
+  } catch (err) {
+    console.error('Translation API error:', err.message || err);
+    res.status(500).json({ 
+      error: 'Translation service error.',
+      details: process.env.NODE_ENV === 'development' ? err.message : 'An unexpected error occurred.'
+    });
+  }
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { lessonsByTopic } from './Lessons';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface QuizQuestion {
   question: string;
@@ -28,6 +29,7 @@ const LessonDetail: React.FC = () => {
   const { topic, lessonIndex } = useParams<{ topic: string; lessonIndex: string }>();
   const navigate = useNavigate();
   const idx = parseInt(lessonIndex || '0', 10);
+  const { t } = useLanguage();
 
   const [lesson, setLesson] = useState<Lesson | null>(null);
   const [loading, setLoading] = useState(true);
@@ -83,9 +85,9 @@ const LessonDetail: React.FC = () => {
     if (userAnswer !== undefined && lesson?.quiz) {
       const isCorrect = lesson.quiz[currentQ].answer === userAnswer;
       if (isCorrect) {
-        toast.success('Correct answer!');
+        toast.success(t('lesson.quiz.correct'));
       } else {
-        toast.error('Incorrect answer. Try again!');
+        toast.error(t('lesson.quiz.incorrect'));
       }
       
       if (currentQ < lesson.quiz.length - 1) {
@@ -93,21 +95,21 @@ const LessonDetail: React.FC = () => {
         setUserAnswer(undefined);
       } else {
         setIsQuizActive(false);
-        toast.success('Quiz completed!');
+        toast.success(t('lesson.quiz.completed'));
       }
     }
   };
 
   if (loading) {
-    return <div style={{ color: COLORS.white, textAlign: 'center', padding: '50px' }}>Loading lesson...</div>;
+    return <div style={{ color: COLORS.white, textAlign: 'center', padding: '50px' }}>{t('lesson.loading')}</div>;
   }
 
   if (!lesson) {
     return (
       <div style={{ color: COLORS.white, textAlign: 'center', padding: '50px', fontFamily: "'Nunito', sans-serif" }}>
-        <h2 style={{ fontFamily: "'Baloo 2', cursive", fontSize: '2.5rem', color: COLORS.mint }}>Lesson Not Found</h2>
+        <h2 style={{ fontFamily: "'Baloo 2', cursive", fontSize: '2.5rem', color: COLORS.mint }}>{t('lesson.notFound.title')}</h2>
         <p style={{ fontSize: '1.2rem', marginTop: '1rem' }}>
-          The lesson content you are looking for hasn't been created yet or could not be loaded.
+          {t('lesson.notFound.description')}
         </p>
         <button
           onClick={() => navigate('/lessons')}
@@ -123,7 +125,7 @@ const LessonDetail: React.FC = () => {
             cursor: 'pointer',
           }}
         >
-          Back to Lessons
+          {t('lesson.notFound.backButton')}
         </button>
       </div>
     );
@@ -153,14 +155,14 @@ const LessonDetail: React.FC = () => {
         
         {lesson.quiz && lesson.quiz.length > 0 && (
           <div className="mt-8 p-6 rounded-lg" style={{ backgroundColor: COLORS.contentBox }}>
-            <h2 style={{ fontFamily: "'Baloo 2', cursive", color: COLORS.mint }} className="text-3xl font-bold mb-4">Quiz</h2>
+            <h2 style={{ fontFamily: "'Baloo 2', cursive", color: COLORS.mint }} className="text-3xl font-bold mb-4">{t('lesson.quiz.title')}</h2>
             {!isQuizActive ? (
               <button
                 onClick={() => setIsQuizActive(true)}
                 style={{ backgroundColor: COLORS.mint, color: COLORS.background }}
                 className="font-bold py-2 px-6 rounded-lg"
               >
-                Start Quiz
+                {t('lesson.quiz.start')}
               </button>
             ) : (
               <div>
@@ -186,7 +188,7 @@ const LessonDetail: React.FC = () => {
                     style={{ backgroundColor: COLORS.mint, color: COLORS.background, marginTop: '1.5rem' }}
                     className="font-bold py-2 px-6 rounded-lg"
                   >
-                    {currentQ < lesson.quiz.length - 1 ? 'Next Question' : 'Finish Quiz'}
+                    {currentQ < lesson.quiz.length - 1 ? t('lesson.quiz.next') : t('lesson.quiz.finish')}
                   </button>
                 )}
               </div>
@@ -201,7 +203,7 @@ const LessonDetail: React.FC = () => {
             style={{ backgroundColor: COLORS.lessonCard }}
             className={`font-bold py-2 px-6 rounded-lg ${idx === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            Previous
+            {t('lesson.previous')}
           </button>
           <button
             onClick={handleNextLesson}
@@ -209,7 +211,7 @@ const LessonDetail: React.FC = () => {
             style={{ backgroundColor: COLORS.lessonCard }}
             className={`font-bold py-2 px-6 rounded-lg ${!topic || !(lessonsByTopic as { [key: string]: string[] })[topic] || idx >= (lessonsByTopic as { [key: string]: string[] })[topic].length - 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            Next
+            {t('lesson.next')}
           </button>
         </div>
       </div>

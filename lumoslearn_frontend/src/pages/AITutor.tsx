@@ -25,7 +25,7 @@ const getSpeechRecognition = () => {
 };
 
 const AITutor: React.FC = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -126,9 +126,7 @@ const AITutor: React.FC = () => {
       // Add error message
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: language === 'en' 
-          ? 'Sorry, I encountered an error. Please try again.' 
-          : 'क्षमा करें, मुझे एक त्रुटि मिली। कृपया पुनः प्रयास करें।',
+        text: t('aiTutor.error'),
         sender: 'bot',
         timestamp: new Date(),
       };
@@ -160,9 +158,7 @@ const AITutor: React.FC = () => {
           <div className="flex items-center text-red-800 dark:text-red-200">
             <AlertCircle className="w-5 h-5 mr-2" />
             <p>
-              {language === 'en' 
-                ? 'Unable to connect to the AI service. Please try again later.'
-                : 'AI सेवा से कनेक्ट नहीं हो पा रहा है। कृपया बाद में पुनः प्रयास करें।'}
+              {t('aiTutor.connectionError')}
             </p>
           </div>
         </div>
@@ -243,7 +239,7 @@ const AITutor: React.FC = () => {
                     ? 'bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-300'
                     : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200 hover:bg-[#30b58a] dark:hover:bg-[#30b58a]'
                 }`}
-                title={isListening ? 'Stop Listening' : 'Speak'}
+                title={isListening ? t('aiTutor.stopListening') : t('aiTutor.speak')}
               >
                 {isListening ? <MicOff size={20} /> : <Mic size={20} />}
               </button>

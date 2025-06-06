@@ -4,6 +4,39 @@ import { Sun, Moon, Menu, X, Globe } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 
+interface ToggleSwitchProps {
+  isToggled: boolean;
+  onToggle: () => void;
+  IconOn: React.ElementType;
+  IconOff: React.ElementType;
+  labelOn: string;
+  labelOff: string;
+}
+
+const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ isToggled, onToggle, IconOn, IconOff, labelOn, labelOff }) => {
+  return (
+    <button
+      onClick={onToggle}
+      className={`relative inline-flex items-center h-8 w-24 rounded-full transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
+        isToggled ? 'bg-indigo-600' : 'bg-gray-400'
+      }`}
+    >
+      <span className="sr-only">Toggle</span>
+      <span
+        className={`absolute left-1 transition-transform duration-300 ease-in-out transform ${
+          isToggled ? 'translate-x-16' : 'translate-x-0'
+        } h-6 w-6 rounded-full bg-white shadow-lg flex items-center justify-center`}
+      >
+        {isToggled ? <IconOn className="h-4 w-4 text-indigo-600" /> : <IconOff className="h-4 w-4 text-gray-600" />}
+      </span>
+      <div className="w-full flex justify-around text-white text-xs font-semibold">
+        <span>{labelOff}</span>
+        <span>{labelOn}</span>
+      </div>
+    </button>
+  );
+};
+
 const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, translate } = useLanguage();
@@ -48,22 +81,22 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="hidden md:flex md:items-center md:space-x-4">
-            <button 
-              onClick={toggleLanguage}
-              className="p-2 rounded-md hover:bg-vscode-highlight transition-colors duration-200"
-              aria-label="Toggle language"
-            >
-              <Globe size={20} />
-              <span className="ml-1 text-sm font-medium">{language.toUpperCase()}</span>
-            </button>
-            
-            <button 
-              onClick={toggleTheme}
-              className="p-2 rounded-md hover:bg-vscode-highlight transition-colors duration-200"
-              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+            <ToggleSwitch
+              isToggled={language === 'hi'}
+              onToggle={toggleLanguage}
+              IconOn={Globe}
+              IconOff={Globe}
+              labelOn="HI"
+              labelOff="EN"
+            />
+            <ToggleSwitch
+              isToggled={theme === 'dark'}
+              onToggle={toggleTheme}
+              IconOn={Moon}
+              IconOff={Sun}
+              labelOn=""
+              labelOff=""
+            />
           </div>
 
           <div className="md:hidden flex items-center">
@@ -112,21 +145,23 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
           <div className="px-4 py-3 border-t dark:border-vscode-border">
-            <div className="flex items-center">
-              <button 
-                onClick={toggleLanguage}
-                className="p-2 rounded-md hover:bg-vscode-highlight transition-colors duration-200"
-              >
-                <Globe size={20} />
-                <span className="ml-1 text-sm font-medium">{language.toUpperCase()}</span>
-              </button>
-              
-              <button 
-                onClick={toggleTheme}
-                className="p-2 rounded-md hover:bg-vscode-highlight transition-colors duration-200"
-              >
-                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
+            <div className="flex items-center justify-around">
+               <ToggleSwitch
+                isToggled={language === 'hi'}
+                onToggle={() => { toggleLanguage(); setIsMenuOpen(false); }}
+                IconOn={Globe}
+                IconOff={Globe}
+                labelOn="HI"
+                labelOff="EN"
+              />
+              <ToggleSwitch
+                isToggled={theme === 'dark'}
+                onToggle={() => { toggleTheme(); setIsMenuOpen(false); }}
+                IconOn={Moon}
+                IconOff={Sun}
+                labelOn=""
+                labelOff=""
+              />
             </div>
           </div>
         </div>
