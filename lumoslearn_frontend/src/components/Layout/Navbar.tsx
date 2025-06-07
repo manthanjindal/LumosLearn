@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Languages } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import logo from '../../assets/logo.png';
 
 const Navbar: React.FC = () => {
   const { language, setLanguage, translate } = useLanguage();
@@ -37,12 +38,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-black font-bold text-xl">
-                L
-              </div>
-              <span className="ml-3 text-2xl font-bold text-white">
-                LumosLearn
-              </span>
+              <img src={logo} alt="LumosLearn Logo" className="h-16" />
             </Link>
           </div>
 
