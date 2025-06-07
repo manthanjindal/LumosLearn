@@ -19,7 +19,7 @@ if (!process.env.GEMINI_API_KEY) {
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
-app.post('/api/chat', async (req, res) => {
+app.post('/chat', async (req, res) => {
   const { message, history } = req.body;
   
   if (!message) {
@@ -46,7 +46,7 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-app.post('/api/translate', async (req, res) => {
+app.post('/translate', async (req, res) => {
   const { text, targetLanguage } = req.body;
 
   if (!text || !targetLanguage) {
@@ -73,7 +73,7 @@ app.post('/api/translate', async (req, res) => {
   }
 });
 
-app.get('/api/health', (req, res) => {
+app.get('/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
