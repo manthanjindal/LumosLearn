@@ -23,15 +23,6 @@ interface Lesson {
   }[];
 }
 
-const COLORS = {
-  background: '#0E0E0E',
-  contentBox: '#1A1A1A',
-  lessonCard: '#1F1F1F',
-  mint: '#A3F7BF',
-  lightGrey: '#A0A0A0',
-  white: '#FFFFFF',
-};
-
 const LessonDetail: React.FC = () => {
   const { topic, lessonIndex } = useParams<{ topic: string; lessonIndex: string }>();
   const navigate = useNavigate();
@@ -50,7 +41,7 @@ const LessonDetail: React.FC = () => {
   useEffect(() => {
     const fetchLesson = async () => {
       setLoading(true);
-      setLesson(null); // Reset lesson state on change
+      setLesson(null);
       if (!topic || lessonIndex === undefined) {
         setLoading(false);
         return;
@@ -63,11 +54,9 @@ const LessonDetail: React.FC = () => {
         return;
       }
 
-      // Sanitize the lesson title to match the generated JSON filenames.
       const sanitizedTitle = lessonTitle.replace(/[?:]/g, '').replace(/[/\\*."<>|]/g, '-');
 
       try {
-        // Dynamically import the lesson's JSON file.
         const lessonModule = await import(`../data/lessons/${sanitizedTitle}.json`);
         setLesson(lessonModule);
       } catch (error) {
@@ -103,35 +92,23 @@ const LessonDetail: React.FC = () => {
         setUserAnswer(undefined);
       } else {
         setIsQuizActive(false);
-        toast.success(t('lesson.quiz.completed'));
+        toast.info(t('lesson.quiz.completed'));
       }
     }
   };
 
   if (loading) {
-    return <div style={{ color: COLORS.white, textAlign: 'center', padding: '50px' }}>{t('lesson.loading')}</div>;
+    return <div className="bg-[#0D1117] text-white text-center p-12">{t('lesson.loading')}</div>;
   }
 
   if (!lesson) {
     return (
-      <div style={{ color: COLORS.white, textAlign: 'center', padding: '50px', fontFamily: "'Nunito', sans-serif" }}>
-        <h2 style={{ fontFamily: "'Baloo 2', cursive", fontSize: '2.5rem', color: COLORS.mint }}>{t('lesson.notFound.title')}</h2>
-        <p style={{ fontSize: '1.2rem', marginTop: '1rem' }}>
-          {t('lesson.notFound.description')}
-        </p>
+      <div className="bg-[#0D1117] text-white text-center p-12">
+        <h2 className="text-4xl font-bold text-[#38BDF8] mb-4">{t('lesson.notFound.title')}</h2>
+        <p className="text-lg mt-4">{t('lesson.notFound.description')}</p>
         <button
           onClick={() => navigate('/lessons')}
-          style={{
-            marginTop: '2rem',
-            padding: '10px 20px',
-            border: 'none',
-            borderRadius: '8px',
-            backgroundColor: COLORS.mint,
-            color: COLORS.background,
-            fontSize: '1rem',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-          }}
+          className="mt-8 px-6 py-2 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
         >
           {t('lesson.notFound.backButton')}
         </button>
@@ -160,35 +137,36 @@ const LessonDetail: React.FC = () => {
   const displayQuiz = language === 'hi' && lesson.quiz_hi ? lesson.quiz_hi : lesson.quiz;
 
   return (
-    <div style={{ backgroundColor: COLORS.background, color: COLORS.lightGrey, fontFamily: "'Nunito', sans-serif" }} className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
-        <h1 style={{ fontFamily: "'Baloo 2', cursive", color: COLORS.mint }} className="text-4xl font-bold mb-6">{displayTitle}</h1>
-        <div className="prose prose-invert max-w-none mb-8" dangerouslySetInnerHTML={{ __html: displayContent }} />
+    <div className="bg-[#0D1117] text-gray-300 min-h-screen">
+      <div className="container mx-auto px-4 py-12">
+        <h1 className="text-4xl lg:text-5xl font-extrabold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#38BDF8] to-[#34D399]">
+          {displayTitle}
+        </h1>
+        <div className="prose prose-invert max-w-none mb-12 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: displayContent }} />
         
         {displayQuiz && displayQuiz.length > 0 && (
-          <div className="mt-8 p-6 rounded-lg" style={{ backgroundColor: COLORS.contentBox }}>
-            <h2 style={{ fontFamily: "'Baloo 2', cursive", color: COLORS.mint }} className="text-3xl font-bold mb-4">{t('lesson.quiz.title')}</h2>
+          <div className="mt-12 p-8 bg-gray-800/30 rounded-2xl border border-gray-700">
+            <h2 className="text-3xl font-bold text-white mb-6">{t('lesson.quiz.title')}</h2>
             {!isQuizActive ? (
               <button
                 onClick={() => setIsQuizActive(true)}
-                style={{ backgroundColor: COLORS.mint, color: COLORS.background }}
-                className="font-bold py-2 px-6 rounded-lg"
+                className="px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
               >
                 {t('lesson.quiz.start')}
               </button>
             ) : (
               <div>
-                <h3 className="text-xl mb-4">{displayQuiz[currentQ].question}</h3>
+                <h3 className="text-xl text-white mb-6">{displayQuiz[currentQ].question}</h3>
                 <div className="space-y-4">
                   {displayQuiz[currentQ].options.map((option, index) => (
                     <button
                       key={index}
                       onClick={() => handleAnswerSelect(index)}
-                      className="w-full text-left p-4 rounded-lg transition-colors"
-                      style={{
-                        backgroundColor: userAnswer === index ? COLORS.mint : COLORS.lessonCard,
-                        color: userAnswer === index ? COLORS.background : COLORS.white
-                      }}
+                      className={`w-full text-left p-4 rounded-lg transition-all duration-200 border-2 ${
+                        userAnswer === index
+                          ? 'bg-[#38BDF8] border-[#38BDF8] text-white font-bold'
+                          : 'bg-gray-700/50 border-gray-600 hover:border-gray-500'
+                      }`}
                     >
                       {option}
                     </button>
@@ -197,8 +175,7 @@ const LessonDetail: React.FC = () => {
                 {userAnswer !== undefined && (
                   <button
                     onClick={handleQuizSubmit}
-                    style={{ backgroundColor: COLORS.mint, color: COLORS.background, marginTop: '1.5rem' }}
-                    className="font-bold py-2 px-6 rounded-lg"
+                    className="mt-8 px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
                   >
                     {currentQ < displayQuiz.length - 1 ? t('lesson.quiz.next') : t('lesson.quiz.finish')}
                   </button>
@@ -208,20 +185,18 @@ const LessonDetail: React.FC = () => {
           </div>
         )}
 
-        <div className="mt-8 flex justify-between">
+        <div className="mt-12 flex justify-between">
           <button
             onClick={handlePrevLesson}
             disabled={idx === 0}
-            style={{ backgroundColor: COLORS.lessonCard }}
-            className={`font-bold py-2 px-6 rounded-lg ${idx === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className="px-6 py-2 bg-gray-800/50 text-white font-bold rounded-lg shadow-md hover:bg-gray-700/70 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {t('lesson.previous')}
           </button>
           <button
             onClick={handleNextLesson}
             disabled={!topic || !(lessonsByTopic as { [key: string]: string[] })[topic] || idx >= (lessonsByTopic as { [key: string]: string[] })[topic].length - 1}
-            style={{ backgroundColor: COLORS.lessonCard }}
-            className={`font-bold py-2 px-6 rounded-lg ${!topic || !(lessonsByTopic as { [key: string]: string[] })[topic] || idx >= (lessonsByTopic as { [key: string]: string[] })[topic].length - 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className="px-6 py-2 bg-gray-800/50 text-white font-bold rounded-lg shadow-md hover:bg-gray-700/70 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {t('lesson.next')}
           </button>
