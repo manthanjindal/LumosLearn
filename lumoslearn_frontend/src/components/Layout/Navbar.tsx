@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
 
   const navClass = `
     sticky top-0 z-50 transition-all duration-300
-    ${isScrolled ? 'bg-gray-900/60 backdrop-blur-xl border-b border-gray-700/50' : 'bg-transparent'}
+    ${isScrolled ? 'bg-black/30 backdrop-blur-lg border-b border-gray-700/50' : 'bg-transparent'}
   `;
 
   return (
