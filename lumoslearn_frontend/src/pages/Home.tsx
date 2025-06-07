@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, Brain, Code } from 'lucide-react';
+import { ChevronDown, Clock, Brain, Code } from 'lucide-react';
 
 const Home: React.FC = () => {
+  const featuresRef = useRef<HTMLDivElement>(null);
+
+  const scrollToFeatures = () => {
+    featuresRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="bg-[#0D1117] text-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center overflow-hidden py-24 sm:py-32">
+      <section className="relative min-h-screen flex flex-col items-center justify-start pt-32 text-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0D1117] z-10" />
         <div 
           className="absolute inset-0 opacity-20"
@@ -74,9 +80,16 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
+
+        <div 
+          className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer"
+          onClick={scrollToFeatures}
+        >
+          <ChevronDown size={32} className="text-gray-500" />
+        </div>
       </section>
 
-      <section className="py-24 bg-[#0D1117]">
+      <section ref={featuresRef} className="py-24 bg-[#0D1117]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">Unlock Your Potential</h2>
