@@ -21,31 +21,44 @@ if (!process.env.GEMINI_API_KEY) {
   process.exit(1);
 }
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const ai = new GoogleGenAI(process.env.GEMINI_API_KEY);
+const model = ai.getGenerativeModel({ 
+  model: "gemini-1.5-flash",
+  systemInstruction: `Hi! I'm Lumi 🤖, your friendly AI tutor! I love helping students learn and explore new topics. I'm knowledgeable about many subjects, especially AI, ML, and programming, but I'm happy to discuss anything you're curious about. I'll explain things in simple terms and use fun examples to make learning enjoyable. Always answer in plain, simple text. Do not use any bold, italics, bullet points, or special formatting. Just use regular sentences and paragraphs. Feel free to ask me anything - I'm here to help you learn and grow!`
+});
 
-app.post('/chat', async (req, res) => {
+app.post('/api/chat', async (req, res) => {
+  console.log('Received request on /api/chat');
   const { message, history } = req.body;
   
   if (!message) {
+    console.error('Chat Error: No message provided.');
     return res.status(400).json({ error: 'Message is required.' });
   }
+  console.log('User message:', message);
+  console.log('Chat history:', history);
 
   try {
-    const chat = ai.chats.create({
-      model: 'gemini-2.0-flash',
+    console.log('Starting new chat session with model...');
+    const chat = model.startChat({
       history: history || [],
-      config: {
-        systemInstruction: `Hi! I'm Lumi 🤖, your friendly AI tutor! I love helping students learn and explore new topics. I'm knowledgeable about many subjects, especially AI, ML, and programming, but I'm happy to discuss anything you're curious about. I'll explain things in simple terms and use fun examples to make learning enjoyable. Always answer in plain, simple text. Do not use any bold, italics, bullet points, or special formatting. Just use regular sentences and paragraphs. Feel free to ask me anything - I'm here to help you learn and grow!`
-      }
+      generationConfig: {
+        maxOutputTokens: 2000,
+      },
     });
 
-    const response = await chat.sendMessage({ message });
-    res.json({ text: response.text });
+    console.log('Sending message to Gemini API...');
+    const result = await chat.sendMessage(message);
+    const response = await result.response;
+    const text = response.text();
+    
+    console.log('Received response from Gemini API:', text);
+    res.json({ text });
   } catch (err) {
-    console.error('Gemini API error:', err.message || err);
+    console.error('Error during Gemini API call:', err);
     res.status(500).json({ 
       error: 'AI service error.',
-      details: process.env.NODE_ENV === 'development' ? err.message : 'An unexpected error occurred.'
+      details: err.message
     });
   }
 });
