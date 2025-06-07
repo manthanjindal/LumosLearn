@@ -33,24 +33,25 @@ const LessonDetail: React.FC = () => {
   const [lesson, setLesson] = useState<Lesson | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Quiz state
   const [currentQ, setCurrentQ] = useState(0);
   const [userAnswers, setUserAnswers] = useState<(number | undefined)[]>([]);
   const [isQuizActive, setIsQuizActive] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [score, setScore] = useState(0);
 
-  const resetQuizState = () => {
-    setIsQuizActive(false);
-    setQuizCompleted(false);
-    setCurrentQ(0);
-    setUserAnswers([]);
-    setScore(0);
-  };
-  
+  // This effect hook fetches the lesson data and RESETS the quiz state
+  // ONLY when the user navigates to a new lesson (i.e., topic or lessonIndex changes).
   useEffect(() => {
     const fetchLesson = async () => {
       setLoading(true);
-      resetQuizState();
+      // Reset all quiz state for the new lesson
+      setIsQuizActive(false);
+      setQuizCompleted(false);
+      setCurrentQ(0);
+      setUserAnswers([]);
+      setScore(0);
+
       if (!topic || lessonIndex === undefined) {
         setLoading(false);
         return;
@@ -77,6 +78,15 @@ const LessonDetail: React.FC = () => {
     fetchLesson();
   }, [topic, lessonIndex, idx]);
 
+  const startOrRetryQuiz = () => {
+    setIsQuizActive(true);
+    setQuizCompleted(false);
+    setCurrentQ(0);
+    const quizLength = (language === 'hi' && lesson?.quiz_hi ? lesson.quiz_hi : lesson?.quiz)?.length ?? 0;
+    setUserAnswers(new Array(quizLength).fill(undefined));
+    setScore(0);
+  };
+
   const handleAnswerSelect = (optionIndex: number) => {
     const newAnswers = [...userAnswers];
     newAnswers[currentQ] = optionIndex;
@@ -84,7 +94,8 @@ const LessonDetail: React.FC = () => {
   };
 
   const handleNextQuestion = () => {
-    if (currentQ < (lesson?.quiz.length ?? 0) - 1) {
+    const displayQuiz = language === 'hi' && lesson?.quiz_hi ? lesson.quiz_hi : lesson?.quiz;
+    if (displayQuiz && currentQ < displayQuiz.length - 1) {
       setCurrentQ(currentQ + 1);
     }
   };
@@ -160,21 +171,20 @@ const LessonDetail: React.FC = () => {
             {quizCompleted ? (
               <QuizResult
                 score={score}
-                total={displayQuiz?.length ?? 0}
+                total={displayQuiz.length}
                 incorrectAnswers={
                   displayQuiz
-                    ?.map((q, i) => (q.answer === userAnswers[i] ? null : {
+                    .map((q, i) => (q.answer === userAnswers[i] ? null : {
                       question: q.question,
                       correctAnswer: q.options[q.answer],
                     }))
-                    .filter((item): item is { question: string; correctAnswer: string } => item !== null) ?? []
+                    .filter((item): item is { question: string; correctAnswer: string } => item !== null)
                 }
-                onRetry={resetQuizState}
+                onRetry={startOrRetryQuiz}
                 t={t}
               />
             ) : isQuizActive ? (
               (() => {
-                if (!displayQuiz || displayQuiz.length === 0) return null;
                 const question = displayQuiz[currentQ];
                 const isLastQuestion = currentQ === displayQuiz.length - 1;
                 return (
@@ -219,7 +229,7 @@ const LessonDetail: React.FC = () => {
               })()
             ) : (
               <button
-                onClick={() => setIsQuizActive(true)}
+                onClick={startOrRetryQuiz}
                 className="px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
               >
                 {t('lesson.quiz.start')}
