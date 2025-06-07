@@ -71,15 +71,12 @@ const LessonDetail: React.FC = () => {
     };
 
     fetchLesson();
-    // Reset quiz state when lesson changes
-    setIsQuizActive(false);
-    setQuizCompleted(false);
-    setCurrentQ(0);
-    setSelected([]);
-    setUserAnswer(undefined);
-    setQuizScore(0);
-    setIncorrectAnswers([]);
   }, [topic, lessonIndex, idx]);
+
+  useEffect(() => {
+    // Reset quiz state only when the lesson changes
+    restartQuiz(true); // pass true to indicate a full reset, not a retry
+  }, [topic, lessonIndex]);
 
   const handleAnswerSelect = (optionIndex: number) => {
     const newSelected = [...selected];
@@ -121,8 +118,12 @@ const LessonDetail: React.FC = () => {
     }
   };
 
-  const restartQuiz = () => {
-    setIsQuizActive(true);
+  const restartQuiz = (isNewLesson: boolean = false) => {
+    if (isNewLesson) {
+      setIsQuizActive(false);
+    } else {
+      setIsQuizActive(true);
+    }
     setQuizCompleted(false);
     setCurrentQ(0);
     setSelected([]);
@@ -208,7 +209,7 @@ const LessonDetail: React.FC = () => {
                 )}
                 
                 <button
-                  onClick={restartQuiz}
+                  onClick={() => restartQuiz()}
                   className="px-8 py-3 bg-gradient-to-r from-[#38BDF8] to-[#34D399] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
                 >
                   {t('lesson.quiz.tryAgain')}
