@@ -42,7 +42,7 @@ export const sendChatMessage = async (
   history: ChatMessage[]
 ): Promise<string> => {
   try {
-    const response = await apiClient.post<ChatResponse>('/chat', { message, history });
+    const response = await apiClient.post<ChatResponse>('/api/chat', { message, history });
     return response.data.text;
   } catch (error) {
     console.error('Error sending chat message:', error);
