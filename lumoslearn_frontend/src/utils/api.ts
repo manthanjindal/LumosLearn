@@ -2,14 +2,24 @@
  * Utility functions for making API calls to the backend
  */
 
+import apiClient from './apiClient';
+
+interface ChatResponse {
+  text: string;
+}
+
+interface TranslateResponse {
+  translatedText: string;
+}
+
 /**
  * Checks if the backend server is healthy and available
  * @returns {Promise<boolean>} True if the backend is healthy, false otherwise
  */
 export const checkBackendHealth = async (): Promise<boolean> => {
   try {
-    const response = await fetch('/api/health');
-    return response.ok;
+    const response = await apiClient.get('/health');
+    return response.status === 200;
   } catch (error) {
     console.error('Error checking backend health:', error);
     return false;
@@ -32,18 +42,8 @@ export const sendChatMessage = async (
   history: ChatMessage[]
 ): Promise<string> => {
   try {
-    const response = await fetch('/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message, history }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data.text;
+    const response = await apiClient.post<ChatResponse>('/chat', { message, history });
+    return response.data.text;
   } catch (error) {
     console.error('Error sending chat message:', error);
     throw error;
@@ -61,18 +61,8 @@ export const translateText = async (
   targetLanguage: string
 ): Promise<string> => {
   try {
-    const response = await fetch('/api/translate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text, targetLanguage }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data.translatedText;
+    const response = await apiClient.post<TranslateResponse>('/translate', { text, targetLanguage });
+    return response.data.translatedText;
   } catch (error) {
     console.error('Error translating text:', error);
     throw error;
