@@ -136,7 +136,7 @@ const Home: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-center items-center gap-16 md:gap-24 text-center">
             <div className="flex flex-col items-center">
-              <span className="text-4xl md:text-5xl font-bold">10+</span>
+              <span className="text-4xl md:text-5xl font-bold">10</span>
               <span className="text-gray-400 mt-2">Learners</span>
             </div>
             <div className="flex flex-col items-center">
@@ -144,7 +144,7 @@ const Home: React.FC = () => {
               <span className="text-gray-400 mt-2">Avg. Rating</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="text-4xl md:text-5xl font-bold">189</span>
+              <span className="text-4xl md:text-5xl font-bold">255</span>
               <span className="text-gray-400 mt-2">Micro-Lessons</span>
             </div>
           </div>
