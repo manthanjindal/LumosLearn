@@ -37,6 +37,9 @@ const LessonDetail: React.FC = () => {
   const [userAnswer, setUserAnswer] = useState<number | undefined>(undefined);
   const [selected, setSelected] = useState<number[]>([]);
   const [isQuizActive, setIsQuizActive] = useState(false);
+  const [quizCompleted, setQuizCompleted] = useState(false);
+  const [quizScore, setQuizScore] = useState(0);
+  const [incorrectAnswers, setIncorrectAnswers] = useState<number[]>([]);
 
   useEffect(() => {
     const fetchLesson = async () => {
@@ -68,6 +71,14 @@ const LessonDetail: React.FC = () => {
     };
 
     fetchLesson();
+    // Reset quiz state when lesson changes
+    setIsQuizActive(false);
+    setQuizCompleted(false);
+    setCurrentQ(0);
+    setSelected([]);
+    setUserAnswer(undefined);
+    setQuizScore(0);
+    setIncorrectAnswers([]);
   }, [topic, lessonIndex, idx]);
 
   const handleAnswerSelect = (optionIndex: number) => {
@@ -91,10 +102,33 @@ const LessonDetail: React.FC = () => {
         setCurrentQ(currentQ + 1);
         setUserAnswer(undefined);
       } else {
+        // End of quiz
+        let score = 0;
+        const incorrect: number[] = [];
+        for (let i = 0; i < currentQuiz.length; i++) {
+          if (currentQuiz[i].answer === selected[i]) {
+            score++;
+          } else {
+            incorrect.push(i);
+          }
+        }
+        setQuizScore(score);
+        setIncorrectAnswers(incorrect);
+        setQuizCompleted(true);
         setIsQuizActive(false);
         toast.info(t('lesson.quiz.completed'));
       }
     }
+  };
+
+  const restartQuiz = () => {
+    setIsQuizActive(true);
+    setQuizCompleted(false);
+    setCurrentQ(0);
+    setSelected([]);
+    setUserAnswer(undefined);
+    setQuizScore(0);
+    setIncorrectAnswers([]);
   };
 
   if (loading) {
@@ -147,7 +181,40 @@ const LessonDetail: React.FC = () => {
         {displayQuiz && displayQuiz.length > 0 && (
           <div className="mt-12 p-8 bg-gray-800/30 rounded-2xl border border-gray-700">
             <h2 className="text-3xl font-bold text-white mb-6">{t('lesson.quiz.title')}</h2>
-            {!isQuizActive ? (
+            
+            {quizCompleted ? (
+              <div>
+                <h3 className="text-2xl text-white mb-4">
+                  {t('lesson.quiz.resultTitle')}
+                </h3>
+                <p className="text-xl mb-6">
+                  {t('lesson.quiz.score').replace('{score}', String(quizScore)).replace('{total}', String(displayQuiz.length))}
+                </p>
+
+                {incorrectAnswers.length > 0 && (
+                  <div className="mb-6">
+                    <h4 className="text-lg font-bold text-white mb-2">{t('lesson.quiz.reviewTitle')}</h4>
+                    <ul>
+                      {incorrectAnswers.map((qIndex) => (
+                        <li key={qIndex} className="mb-4 p-4 bg-gray-700/50 rounded-lg">
+                          <p className="font-semibold">{displayQuiz[qIndex].question}</p>
+                          <p className="text-green-400 mt-2">
+                            {t('lesson.quiz.correctAnswer')}: {displayQuiz[qIndex].options[displayQuiz[qIndex].answer]}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                
+                <button
+                  onClick={restartQuiz}
+                  className="px-8 py-3 bg-gradient-to-r from-[#38BDF8] to-[#34D399] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
+                >
+                  {t('lesson.quiz.tryAgain')}
+                </button>
+              </div>
+            ) : !isQuizActive ? (
               <button
                 onClick={() => setIsQuizActive(true)}
                 className="px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"

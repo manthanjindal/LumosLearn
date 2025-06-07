@@ -41,6 +41,14 @@ export const enTranslations: { [key: string]: string } = {
   'quiz.correct': 'Correct!',
   'quiz.incorrect': 'Incorrect',
   'quiz.explanation': 'Explanation',
+  'lesson.quiz.correct': 'Correct!',
+  'lesson.quiz.incorrect': 'Incorrect!',
+  'lesson.quiz.completed': 'Quiz completed!',
+  'lesson.quiz.score': 'Your Score: {score}/{total}',
+  'lesson.quiz.resultTitle': 'Quiz Results',
+  'lesson.quiz.reviewTitle': 'Review Incorrect Answers',
+  'lesson.quiz.correctAnswer': 'Correct Answer',
+  'lesson.quiz.tryAgain': 'Try Again',
   
   // Progress
   'progress.level': 'Level',

@@ -68,6 +68,11 @@ const translations = {
     'lesson.quiz.start': 'Start Quiz',
     'lesson.quiz.next': 'Next Question',
     'lesson.quiz.finish': 'Finish Quiz',
+    'lesson.quiz.resultTitle': 'Quiz Results',
+    'lesson.quiz.score': 'Your Score: {score} out of {total}',
+    'lesson.quiz.reviewTitle': 'Review Incorrect Answers',
+    'lesson.quiz.correctAnswer': 'Correct Answer',
+    'lesson.quiz.tryAgain': 'Try Again',
     'lesson.previous': 'Previous',
     'lesson.next': 'Next'
   },
@@ -137,6 +142,11 @@ const translations = {
     'lesson.quiz.start': 'प्रश्नोत्तरी शुरू करें',
     'lesson.quiz.next': 'अगला सवाल',
     'lesson.quiz.finish': 'प्रश्नोत्तरी समाप्त करें',
+    'lesson.quiz.resultTitle': 'प्रश्नोत्तरी परिणाम',
+    'lesson.quiz.score': 'आपका स्कोर: {total} में से {score}',
+    'lesson.quiz.reviewTitle': 'गलत उत्तरों की समीक्षा करें',
+    'lesson.quiz.correctAnswer': 'सही उत्तर',
+    'lesson.quiz.tryAgain': 'पुनः प्रयास करें',
     'lesson.previous': 'पिछला',
     'lesson.next': 'अगला'
   }
