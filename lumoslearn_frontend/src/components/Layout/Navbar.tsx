@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Languages } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
-import logo from '../../assets/logo.png';
+import ThemeToggle from './ThemeToggle';
+import { useTheme } from '../../contexts/ThemeContext';
+// import logo from '../../assets/logo.png';
 
 const Navbar: React.FC = () => {
   const { language, setLanguage, translate } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +41,10 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="LumosLearn Logo" className="h-16" />
+              <div className="bg-white w-8 h-8 rounded-md flex items-center justify-center">
+                <span className="text-black text-xl font-bold">L</span>
+              </div>
+              <span className="text-white text-xl font-semibold ml-2">LumosLearn</span>
             </Link>
           </div>
 
@@ -61,6 +67,7 @@ const Navbar: React.FC = () => {
             <button onClick={toggleLanguage} className="p-2 rounded-full text-white hover:bg-gray-700/50">
               <Languages size={26} />
             </button>
+            <ThemeToggle />
           </div>
 
           <div className="md:hidden flex items-center">
@@ -97,6 +104,7 @@ const Navbar: React.FC = () => {
               <button onClick={toggleLanguage} className="p-2 rounded-full text-white hover:bg-gray-700/50">
                 <Languages size={28} />
               </button>
+              <ThemeToggle />
             </div>
           </div>
         </div>
