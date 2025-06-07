@@ -33,16 +33,24 @@ const LessonDetail: React.FC = () => {
   const [lesson, setLesson] = useState<Lesson | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Quiz state
   const [currentQ, setCurrentQ] = useState(0);
   const [userAnswers, setUserAnswers] = useState<(number | undefined)[]>([]);
   const [isQuizActive, setIsQuizActive] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [score, setScore] = useState(0);
 
+  const resetQuizState = () => {
+    setIsQuizActive(false);
+    setQuizCompleted(false);
+    setCurrentQ(0);
+    setUserAnswers([]);
+    setScore(0);
+  };
+  
   useEffect(() => {
     const fetchLesson = async () => {
       setLoading(true);
+      resetQuizState();
       if (!topic || lessonIndex === undefined) {
         setLoading(false);
         return;
@@ -68,18 +76,6 @@ const LessonDetail: React.FC = () => {
 
     fetchLesson();
   }, [topic, lessonIndex, idx]);
-
-  useEffect(() => {
-    resetQuiz();
-  }, [lesson]);
-
-  const resetQuiz = () => {
-    setIsQuizActive(false);
-    setQuizCompleted(false);
-    setCurrentQ(0);
-    setUserAnswers([]);
-    setScore(0);
-  };
 
   const handleAnswerSelect = (optionIndex: number) => {
     const newAnswers = [...userAnswers];
@@ -149,82 +145,6 @@ const LessonDetail: React.FC = () => {
   const displayContent = language === 'hi' && lesson.content_hi ? lesson.content_hi : lesson.content || '';
   const displayQuiz = language === 'hi' && lesson.quiz_hi ? lesson.quiz_hi : lesson.quiz;
 
-  const renderQuizContent = () => {
-    if (quizCompleted) {
-      const incorrectAnswers = displayQuiz
-        ?.map((q, i) => (q.answer === userAnswers[i] ? null : {
-          question: q.question,
-          correctAnswer: q.options[q.answer],
-        }))
-        .filter((item): item is { question: string; correctAnswer: string } => item !== null) ?? [];
-
-      return (
-        <QuizResult
-          score={score}
-          total={displayQuiz?.length ?? 0}
-          incorrectAnswers={incorrectAnswers}
-          onRetry={resetQuiz}
-          t={t}
-        />
-      );
-    }
-
-    if (isQuizActive) {
-      if (!displayQuiz || displayQuiz.length === 0) return null;
-      const question = displayQuiz[currentQ];
-      const isLastQuestion = currentQ === displayQuiz.length - 1;
-
-      return (
-        <div>
-          <h3 className="text-xl text-white mb-6">{question.question}</h3>
-          <div className="space-y-4">
-            {question.options.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => handleAnswerSelect(index)}
-                className={`w-full text-left p-4 rounded-lg transition-all duration-200 border-2 ${
-                  userAnswers[currentQ] === index
-                    ? 'bg-[#38BDF8] border-[#38BDF8] text-white font-bold'
-                    : 'bg-gray-700/50 border-gray-600 hover:border-gray-500'
-                }`}
-              >
-                {option}
-              </button>
-            ))}
-          </div>
-          <div className="mt-8 flex justify-end">
-            {isLastQuestion ? (
-              <button
-                onClick={handleFinishQuiz}
-                disabled={userAnswers[currentQ] === undefined}
-                className="px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {t('lesson.quiz.finish')}
-              </button>
-            ) : (
-              <button
-                onClick={handleNextQuestion}
-                disabled={userAnswers[currentQ] === undefined}
-                className="px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {t('lesson.quiz.next')}
-              </button>
-            )}
-          </div>
-        </div>
-      );
-    }
-
-    return (
-      <button
-        onClick={() => setIsQuizActive(true)}
-        className="px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
-      >
-        {t('lesson.quiz.start')}
-      </button>
-    );
-  };
-
   return (
     <div className="bg-[#0D1117] text-gray-300 min-h-screen">
       <div className="container mx-auto px-4 py-12">
@@ -236,7 +156,75 @@ const LessonDetail: React.FC = () => {
         {displayQuiz && displayQuiz.length > 0 && (
           <div className="mt-12 p-8 bg-gray-800/30 rounded-2xl border border-gray-700">
             <h2 className="text-3xl font-bold text-white mb-6">{t('lesson.quiz.title')}</h2>
-            {renderQuizContent()}
+            
+            {quizCompleted ? (
+              <QuizResult
+                score={score}
+                total={displayQuiz?.length ?? 0}
+                incorrectAnswers={
+                  displayQuiz
+                    ?.map((q, i) => (q.answer === userAnswers[i] ? null : {
+                      question: q.question,
+                      correctAnswer: q.options[q.answer],
+                    }))
+                    .filter((item): item is { question: string; correctAnswer: string } => item !== null) ?? []
+                }
+                onRetry={resetQuizState}
+                t={t}
+              />
+            ) : isQuizActive ? (
+              (() => {
+                if (!displayQuiz || displayQuiz.length === 0) return null;
+                const question = displayQuiz[currentQ];
+                const isLastQuestion = currentQ === displayQuiz.length - 1;
+                return (
+                  <div>
+                    <h3 className="text-xl text-white mb-6">{question.question}</h3>
+                    <div className="space-y-4">
+                      {question.options.map((option, index) => (
+                        <button
+                          key={index}
+                          onClick={() => handleAnswerSelect(index)}
+                          className={`w-full text-left p-4 rounded-lg transition-all duration-200 border-2 ${
+                            userAnswers[currentQ] === index
+                              ? 'bg-[#38BDF8] border-[#38BDF8] text-white font-bold'
+                              : 'bg-gray-700/50 border-gray-600 hover:border-gray-500'
+                          }`}
+                        >
+                          {option}
+                        </button>
+                      ))}
+                    </div>
+                    <div className="mt-8 flex justify-end">
+                      {isLastQuestion ? (
+                        <button
+                          onClick={handleFinishQuiz}
+                          disabled={userAnswers[currentQ] === undefined}
+                          className="px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          {t('lesson.quiz.finish')}
+                        </button>
+                      ) : (
+                        <button
+                          onClick={handleNextQuestion}
+                          disabled={userAnswers[currentQ] === undefined}
+                          className="px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          {t('lesson.quiz.next')}
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })()
+            ) : (
+              <button
+                onClick={() => setIsQuizActive(true)}
+                className="px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
+              >
+                {t('lesson.quiz.start')}
+              </button>
+            )}
           </div>
         )}
 
