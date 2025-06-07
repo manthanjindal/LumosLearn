@@ -6,7 +6,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Clock, Brain, Code } from 'lucide-react';
 
 const Home: React.FC = () => {
   return (
@@ -83,6 +83,43 @@ const Home: React.FC = () => {
 
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
           <ChevronDown size={32} className="text-gray-500" />
+        </div>
+      </section>
+
+      <section className="py-24 bg-[#0D1117]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold">Unlock Your Potential</h2>
+            <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">
+              Choose a path and start your learning journey today.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Link to="/lessons" className="block p-8 bg-gray-800/30 backdrop-blur-md rounded-2xl border border-gray-700 hover:border-[#38BDF8] hover:scale-105 transform transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#38BDF8] to-[#34D399] rounded-xl flex items-center justify-center mb-6">
+                <Clock size={32} className="text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-3">5-Minute Lessons</h3>
+              <p className="text-gray-400">Bite-sized lessons to learn new concepts quickly.</p>
+            </Link>
+
+            <Link to="/ai-tutor" className="block p-8 bg-gray-800/30 backdrop-blur-md rounded-2xl border border-gray-700 hover:border-[#38BDF8] hover:scale-105 transform transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#8B5CF6] to-[#EC4899] rounded-xl flex items-center justify-center mb-6">
+                <Brain size={32} className="text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-3">AI Tutor</h3>
+              <p className="text-gray-400">Get personalized help from an AI tutor anytime.</p>
+            </Link>
+
+            <Link to="/python" className="block p-8 bg-gray-800/30 backdrop-blur-md rounded-2xl border border-gray-700 hover:border-[#38BDF8] hover:scale-105 transform transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#F59E0B] to-[#EF4444] rounded-xl flex items-center justify-center mb-6">
+                <Code size={32} className="text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Python Lessons</h3>
+              <p className="text-gray-400">Interactive lessons to master Python programming.</p>
+            </Link>
+          </div>
         </div>
       </section>
 
