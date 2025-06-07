@@ -12,7 +12,7 @@ const Home: React.FC = () => {
   return (
     <div className="bg-[#0D1117] text-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-start pt-32 text-center overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-start pt-40 text-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0D1117] z-10" />
         <div 
           className="absolute inset-0 opacity-20"
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
         </div>
 
         <div 
-          className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer"
+          className="absolute bottom-28 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer"
           onClick={scrollToFeatures}
         >
           <ChevronDown size={32} className="text-gray-500" />
