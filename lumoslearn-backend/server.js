@@ -5,7 +5,11 @@ const { GoogleGenAI } = require('@google/genai');
 
 const app = express();
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173', // Vite's default port
+  origin: [
+    process.env.FRONTEND_URL || 'http://localhost:5173',
+    'https://lumoslearn.netlify.app',
+    'https://lumoslearn-backend.onrender.com'
+  ],
   methods: ['POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
 }));
