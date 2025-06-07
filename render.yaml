@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: lumoslearn-backend
+    env: node
+    rootDir: lumoslearn-backend
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: FRONTEND_URL
+        value: https://lumoslearn.netlify.app
+      - key: GEMINI_API_KEY
+        sync: false 
