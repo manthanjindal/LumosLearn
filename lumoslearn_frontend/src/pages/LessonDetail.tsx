@@ -34,12 +34,10 @@ const LessonDetail: React.FC = () => {
 
   // Quiz state
   const [currentQ, setCurrentQ] = useState(0);
-  const [userAnswer, setUserAnswer] = useState<number | undefined>(undefined);
-  const [selectedAnswers, setSelectedAnswers] = useState<number[]>([]);
+  const [userAnswers, setUserAnswers] = useState<(number | undefined)[]>([]);
   const [isQuizActive, setIsQuizActive] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [score, setScore] = useState(0);
-  const [incorrectAnswers, setIncorrectAnswers] = useState<number[]>([]);
 
   useEffect(() => {
     const fetchLesson = async () => {
@@ -78,52 +76,34 @@ const LessonDetail: React.FC = () => {
     setIsQuizActive(false);
     setQuizCompleted(false);
     setCurrentQ(0);
-    setSelectedAnswers([]);
-    setUserAnswer(undefined);
+    setUserAnswers([]);
     setScore(0);
-    setIncorrectAnswers([]);
   };
 
   const handleAnswerSelect = (optionIndex: number) => {
-    setUserAnswer(optionIndex);
-    const newSelectedAnswers = [...selectedAnswers];
-    newSelectedAnswers[currentQ] = optionIndex;
-    setSelectedAnswers(newSelectedAnswers);
+    const newAnswers = [...userAnswers];
+    newAnswers[currentQ] = optionIndex;
+    setUserAnswers(newAnswers);
   };
 
   const handleNextQuestion = () => {
-    const displayQuiz = language === 'hi' && lesson?.quiz_hi ? lesson.quiz_hi : lesson?.quiz;
-    if (!displayQuiz) return;
-    
-    const isCorrect = userAnswer === displayQuiz[currentQ].answer;
-    if(isCorrect) {
-      toast.success(t('lesson.quiz.correct'));
-    } else {
-      toast.error(t('lesson.quiz.incorrect'));
-    }
-
-    if (currentQ < displayQuiz.length - 1) {
+    if (currentQ < (lesson?.quiz.length ?? 0) - 1) {
       setCurrentQ(currentQ + 1);
-      setUserAnswer(selectedAnswers[currentQ + 1] ?? undefined);
     }
   };
-
+  
   const handleFinishQuiz = () => {
     const displayQuiz = language === 'hi' && lesson?.quiz_hi ? lesson.quiz_hi : lesson?.quiz;
     if (!displayQuiz) return;
 
     let finalScore = 0;
-    const incorrect: number[] = [];
     displayQuiz.forEach((q, index) => {
-      if (q.answer === selectedAnswers[index]) {
+      if (q.answer === userAnswers[index]) {
         finalScore++;
-      } else {
-        incorrect.push(index);
       }
     });
 
     setScore(finalScore);
-    setIncorrectAnswers(incorrect);
     setQuizCompleted(true);
     setIsQuizActive(false);
     toast.info(t('lesson.quiz.completed'));
@@ -170,6 +150,7 @@ const LessonDetail: React.FC = () => {
 
   const renderQuizContent = () => {
     if (quizCompleted) {
+      const incorrectAnswers = displayQuiz?.map((q, i) => q.answer === userAnswers[i] ? -1 : i).filter(i => i !== -1) ?? [];
       return (
         <div>
           <h3 className="text-2xl text-white mb-4">{t('lesson.quiz.resultTitle')}</h3>
@@ -204,6 +185,8 @@ const LessonDetail: React.FC = () => {
     if (isQuizActive) {
       if (!displayQuiz || displayQuiz.length === 0) return null;
       const question = displayQuiz[currentQ];
+      const isLastQuestion = currentQ === displayQuiz.length - 1;
+
       return (
         <div>
           <h3 className="text-xl text-white mb-6">{question.question}</h3>
@@ -213,7 +196,7 @@ const LessonDetail: React.FC = () => {
                 key={index}
                 onClick={() => handleAnswerSelect(index)}
                 className={`w-full text-left p-4 rounded-lg transition-all duration-200 border-2 ${
-                  userAnswer === index
+                  userAnswers[currentQ] === index
                     ? 'bg-[#38BDF8] border-[#38BDF8] text-white font-bold'
                     : 'bg-gray-700/50 border-gray-600 hover:border-gray-500'
                 }`}
@@ -223,21 +206,21 @@ const LessonDetail: React.FC = () => {
             ))}
           </div>
           <div className="mt-8 flex justify-end">
-            {currentQ < displayQuiz.length - 1 ? (
-              <button
-                onClick={handleNextQuestion}
-                disabled={userAnswer === undefined}
-                className="px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {t('lesson.quiz.next')}
-              </button>
-            ) : (
+            {isLastQuestion ? (
               <button
                 onClick={handleFinishQuiz}
-                disabled={userAnswer === undefined}
+                disabled={userAnswers[currentQ] === undefined}
                 className="px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {t('lesson.quiz.finish')}
+              </button>
+            ) : (
+              <button
+                onClick={handleNextQuestion}
+                disabled={userAnswers[currentQ] === undefined}
+                className="px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {t('lesson.quiz.next')}
               </button>
             )}
           </div>
