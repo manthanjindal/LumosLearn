@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Languages } from 'lucide-react';
-import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const Navbar: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, translate } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +28,7 @@ const Navbar: React.FC = () => {
 
   const navClass = `
     sticky top-0 z-50 transition-all duration-300
-    ${isScrolled ? 'bg-gray-900/80 backdrop-blur-lg border-b border-gray-700' : 'bg-transparent'}
+    ${isScrolled ? 'bg-gray-900/60 backdrop-blur-xl border-b border-gray-700/50' : 'bg-transparent'}
   `;
 
   return (
@@ -67,16 +65,6 @@ const Navbar: React.FC = () => {
             <button onClick={toggleLanguage} className="p-2 rounded-full text-white hover:bg-gray-700/50">
               <Languages size={26} />
             </button>
-            <button
-              onClick={toggleTheme}
-              className="relative w-16 h-8 flex items-center bg-gray-700/50 rounded-full p-1 transition-colors"
-            >
-              <div
-                className={`w-6 h-6 bg-white rounded-full shadow-md transform transition-transform ${
-                  theme === 'dark' ? 'translate-x-8' : 'translate-x-0'
-                }`}
-              />
-            </button>
           </div>
 
           <div className="md:hidden flex items-center">
@@ -112,16 +100,6 @@ const Navbar: React.FC = () => {
             <div className="flex items-center justify-center space-x-4">
               <button onClick={toggleLanguage} className="p-2 rounded-full text-white hover:bg-gray-700/50">
                 <Languages size={28} />
-              </button>
-              <button
-                onClick={toggleTheme}
-                className="relative w-16 h-8 flex items-center bg-gray-700/50 rounded-full p-1"
-              >
-                <div
-                  className={`w-6 h-6 bg-white rounded-full shadow-md transform transition-transform ${
-                    theme === 'dark' ? 'translate-x-8' : 'translate-x-0'
-                  }`}
-                />
               </button>
             </div>
           </div>
