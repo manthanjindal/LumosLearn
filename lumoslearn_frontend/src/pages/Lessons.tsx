@@ -1,40 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-// Mint and greys
-const COLORS = {
-  background: '#0E0E0E',
-  topicBox: '#1A1A1A',
-  lessonCard: '#1F1F1F',
-  mint: '#A3F7BF',
-  lightGrey: '#A0A0A0',
-  white: '#FFFFFF',
-};
-
-// SVG mint chevron
-const MintChevron: React.FC<{ open: boolean }> = ({ open }) => (
-  <svg
-    width="28"
-    height="28"
-    viewBox="0 0 24 24"
-    style={{
-      display: 'inline-block',
-      transition: 'transform 0.3s',
-      transform: open ? 'rotate(90deg)' : 'rotate(0deg)',
-      verticalAlign: 'middle',
-    }}
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <polyline
-      points="6 9 12 15 18 9"
-      stroke={COLORS.mint}
-      strokeWidth="3"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+import { ChevronRight, Clock, Star } from 'lucide-react';
 
 export const lessonsByTopic = {
   'AI Fundamentals': [
@@ -60,6 +26,8 @@ export const lessonsByTopic = {
     'AI Safety',
     'Risks of AI',
     'Explainable AI',
+    'Responsible AI Design',
+    'Trustworthy AI Systems',
   ],
   'AI in the Real World': [
     'AI in Healthcare',
@@ -299,8 +267,6 @@ export const lessonsByTopic = {
     'Diffusion Models',
     'AI for Drug Discovery',
     'Scalable AI',
-    'Responsible AI Design',
-    'Trustworthy AI Systems',
   ],
   'AI Explorers & Project Pathways for Teens': [
     'Discovering AI Roles',
@@ -1143,47 +1109,28 @@ const Lessons: React.FC = () => {
   };
 
   return (
-    <div style={{ background: COLORS.background, minHeight: '100vh', padding: '2rem' }}>
-      <h1 style={{ color: COLORS.white, fontSize: '2rem', fontWeight: 700, marginBottom: '2rem' }}>All Lesson Topics</h1>
-      <div style={{ maxWidth: 900, margin: '0 auto' }}>
+    <div className="bg-[#0D1117] min-h-screen p-8 text-white">
+      <h1 className="text-4xl font-bold mb-8 text-center">All Lesson Topics</h1>
+      <div className="max-w-4xl mx-auto">
         {Object.entries(lessonsByTopic).map(([topic, lessons]) => {
           const isOpen = openTopics[topic];
           return (
             <div
               key={topic}
-              style={{
-                background: COLORS.topicBox,
-                borderRadius: 20,
-                marginBottom: 32,
-                boxShadow: '0 2px 16px 0 rgba(0,0,0,0.18)',
-                transition: 'background 0.2s',
-                padding: '0.5rem 1.5rem 1.5rem 1.5rem',
-                position: 'relative',
-              }}
+              className="bg-gray-800/30 backdrop-blur-md rounded-2xl mb-8 border border-gray-700"
             >
               <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  cursor: 'pointer',
-                  padding: '1.5rem 0 0.5rem 0',
-                  userSelect: 'none',
-                }}
+                className="flex items-center justify-between cursor-pointer p-6"
                 onClick={() => toggleTopic(topic)}
               >
-                <span style={{ color: COLORS.white, fontSize: '1.4rem', fontWeight: 700 }}>{topic}</span>
-                <MintChevron open={isOpen} />
+                <span className="text-2xl font-bold">{topic}</span>
+                <ChevronRight
+                  className={`transition-transform duration-300 ${isOpen ? 'rotate-90' : ''}`}
+                  size={28}
+                />
               </div>
               {isOpen && (
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                    gap: '2rem',
-                    marginTop: 24,
-                  }}
-                >
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 pt-0">
                   {lessons.map((lesson, idx) => {
                     const durations = [4, 5, 6];
                     const hash = lesson.split('').reduce((acc, c) => acc + c.charCodeAt(0), idx);
@@ -1192,36 +1139,19 @@ const Lessons: React.FC = () => {
                     return (
                       <div
                         key={lesson}
-                        style={{
-                          background: COLORS.lessonCard,
-                          borderRadius: 16,
-                          boxShadow: '0 2px 12px 0 rgba(163,247,191,0.08)',
-                          border: `1.5px solid transparent`,
-                          transition: 'box-shadow 0.2s, border 0.2s',
-                          width: 270,
-                          padding: '1.2rem 1.2rem 1.5rem 1.2rem',
-                          marginBottom: 0,
-                          position: 'relative',
-                          cursor: 'pointer',
-                          outline: 'none',
-                        }}
+                        className="bg-gray-900/50 rounded-xl p-6 border border-gray-700 transition-all duration-300 hover:border-[#38BDF8] hover:scale-105 cursor-pointer"
                         onClick={handleClick}
-                        onMouseOver={e => {
-                          (e.currentTarget as HTMLDivElement).style.boxShadow = '0 0 32px 8px #A3F7BF33, 0 0 16px 2px #A3F7BF55';
-                          (e.currentTarget as HTMLDivElement).style.border = `1.5px solid ${COLORS.mint}`;
-                        }}
-                        onMouseOut={e => {
-                          (e.currentTarget as HTMLDivElement).style.boxShadow = '0 2px 12px 0 rgba(163,247,191,0.08)';
-                          (e.currentTarget as HTMLDivElement).style.border = '1.5px solid transparent';
-                        }}
                       >
-                        <h3 style={{ color: COLORS.white, fontSize: '1.1rem', fontWeight: 700, marginBottom: 8 }}>{lesson}</h3>
-                        <div style={{ color: COLORS.lightGrey, fontSize: 15, marginBottom: 12 }}>
-                          <span>XP: 30</span> &nbsp;|&nbsp;
-                          <span>Difficulty: Beginner</span>
-                        </div>
-                        <div style={{ color: COLORS.lightGrey, fontSize: 14, marginBottom: 18 }}>
-                          Duration: {duration} min
+                        <h3 className="text-lg font-bold mb-3">{lesson}</h3>
+                        <div className="text-gray-400 text-sm flex items-center justify-between">
+                          <div className="flex items-center">
+                            <Star size={16} className="mr-2 text-yellow-400" />
+                            <span>Beginner</span>
+                          </div>
+                          <div className="flex items-center">
+                            <Clock size={16} className="mr-2" />
+                            <span>{duration} min</span>
+                          </div>
                         </div>
                       </div>
                     );
