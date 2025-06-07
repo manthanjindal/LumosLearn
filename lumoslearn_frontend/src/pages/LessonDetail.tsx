@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { lessonsByTopic } from './Lessons';
 import { useLanguage } from '../contexts/LanguageContext';
+import QuizResult from '../components/QuizResult';
 
 interface QuizQuestion {
   question: string;
@@ -150,35 +151,21 @@ const LessonDetail: React.FC = () => {
 
   const renderQuizContent = () => {
     if (quizCompleted) {
-      const incorrectAnswers = displayQuiz?.map((q, i) => q.answer === userAnswers[i] ? -1 : i).filter(i => i !== -1) ?? [];
+      const incorrectAnswers = displayQuiz
+        ?.map((q, i) => (q.answer === userAnswers[i] ? null : {
+          question: q.question,
+          correctAnswer: q.options[q.answer],
+        }))
+        .filter((item): item is { question: string; correctAnswer: string } => item !== null) ?? [];
+
       return (
-        <div>
-          <h3 className="text-2xl text-white mb-4">{t('lesson.quiz.resultTitle')}</h3>
-          <p className="text-xl mb-6">
-            {t('lesson.quiz.score').replace('{score}', String(score)).replace('{total}', String(displayQuiz?.length ?? 0))}
-          </p>
-          {incorrectAnswers.length > 0 && (
-            <div className="mb-6">
-              <h4 className="text-lg font-bold text-white mb-2">{t('lesson.quiz.reviewTitle')}</h4>
-              <ul>
-                {incorrectAnswers.map((qIndex) => (
-                  <li key={qIndex} className="mb-4 p-4 bg-gray-700/50 rounded-lg">
-                    <p className="font-semibold">{displayQuiz?.[qIndex].question}</p>
-                    <p className="text-green-400 mt-2">
-                      {t('lesson.quiz.correctAnswer')}: {displayQuiz?.[qIndex].options[displayQuiz?.[qIndex].answer ?? 0]}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          <button
-            onClick={resetQuiz}
-            className="px-8 py-3 bg-gradient-to-r from-[#38BDF8] to-[#34D399] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300"
-          >
-            {t('lesson.quiz.tryAgain')}
-          </button>
-        </div>
+        <QuizResult
+          score={score}
+          total={displayQuiz?.length ?? 0}
+          incorrectAnswers={incorrectAnswers}
+          onRetry={resetQuiz}
+          t={t}
+        />
       );
     }
 
