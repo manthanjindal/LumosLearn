@@ -88,7 +88,7 @@ const Home: React.FC = () => {
         </div>
 
         <div 
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer"
+          className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer"
           onClick={scrollToFeatures}
         >
           <ChevronDown size={32} className="text-gray-500" />
