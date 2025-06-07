@@ -4,11 +4,17 @@
 
 
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Clock, Brain, Code } from 'lucide-react';
 
 const Home: React.FC = () => {
+  const featuresRef = useRef<HTMLDivElement>(null);
+
+  const scrollToFeatures = () => {
+    featuresRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="bg-[#0D1117] text-white min-h-screen">
       {/* Hero Section */}
@@ -81,12 +87,15 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+        <div 
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer"
+          onClick={scrollToFeatures}
+        >
           <ChevronDown size={32} className="text-gray-500" />
         </div>
       </section>
 
-      <section className="py-24 bg-[#0D1117]">
+      <section ref={featuresRef} className="py-24 bg-[#0D1117]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">Unlock Your Potential</h2>
@@ -127,7 +136,7 @@ const Home: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-center items-center gap-16 md:gap-24 text-center">
             <div className="flex flex-col items-center">
-              <span className="text-4xl md:text-5xl font-bold">100+</span>
+              <span className="text-4xl md:text-5xl font-bold">10+</span>
               <span className="text-gray-400 mt-2">Learners</span>
             </div>
             <div className="flex flex-col items-center">
@@ -135,7 +144,7 @@ const Home: React.FC = () => {
               <span className="text-gray-400 mt-2">Avg. Rating</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="text-4xl md:text-5xl font-bold">100+</span>
+              <span className="text-4xl md:text-5xl font-bold">189</span>
               <span className="text-gray-400 mt-2">Micro-Lessons</span>
             </div>
           </div>
