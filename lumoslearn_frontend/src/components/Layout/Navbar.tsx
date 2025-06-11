@@ -4,7 +4,7 @@ import { Menu, X, Languages } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import ThemeToggle from './ThemeToggle';
 import { useTheme } from '../../contexts/ThemeContext';
-// import logo from '../../assets/logo.png';
+import logo from '../../assets/LOGO.png'; // <-- add this line
 
 const Navbar: React.FC = () => {
   const { language, setLanguage, translate } = useLanguage();
@@ -41,9 +41,12 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <div className="bg-white w-8 h-8 rounded-md flex items-center justify-center">
-                <span className="text-black text-xl font-bold">L</span>
-              </div>
+              <img
+                src={logo}
+                alt="LumosLearn Logo"
+                className="h-10 w-auto rounded-md bg-white p-1"
+                style={{ maxHeight: "40px" }}
+              />
               <span className="text-white text-xl font-semibold ml-2">LumosLearn</span>
             </Link>
           </div>
