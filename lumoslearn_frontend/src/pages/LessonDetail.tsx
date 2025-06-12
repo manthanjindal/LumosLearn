@@ -56,7 +56,7 @@ const LessonDetail: React.FC = () => {
         setLoading(false);
         return;
       }
-      
+
       const lessonTitle = (lessonsByTopic as { [key: string]: string[] })[topic]?.[idx];
       if (!lessonTitle) {
         setLoading(false);
@@ -99,7 +99,7 @@ const LessonDetail: React.FC = () => {
       setCurrentQ(currentQ + 1);
     }
   };
-  
+
   const handleFinishQuiz = () => {
     const displayQuiz = language === 'hi' && lesson?.quiz_hi ? lesson.quiz_hi : lesson?.quiz;
     if (!displayQuiz) return;
@@ -163,11 +163,10 @@ const LessonDetail: React.FC = () => {
           {displayTitle}
         </h1>
         <div className="prose prose-invert max-w-none mb-12 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: displayContent }} />
-        
+
         {displayQuiz && displayQuiz.length > 0 && (
           <div className="mt-12 p-8 bg-gray-800/30 rounded-2xl border border-gray-700">
             <h2 className="text-3xl font-bold text-white mb-6">{t('lesson.quiz.title')}</h2>
-            
             {quizCompleted ? (
               <QuizResult
                 score={score}
@@ -208,7 +207,14 @@ const LessonDetail: React.FC = () => {
                     <div className="mt-8 flex justify-end">
                       {isLastQuestion ? (
                         <button
-                          onClick={handleFinishQuiz}
+                          onClick={() => {
+                            // Only finish if all questions answered!
+                            if (userAnswers.every(ans => ans !== undefined)) {
+                              handleFinishQuiz();
+                            } else {
+                              toast.warn("Please answer all questions before submitting!");
+                            }
+                          }}
                           disabled={userAnswers[currentQ] === undefined}
                           className="px-8 py-3 bg-gradient-to-r from-[#34D399] to-[#38BDF8] text-white font-bold rounded-full shadow-lg hover:scale-105 transform transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
@@ -248,7 +254,7 @@ const LessonDetail: React.FC = () => {
           </button>
           <button
             onClick={handleNextLesson}
-            disabled={!topic || !(lessonsByTopic as { [key: string]: string[] })[topic] || idx >= (lessonsByTopic as { [key:string]: string[] })[topic].length - 1}
+            disabled={!topic || !(lessonsByTopic as { [key: string]: string[] })[topic] || idx >= (lessonsByTopic as { [key: string]: string[] })[topic].length - 1}
             className="px-6 py-2 bg-gray-800/50 text-white font-bold rounded-lg shadow-md hover:bg-gray-700/70 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {t('lesson.next')}
