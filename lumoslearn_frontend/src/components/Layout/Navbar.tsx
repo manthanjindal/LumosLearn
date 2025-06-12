@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom';
 import { Menu, X, Languages } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import ThemeToggle from './ThemeToggle';
-import { useTheme } from '../../contexts/ThemeContext';
-import logo from '../../assets/LOGO.png'; // <-- add this line
+import logo from '../../assets/LOGO.png'; // Adjust path if needed
+
 
 const Navbar: React.FC = () => {
   const { language, setLanguage, translate } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,14 +39,9 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
-              <img
-                src={logo}
-                alt="LumosLearn Logo"
-                className="h-10 w-auto rounded-md bg-white p-1"
-                style={{ maxHeight: "40px" }}
-              />
-              <span className="text-white text-xl font-semibold ml-2">LumosLearn</span>
+            <Link to="/" className="flex items-center gap-2">
+              <img src={logo} alt="LumosLearn Logo" className="h-10 w-10 object-contain rounded-xl shadow" />
+              <span className="font-extrabold text-2xl text-white">LumosLearn</span>
             </Link>
           </div>
 
