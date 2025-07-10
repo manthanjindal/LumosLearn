@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { AuthProvider } from './contexts/AuthContext';
@@ -18,36 +17,43 @@ import LessonDetail from './pages/LessonDetail';
 
 function App() {
   return (
-    <LanguageProvider>
-      <AuthProvider>
-        <UserProgressProvider>
-          <ThemeProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <AuthProvider>
+          <UserProgressProvider>
             <Router>
-              <Layout>
                 <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/ai-tutor" element={<AITutor />} />
+                  {/* Full-screen route without Layout */}
                   <Route path="/python" element={<PythonModule />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/register" element={<Register />} />
-                  <Route 
-                    path="/dashboard" 
-                    element={
-                      <ProtectedRoute>
-                        <Dashboard />
-                      </ProtectedRoute>
-                    } 
-                  />
-                  <Route path="/lessons" element={<Lessons />} />
-                  <Route path="/lessons/:topic/:lessonIndex" element={<LessonDetail />} />
-                  <Route path="*" element={<NotFound />} />
+                  
+                  {/* Routes with Layout */}
+                  <Route path="/*" element={
+                    <Layout>
+                      <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/ai-tutor" element={<AITutor />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route 
+                          path="/dashboard" 
+                          element={
+                            <ProtectedRoute>
+                              <Dashboard />
+                            </ProtectedRoute>
+                          } 
+                        />
+                        <Route path="/lessons" element={<Lessons />} />
+                        <Route path="/lessons/:topic/:lessonIndex" element={<LessonDetail />} />
+                        <Route path="*" element={<NotFound />} />
+                      </Routes>
+                    </Layout>
+                  } />
                 </Routes>
-              </Layout>
-            </Router>
-          </ThemeProvider>
-        </UserProgressProvider>
-      </AuthProvider>
-    </LanguageProvider>
+              </Router>
+          </UserProgressProvider>
+        </AuthProvider>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 

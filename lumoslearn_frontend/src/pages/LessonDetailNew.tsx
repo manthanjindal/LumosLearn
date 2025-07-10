@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { lessonsByTopic } from './Lessons';
+import { getLessonsByTopic } from './Lessons';
 
 interface QuizQuestion {
   question: string;
@@ -46,7 +46,8 @@ const LessonDetailNew: React.FC = () => {
         return;
       }
       
-      const lessonTitle = lessonsByTopic[topic]?.[idx];
+      const topicLessons = getLessonsByTopic(topic);
+      const lessonTitle = topicLessons?.[idx];
 
       if (!lessonTitle) {
         setLesson(null);
@@ -127,7 +128,8 @@ const LessonDetailNew: React.FC = () => {
 
   const handleNextLesson = () => {
     const nextLessonIndex = idx + 1;
-    if (topic && nextLessonIndex < lessonsByTopic[topic].length) {
+    const topicLessons = getLessonsByTopic(topic!);
+    if (topic && nextLessonIndex < topicLessons.length) {
       navigate(`/lessons/${topic}/${nextLessonIndex}`);
     }
   };
@@ -201,9 +203,9 @@ const LessonDetailNew: React.FC = () => {
           </button>
           <button
             onClick={handleNextLesson}
-            disabled={!topic || idx >= lessonsByTopic[topic].length - 1}
+            disabled={!topic || idx >= getLessonsByTopic(topic).length - 1}
             style={{ backgroundColor: COLORS.lessonCard }}
-            className={`font-bold py-2 px-6 rounded-lg ${!topic || idx >= lessonsByTopic[topic].length - 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`font-bold py-2 px-6 rounded-lg ${!topic || idx >= getLessonsByTopic(topic).length - 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             Next
           </button>
