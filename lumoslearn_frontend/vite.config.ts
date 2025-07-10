@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['pyodide', 'framer-motion']
+      external: ['pyodide', 'framer-motion', 'gsap']
     }
   },
   optimizeDeps: {
