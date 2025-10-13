@@ -1,0 +1,36 @@
+{
+  "title": "Types of AI: Narrow, General, Super",
+  "content": "Artificial Intelligence can be broadly categorized into three main types based on its capabilities and level of intelligence relative to humans. Understanding these distinctions is key to understanding the current state and future potential of AI.<br><br>\n    1.  <b>Artificial Narrow Intelligence (ANI)</b>: Also known as Weak AI, ANI is AI trained to perform a specific task. It is the only type of AI that currently exists. ANI systems are very good at the particular task they are designed for, often exceeding human performance in that specific area, but they cannot perform tasks outside their domain. Examples include voice assistants (like Siri or Alexa), image recognition systems, recommendation engines, and spam filters.<br><br>\n    2.  <b>Artificial General Intelligence (AGI)</b>: Also known as Strong AI or Human-Level AI, AGI refers to AI that has the ability to understand, learn, and apply intelligence to solve any problem that a human can. AGI systems would possess cognitive abilities across a wide range of tasks, including reasoning, problem-solving, abstract thinking, and learning from experience, similar to human intelligence. AGI does not currently exist, although significant research efforts are directed towards achieving it.<br><br>\n    3.  <b>Artificial Super Intelligence (ASI)</b>: ASI is a hypothetical form of AI that would surpass human intelligence in virtually every field, including scientific creativity, general wisdom, and social skills. ASI would not only be able to perform any task a human can but would be vastly superior in cognitive capacity and speed. ASI remains a speculative concept, and its potential implications for humanity are a subject of much debate and discussion.<br><br>\n    The progression from ANI to AGI and then to ASI represents increasing levels of AI capability and autonomy. While ANI is our present reality, AGI and ASI are future possibilities with potentially profound impacts on society. Much of the current discussion and ethical consideration around AI revolves around the potential risks and benefits of developing AGI and ASI.",
+  "quiz": [
+    {
+      "question": "Which type of AI is the only one that currently exists and is trained for specific tasks?",
+      "options": [
+        "Artificial General Intelligence (AGI)",
+        "Artificial Super Intelligence (ASI)",
+        "Artificial Narrow Intelligence (ANI)",
+        "Strong AI"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What is the definition of Artificial General Intelligence (AGI)?",
+      "options": [
+        "AI that is faster than humans at a specific task",
+        "AI that can understand, learn, and apply intelligence across a wide range of tasks like a human",
+        "AI that surpasses human intelligence in all fields",
+        "AI used only in robots"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Artificial Super Intelligence (ASI) is characterized by:",
+      "options": [
+        "Can only perform tasks faster than humans",
+        "Is equal to human intelligence",
+        "Surpasses human intelligence in virtually every field",
+        "Is less intelligent than humans"
+      ],
+      "answer": 2
+    }
+  ]
+}

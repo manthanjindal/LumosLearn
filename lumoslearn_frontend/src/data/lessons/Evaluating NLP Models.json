@@ -1,0 +1,50 @@
+{
+  "title": "Evaluating NLP Models",
+  "content": "Evaluating Natural Language Processing (NLP) models is crucial to determine their effectiveness and reliability for specific tasks. Unlike some other AI domains, evaluating NLP can be complex due to the nuances and variability of human language. Both automatic metrics and human evaluation are often necessary.<br><br>\n    <b>Automatic Evaluation Metrics:</b> These metrics use algorithms to compare the model's output to a reference or ground truth. They are fast and objective but may not always capture the full quality of the output, especially for generative tasks.<br>\n    1.  <b>For Classification Tasks (e.g., Sentiment Analysis, Spam Detection):</b><br>\n        *   <b>Accuracy:</b> The proportion of correctly classified instances.<br>\n        *   <b>Precision:</b> Out of all instances the model predicted as positive, what proportion were actually positive.<br>\n        *   <b>Recall (Sensitivity):</b> Out of all actual positive instances, what proportion did the model correctly identify.<br>\n        *   <b>F1-Score:</b> The harmonic mean of precision and recall, providing a balance between the two.<br>\n        *   <b>Confusion Matrix:</b> A table summarizing the performance of a classification model, showing true positives, true negatives, false positives, and false negatives.<br>\n        *   <b>ROC-AUC:</b> Receiver Operating Characteristic - Area Under the Curve. Measures the ability of a binary classifier to distinguish between classes.<br><br>\n    2.  <b>For Generative Tasks (e.g., Machine Translation, Text Summarization, Text Generation):</b> Evaluating generated text is harder as there can be multiple valid outputs.<br>\n        *   <b>BLEU (Bilingual Evaluation Understudy):</b> Commonly used for machine translation. Measures the similarity of the generated text to one or more reference translations based on the overlap of n-grams (sequences of n words).<br>\n        *   <b>ROUGE (Recall-Oriented Understudy for Gisting Evaluation):</b> Commonly used for text summarization. Measures the overlap of n-grams, word sequences, and word pairs between the generated summary and reference summaries.<br>\n        *   <b>METEOR (Metric for Evaluation of Translation with Explicit ORdering):</b> Considers precision, recall, and how words are ordered. Includes stemming and synonymy.<br>\n        *   <b>Perplexity:</b> Measures how well a language model predicts a sample of text. Lower perplexity indicates a better model.<br><br>\n    <b>Human Evaluation:</b> This involves human judges assessing the quality of the NLP model's output. While more subjective and expensive, human evaluation is often necessary to capture nuances like fluency, coherence, relevance, and overall linguistic quality, especially for generative tasks where automatic metrics can be insufficient.<br>\n    *   Human judges can rate outputs based on criteria like fluency, adequacy (does it convey the meaning?), and quality.<br><br>\n    Choosing the right evaluation metric depends heavily on the specific NLP task and its goals. Often, a combination of automatic metrics and human evaluation provides the most comprehensive assessment of a model's performance.",
+  "quiz": [
+    {
+      "question": "Which automatic evaluation metric is commonly used for machine translation and measures n-gram overlap with reference translations?",
+      "options": [
+        "Accuracy",
+        "F1-Score",
+        "BLEU",
+        "Perplexity"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Why is Human Evaluation often considered the \"gold standard\" for generative NLP tasks?",
+      "options": [
+        "It is the fastest method",
+        "It is the cheapest method",
+        "It provides the most reliable assessment of linguistic quality, coherence, and relevance",
+        "It is the only automated method"
+      ],
+      "answer": 2
+    }
+  ],
+  "title_hi": "एनएलपी मॉडल का मूल्यांकन",
+  "content_hi": "प्राकृतिक भाषा प्रसंस्करण (एनएलपी) मॉडल का मूल्यांकन विशिष्ट कार्यों के लिए उनकी प्रभावशीलता और विश्वसनीयता निर्धारित करने के लिए महत्वपूर्ण है। कुछ अन्य एआई डोमेन के विपरीत, एनएलपी का मूल्यांकन मानव भाषा की बारीकियों और परिवर्तनशीलता के कारण जटिल हो सकता है। दोनों स्वचालित मैट्रिक्स और मा���व मूल्यांकन अक्सर आवश्यक होते हैं। <br> <br> \n<b> स्वचालित मूल्यांकन मेट्रिक्स: </b> ये मैट्रिक्स मॉडल के आउटपुट की तुलना एक संदर्भ या जमीनी सत्य से करने के लिए एल्गोरिदम का उपयोग करते हैं। वे तेज और उद्देश्यपूर्ण हैं, लेकिन हमेशा आउटपुट की पूरी गुणवत्ता पर कब्जा नहीं कर सकते हैं, विशेष रूप से सामान्य कार्यों के लिए। <br> \n1। <b> वर्गीकरण कार्यों के लिए (जैसे, भावना विश्लेषण, स्पैम का पता ���गाना): </b> <br> \n* <b> सटीकता: </b> सही ढंग से वर्गीकृत उदाहरणों का अनुपात। <br> \n* <b> परिशुद्धता: </b> सभी उदाहरणों में से मॉडल सकारात्मक के रूप में भविष्यवाणी की गई थी, वास्तव में सकारात्मक क्या अनुपात थे। <br> \n* <b> रिकॉल (संवेदनशीलता): </b> सभी वास्तविक सकारात्मक उदाहरणों में से, मॉडल ने किस अनुपात को सही ढंग से पहचान लिया। <br> \n* <b> f1-score: </b> सटीकता और याद का हार्मोनिक मतलब, दोनों के बीच एक संतुलन प्रदान करता है। <br> \n* <b> भ्रम मैट्रिक्स: </b> एक तालिका एक वर्गीकरण मॉडल के प्रदर्शन को सारांशित करती है, जो सही सकारात्मकता, सच्ची नकारात्मक, झूठी सकारात्मकता और झूठी नकारात्मक दिखाती है। <br> \n* <b> roc -auc: </b> रिसीवर ऑपरेटिंग विशेषता - वक्र के तहत क्षेत्र। कक्षाओं के बीच अंतर करने के लिए एक द्विआधारी क्लासिफायर की क्षमता को मापता है। <br> <br> \n2। <b> जनरेटिव कार्यों के लिए (जैसे, मशीन अनुवाद, पाठ सारांश, पाठ पीढ़ी): </b> उत्पन्न पाठ का मूल्यांकन कठिन है क्योंकि कई मान्य आउटपुट हो सकते हैं। <br> <br> \n* <b> BLEU (द्विभाषी मूल्यांकन समझ): </b> आमतौर पर मशीन अनुवाद के लिए उपयोग किया जाता है। एन-ग्राम (एन शब्दों के अनुक्रम) के ओवरलैप के आ��ार पर एक या एक से अधिक संदर्भ अनुवादों के लिए उत्पन्न पाठ की समानता को मापता है। <br> \n* <b> रूज (गिस्टिंग मूल्यांकन के लिए याद-उन्मुख समझ): </b> आमतौर पर पाठ सारांश के लिए उपयोग किया जाता है। उत्पन्न सारांश और संदर्भ सारांश के बीच एन-ग्राम, शब्द अनुक्रम और शब्द जोड़े के ओवरलैप को मापता है। <br> \n* <b> उल्का (स्पष्ट आदेश के साथ अनुवाद के मूल्यांकन के लिए मीट्रिक): </b> सटीकता, याद क���ते हैं, और शब्दों का आदेश कैसे दिया जाता है। स्टेमिंग और पर्यायवाची शामिल हैं। <br> \n* <b> perplexity: </b> मापता है कि भाषा मॉडल कितनी अच्छी तरह से पाठ के नमूने की भविष्यवाणी करता है। कम perplexity एक बेहतर मॉडल को इंगित करता है। <br> <br> \n<b> मानव मूल्यांकन: </b> इसमें मानव न्यायाधीश शामिल हैं जो एनएलपी मॉडल के आउटपुट की गुणवत्ता का आकलन करते हैं। जबकि अधिक व्यक्तिपरक और महंगा है, मानव मूल्यांकन अक्सर प्रवाह, सुसंगतता, प्रासंगिकता, और समग्र भाषाई गुणवत्ता जैसे बारीकियों को पकड़ने के लिए आवश्यक है, विशेष रूप से सामान्य कार्यों के लिए जहां स्वचालित मैट्रिक्स अपर्याप्त हो सकते हैं। <br> <br> \n* मानव न्यायाधीश प्रवाह, पर्याप्तता जैसे मानदंडों के आधार पर आउटपुट की दर कर सकते हैं (क्या यह अर्थ को व्यक्त करता है?), और गुणवत्ता। <br> <br> <br> \nसही मूल्यांकन मीट्रिक चुनना विशिष्ट एनएलपी कार्य और उसके लक्ष्यों पर बहुत अधिक निर्भर करता है। अक्सर, स्वचालित मैट्रिक्स और मानव मूल्यांकन का एक संयोजन एक मॉडल के प्रदर्शन का सबसे व्यापक मूल्यांकन प्रदान करता है।",
+  "quiz_hi": [
+    {
+      "question": "कौन सा स्वचालित मूल्यांकन मीट्रिक आमतौर पर मशीन अनुवाद के लिए उपयोग किया जाता है और संदर्भ अनुवादों के साथ एन-ग्राम ओवरलैप को मापता है?",
+      "options": [
+        "शुद्धता",
+        "एफ 1 स्कोर",
+        "ब्लू",
+        "विकलता"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "क्यों मानव मूल्यांकन को अक्सर सामान्य एनएलपी कार्यों के लिए \"सोने का मानक\" माना जाता है?",
+      "options": [
+        "यह सबसे तेज विधि है",
+        "यह सबसे सस्ता तरीका है",
+        "यह भाषाई गुणवत्ता, सुसंगतता और प्रासंगिकता का सबसे विश्वसनीय मूल्यांकन प्रदान करता है",
+        "यह एकमात्र स्वचालित विधि है"
+      ],
+      "answer": 2
+    }
+  ]
+}

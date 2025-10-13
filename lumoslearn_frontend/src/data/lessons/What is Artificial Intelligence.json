@@ -1,0 +1,36 @@
+{
+  "title": "What is Artificial Intelligence?",
+  "content": "<b>Artificial Intelligence (AI)</b> is the <span style=\"color:#A3F7BF\"><b>simulation of human intelligence processes by machines</b></span>, especially computer systems. These processes include <span style=\"color:#A3F7BF\"><b>learning</b></span> (the acquisition of information and rules for using the information), <span style=\"color:#A3F7BF\"><b>reasoning</b></span> (using rules to reach approximate or definite conclusions), and <span style=\"color:#A3F7BF\"><b>self-correction</b></span>.<br><br>\n    Think of AI as creating computer programs that can \"think\" and learn like humans. While the ultimate goal of creating machines with human-level intelligence across all tasks (known as Artificial General Intelligence or AGI) is still a future prospect, <span style=\"color:#A3F7BF\"><b>Narrow AI (or Weak AI)</b></span> is already prevalent. Narrow AI is designed to perform a specific task (e.g., facial recognition, voice assistants, playing chess) extremely well.<br><br>\n    AI systems work by processing large amounts of data to identify patterns and make decisions or predictions. This often involves using sophisticated algorithms and models, particularly from the field of <span style=\"color:#A3F7BF\"><b>Machine Learning</b></span>. The more data an AI system is trained on, the better it can become at recognizing patterns and making accurate predictions.<br><br>\n    <span style=\"color:#A3F7BF\"><b>Key Components of AI:</b></span><br>\n    *   <b>Machine Learning:</b> Algorithms that allow computers to learn from data without being explicitly programmed.<br>\n    *   <b>Deep Learning:</b> A subset of machine learning that uses artificial neural networks with multiple layers.<br>\n    *   <b>Natural Language Processing (NLP):</b> Enables computers to understand, interpret, and generate human language.<br>\n    *   <b>Computer Vision:</b> Allows computers to \"see\" and interpret visual information from images and videos.<br>\n    *   <b>Robotics:</b> Involves creating robots that can perform tasks, often incorporating AI for decision-making and perception.<br><br>\n    Understanding AI is becoming increasingly important as it continues to integrate into various aspects of our lives and industries. It's a field that is constantly evolving, offering exciting opportunities and challenges.",
+  "quiz": [
+    {
+      "question": "What is the primary definition of Artificial Intelligence?",
+      "options": [
+        "Building robots that can walk and talk",
+        "Creating computer systems that simulate human intelligence processes like learning and reasoning",
+        "Designing faster computer processors",
+        "Storing large amounts of data"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which type of AI is designed to perform a specific task extremely well and is common today?",
+      "options": [
+        "Artificial General Intelligence (AGI)",
+        "Artificial Super Intelligence (ASI)",
+        "Narrow AI (Weak AI)",
+        "Artificial Narrow Intelligence (ANI)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "Which field is a subset of AI that involves algorithms allowing computers to learn from data?",
+      "options": [
+        "Robotics",
+        "Computer Vision",
+        "Natural Language Processing",
+        "Machine Learning"
+      ],
+      "answer": 3
+    }
+  ]
+}

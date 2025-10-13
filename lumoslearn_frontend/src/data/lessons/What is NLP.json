@@ -1,0 +1,36 @@
+{
+  "title": "What is NLP?",
+  "content": "<b>Natural Language Processing (NLP)</b> is a subfield of artificial intelligence (AI) that focuses on enabling computers to <span style=\"color:#A3F7BF\">understand, interpret, and generate human language</span> in a way that is both meaningful and useful. It combines computational linguistics (rule-based modeling of human language) with statistical, machine learning, and deep learning models.<br><br>The ultimate goal of NLP is to bridge the gap between human communication and computer understanding, allowing machines to process and analyze large amounts of natural language data.<br><br>Key challenges in NLP include:<br><i>1. <b>Ambiguity:</b></i> Words and sentences can have multiple meanings depending on context (e.g., \"bank\" can mean a financial institution or the side of a river).<br><i>2. <b>Variability:</b></i> Human language is incredibly diverse in terms of grammar, vocabulary, and style.<br><i>3. <b>Contextual Understanding:</b></i> Machines need to understand not just individual words but also the context in which they are used.<br><i>4. <b>Idioms and Sarcasm:</b></i> Figurative language is difficult for machines to interpret literally.<br><br>Applications of NLP are ubiquitous in modern technology:<br><i>1. <b>Machine Translation:</b></i> Translating text or speech from one language to another (e.g., Google Translate).<br><i>2. <b>Sentiment Analysis:</b></i> Determining the emotional tone behind a piece of text (e.g., positive, negative, neutral).<br><i>3. <b>Spam Detection:</b></i> Identifying and filtering unwanted emails.<br><i>4. <b>Chatbots and Virtual Assistants:</b></i> Enabling natural language interaction with users (e.g., Siri, Alexa).<br><i>5. <b>Text Summarization:</b></i> Creating concise summaries of longer documents.<br><i>6. <b>Speech Recognition:</b></i> Converting spoken language into text.<br><br>NLP techniques range from rule-based systems and statistical methods to advanced deep learning models like Recurrent Neural Networks (RNNs), Convolutional Neural Networks (CNNs), and especially Transformers, which have revolutionized the field.",
+  "quiz": [
+    {
+      "question": "What is the primary goal of Natural Language Processing (NLP)?",
+      "options": [
+        "To create realistic computer graphics",
+        "To enable computers to understand, interpret, and generate human language",
+        "To design efficient database systems",
+        "To control robotic movements"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following is a common challenge in NLP?",
+      "options": [
+        "Predicting numerical sequences",
+        "Understanding ambiguity in language",
+        "Optimizing image compression",
+        "Generating random numbers"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which deep learning architecture has significantly impacted modern NLP, particularly for tasks like machine translation and text generation?",
+      "options": [
+        "Multilayer Perceptron",
+        "Support Vector Machine",
+        "Transformer",
+        "K-Nearest Neighbors"
+      ],
+      "answer": 2
+    }
+  ]
+}

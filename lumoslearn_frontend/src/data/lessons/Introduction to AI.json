@@ -1,0 +1,70 @@
+{
+  "title": "Introduction to AI",
+  "content": "<b>Artificial Intelligence (AI)</b> is the <span style=\"color:#A3F7BF\"><b>science and engineering</b></span> of creating machines that can perform tasks that typically require <b>human intelligence</b>. These tasks include <b>learning</b>, <b>reasoning</b>, <b>problem-solving</b>, <b>perception</b>, and <b>language understanding</b>.<br><br><i>Imagine a world where your phone understands your voice, your car drives itself, and your favorite apps recommend exactly what you want to watch or listen to!</i> That's AI in action.<br><br><b>AI is everywhere:</b> From the <span style=\"color:#A3F7BF\">voice assistants</span> in our phones to the <span style=\"color:#A3F7BF\">recommendation systems</span> on streaming platforms, AI is making life easier, smarter, and more fun.<br><br>The field of AI combines <b>computer science</b>, <b>mathematics</b>, <b>psychology</b>, and more to build systems that can <b>adapt and improve over time</b>. As technology advances, AI is becoming an <b>essential part of our daily lives</b>, helping us work more efficiently, make better decisions, and even entertain ourselves.<br><br><span style=\"color:#A3F7BF\"><b>Fun Fact:</b></span> Did you know that AI can beat world chess champions, but it still can't fold your laundry? <i>Yet!</i><br><br><b>Why learn AI?</b> Understanding AI is crucial for anyone interested in the <span style=\"color:#A3F7BF\">future of technology</span>, as it continues to shape the way we live and interact with the world. <i>Are you ready to explore the amazing world of AI?</i>",
+  "quiz": [
+    {
+      "question": "What is the main goal of Artificial Intelligence?",
+      "options": [
+        "To create machines that can perform tasks requiring human intelligence",
+        "To make computers run faster",
+        "To replace all human jobs",
+        "To build only robots"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Which of the following is an example of AI in daily life?",
+      "options": [
+        "Using a calculator",
+        "Unlocking your phone with your face",
+        "Reading a book",
+        "Riding a bicycle"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "AI combines which of the following fields?",
+      "options": [
+        "Computer Science",
+        "Mathematics",
+        "Psychology",
+        "All of the above"
+      ],
+      "answer": 3
+    }
+  ],
+  "title_hi": "एआई का परिचय",
+  "content_hi": "<b> आर्टिफिशियल इंटेलिजेंस (एआई) </b> <स्पैन स्टाइल = \"रंग:#a3f7bf\"> <b> साइंस एंड इंजीनियरिंग </b> </span> ऐसी मशीनों का निर्माण कर सक���ा है जो आमतौर पर <b> मानव खुफिया </b> की आवश्यकता होती हैं। इन कार्यों में <b> लर्निंग </b>, <b> तर्क </b>, <b> समस्या-समाधान </b>, <b> धारणा </b>, और <b> भाषा की समझ </b> शामिल हैं। एक्शन। <br> <br> <b> एआई हर जगह है: </b> </b> से <स्पैन स्टाइल = \"रंग:#a3f7bf\"> वॉयस असिस्टेंट </span> हमारे फोन में <span style = \"color:#a3f7bf\"> सिफारिश सिस्टम </span> स्ट्रीमिंग प्लेटफार्मों पर विज्ञान </b>, <b> गणित </b>, <b> मनोविज्ञान </b>, और अधिक सिस्टम बनाने के लिए जो <b> समय के साथ अनुकूलन और सुधार कर सकते हैं </b>। जैसा कि प्रौद्योगिकी आगे बढ���ती है, एआई हमारे दैनिक जीवन का एक <b> आवश्यक हिस्सा बन रहा है </b>, हमें अधिक कुशलता से काम करने में मदद करने, बेहतर निर्णय लेने, और यहां तक ​​कि खुद का मनोरंजन करने में मदद करता है। <br> <br> <स्पैन स्टाइल = \"रंग:#A3F7BF\" <i> अभी तक! </i> <br> <br> <b> क्यों सीखें एआई? <i> क्या आप एआई की अद्भुत दुनिया का पता लगाने के लिए तैयार हैं? </i>",
+  "quiz_hi": [
+    {
+      "question": "कृत्रिम बुद्धिमत्ता का मुख्य लक्ष्य क्या है?",
+      "options": [
+        "ऐसी मशीनें बनाने के लिए जो मानव बुद्धिमत्ता की आवश्यकता वाले कार्यों को कर सकते हैं",
+        "कंप्यूटर को तेजी से चलाने के लिए",
+        "सभी मानव नौकरियों को बदलने के लिए",
+        "केवल रोबोट बनाने के लिए"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "निम्नलिखित में से कौन दैनिक जीवन में AI का एक उदाहरण है?",
+      "options": [
+        "एक कैलकुलेटर का उपयोग करना",
+        "अपने चेहरे से अपने फोन को अनलॉक करना",
+        "किताब पढ़ें",
+        "एक साइकिल की सवारी"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "AI निम्नलिखित में से किस क्षेत्रों को जोड़ती है?",
+      "options": [
+        "कंप्यूटर विज्ञान",
+        "अंक शास्त्र",
+        "मनोविज्ञान",
+        "ऊपर के सभी"
+      ],
+      "answer": 3
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "title": "Backward Propagation",
+  "content": "<b>Backward propagation</b> (or backpropagation) is the algorithm that allows neural networks to learn by efficiently calculating the <span style=\"color:#A3F7BF\">gradients of the loss function</span> with respect to the network's weights and biases.<br><br>After a forward pass computes the output and the loss, backpropagation works by propagating the error backwards from the output layer through the hidden layers to the input layer. It uses the <span style=\"color:#A3F7BF\">chain rule of calculus</span> to determine how much each weight and bias contributed to the overall error.<br><br>The calculated gradients indicate the direction and magnitude by which the weights and biases should be adjusted to minimize the loss. This process is iterative: forward pass, calculate loss, backward pass (calculate gradients), and then <span style=\"color:#A3F7BF\">update the parameters</span> using an optimizer. Backpropagation is fundamental to training most deep neural networks.",
+  "quiz": [
+    {
+      "question": "What is the primary purpose of backward propagation?",
+      "options": [
+        "To feed input data forward",
+        "To calculate gradients of the loss function",
+        "To activate neurons",
+        "To initialize network weights"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which mathematical rule is fundamental to backpropagation?",
+      "options": [
+        "Pythagorean theorem",
+        "Chain rule of calculus",
+        "Newton's laws",
+        "Law of cosines"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What happens to the network's parameters (weights and biases) after gradients are calculated in backpropagation?",
+      "options": [
+        "They are randomly reinitialized",
+        "They remain unchanged",
+        "They are adjusted to minimize the loss",
+        "They are removed from the network"
+      ],
+      "answer": 2
+    }
+  ],
+  "title_hi": "पिछड़े प्रसार",
+  "content_hi": "> इनपुट परत के लिए छिपी हुई परतें। यह <स्पैन स्टाइल = \"रंग:#a3f7bf\"> चेन रूल ऑफ कैलकुलस </span> का उपयोग करता है, यह निर्धारित करने के लिए कि प्रत्येक वजन और पूर्वाग्रह ने समग्र त्रुटि में कितना योगदान दिया। यह प्रक्रिया पुनरावृत्ति है: फॉरवर्ड पास, लॉस की गणना करें, बैकवर्ड पास (ग्रेडिएंट्स की गणना करें), और फिर <स्पैन स्टाइल = \"रंग:#A3F7BF\"> एक ऑप्टिमाइज़र का उपयोग करके पैरामीटर </स्पैन> अपडेट करें। बैकप्रोपैगेशन सबसे गहरे तंत्रिका नेटवर्क को प्रशिक्षित करने के लिए मौलिक है।",
+  "quiz_hi": [
+    {
+      "question": "पिछड़े प्रसार का प्राथमिक उद्देश्य क्या है?",
+      "options": [
+        "इनपुट डेटा को फ़ीड करने के लिए",
+        "हानि समारोह के ग्रेडिएंट की गणना करने के लिए",
+        "न्यूरॉन्स को सक्रिय करने के लिए",
+        "नेटवर्क वेट इनिशियलाइज़ करने के लिए"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "कौन सा गणितीय नियम बैकप्रोपैगेशन के लिए मौलिक है?",
+      "options": [
+        "पाइथागोरस प्रमेय",
+        "कैलकुलस की श्रृंखला नियम",
+        "न्यूटन के कानून",
+        "कोसाइन का नियम"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "बैकप्रोपैगेशन में गणना की जाती है कि ग्रेडिएंट्स की गणना के बाद नेटवर्क के मापदंडों (वजन और पूर्वाग्रह) का क्या होता है?",
+      "options": [
+        "वे यादृच्छिक रूप से पुनर्निवेशित हैं",
+        "वे अपरिवर्तित रहते हैं",
+        "उन्हें नुकसान को कम करने के लिए समायोजित किया जाता है",
+        "उन्हें नेटवर्क से हटा दिया जाता है"
+      ],
+      "answer": 2
+    }
+  ]
+}

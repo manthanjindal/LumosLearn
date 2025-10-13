@@ -1,0 +1,50 @@
+{
+  "title": "Feature Engineering",
+  "content": "<b>Feature Engineering</b> is the art and science of creating new features from existing data to improve model performance. It requires domain knowledge and creativity to extract meaningful signals that can help your model make better predictions. This is often one of the most impactful parts of the machine learning workflow.<br><br>For example, if you have a dataset of customer transactions, you could create new features like \"average purchase value,\" \"purchase frequency,\" or \"time since last purchase.\" These engineered features can provide valuable insights that are not immediately obvious from the raw data.<br><br>Common feature engineering techniques include:<br><i>1. <b>Creating Interaction Terms:</b></i> Combining two or more features to capture their interaction.<br><i>2. <b>Binning:</b></i> Converting continuous numerical data into categorical bins.<br><i>3. <b>Transformations:</b></i> Applying mathematical functions like log or square root to a feature to change its distribution.<br><i>4. <b>Encoding Categorical Variables:</b></i> Converting text-based categories into numerical format using techniques like one-hot encoding.",
+  "quiz": [
+    {
+      "question": "What is the primary goal of feature engineering?",
+      "options": [
+        "To reduce the number of features",
+        "To make the data harder to understand",
+        "To create new, more informative features",
+        "To collect more raw data"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "What is one-hot encoding used for?",
+      "options": [
+        "Handling missing values",
+        "Converting categorical variables into a numerical format",
+        "Reducing the dimensionality of data",
+        "Normalizing numerical data"
+      ],
+      "answer": 1
+    }
+  ],
+  "title_hi": "फ़ीचर इंजीनियरिंग",
+  "content_hi": "<b> फीचर इंजीनियरिंग </b> मॉडल प्रदर्शन में सुधार करने के लिए मौजूदा डेटा से नई सुविधाओं को बनाने की कला और विज्ञान है। सार्थक संकेतों को निकालने के लिए डोमेन ज्ञान और रचनात्मकता की आवश्यकता होती है जो आपके मॉडल को बेहतर भविष्यवाणियां करने में मदद कर सकते हैं। यह अक्सर मशीन लर्निंग वर्कफ़्लो के सबसे प्र��ावशाली भागों में से एक है। <br> <br> उदाहरण के लिए, यदि आपके पास ग्राहक लेनदेन का एक डेटासेट है, तो आप \"औसत खरीद मूल्य,\" \"खरीद आवृत्ति,\" या \"अंतिम खरीद के बाद से समय\" जैसी नई सुविधाएँ बना सकते हैं। ये इंजीनियर सुविधाएँ मूल्यवान अंतर्दृष्टि प्रदान कर सकती हैं जो कच्चे डेटा से तुरंत स्पष्ट नहीं हैं। <br> <br> सामान्य फीचर इंजीनियरिंग तकनीकों में शामिल हैं: <br> <i> 1। <b> इंटरैक्शन की शर्तें बनाना: </b> </i> उनकी इंटरैक्शन को कैप्चर करने के लिए दो या अधिक सुविधाओं का संयोजन। <br> <i> 2। <b> बिनिंग: </b> </i> निरंतर संख्यात्मक डेटा को श्रेणीबद्ध डिब्बे में परिवर्तित करना। <br> <i> 3। <b> परिवर्तन: </b> </i> इसके वितरण को बदलने के लिए किसी सुविधा के लिए लॉग या स्क्वायर रूट जैसे गणितीय कार्यों को लागू करना। <br> <i> 4। <b> एन्कोडिंग श्रेणीबद्ध चर: </b> </i> एक-हॉट एन्कोडिंग जैसी तकनीकों का उपयोग करके पाठ-आधारित श्रेणियों को संख्यात्मक प्रारूप में परिवर्तित करना।",
+  "quiz_hi": [
+    {
+      "question": "फीचर इंजीनियरिंग का प्राथमिक लक्ष्य क्या है?",
+      "options": [
+        "सुविधाओं की संख्या को कम करने के लिए",
+        "डेटा को समझने के लिए कठिन बनाना",
+        "नई, अधिक जानकारीपूर्ण विशेषताएं बनाने के लिए",
+        "अधिक कच्चे डेटा एकत्र करने के लिए"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "एक-गर्म एन्कोडिंग के लिए किसके लिए उपयोग किया जाता है?",
+      "options": [
+        "लापता मूल्यों को संभालना",
+        "श्रेणीबद्ध चर को एक संख्यात्मक प्रारूप में परिवर्तित करना",
+        "डेटा की आयामीता को कम करना",
+        "संख्यात्मक डेटा को सामान्य करना"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black dark:bg-black text-base-900 dark:text-base-100 antialiased font-sans;
+    /* Increase accent brightness by ~25% */
+    background-image: radial-gradient(60rem 40rem at 50% -10%, rgba(59,130,246,0.19), transparent 60%),
+      radial-gradient(50rem 30rem at 80% 10%, rgba(236,72,153,0.15), transparent 60%),
+      radial-gradient(40rem 20rem at 10% 0%, rgba(168,85,247,0.125), transparent 60%);
+    background-attachment: fixed;
+  }
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+.text-shadow-lg {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow-md {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pixel-border {
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-repeat: stretch;
+  border-image-source: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAZSURBVHjaYmBgYPgPxAwgwMSABAYGBgAAAAD//wMADIwDqYWf58IAAAAASUVORK5CYII=');
+}
+
+.font-sora {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+}
+
+.font-manrope {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+/* Minimal grain overlay */
+.grain-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' opacity='.035'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  animation: grain-shift 8s steps(10) infinite;
+  z-index: 1;
+}
+
+/* Utility for big display headings */
+.display-heading {
+  @apply font-display tracking-tight leading-[0.95];
+}
