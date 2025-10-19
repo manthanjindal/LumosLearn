@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import gsap from 'gsap'
+import { gsap } from 'gsap'
 // import { cn } from '@/lib/utils'
 // Temporary fix: define a simple cn utility here
 function cn(...classes: (string | undefined | false | null)[]) {
@@ -14,6 +14,8 @@ interface GlassCardProps {
   hover?: 'lift' | 'glow' | 'tilt' | 'magnetic'
   blur?: 'sm' | 'md' | 'lg' | 'xl'
   onClick?: () => void
+  // When set to 'mono', remove colorful overlays/sparkles to match a monochrome theme
+  tone?: 'color' | 'mono'
 }
 
 const GlassCard: React.FC<GlassCardProps> = ({
@@ -22,7 +24,8 @@ const GlassCard: React.FC<GlassCardProps> = ({
   variant = 'default',
   hover = 'lift',
   blur = 'md',
-  onClick
+  onClick,
+  tone = 'color'
 }) => {
   const cardRef = useRef<HTMLDivElement>(null)
 
@@ -36,7 +39,6 @@ const GlassCard: React.FC<GlassCardProps> = ({
       const x = e.clientX - rect.left - rect.width / 2
       const y = e.clientY - rect.top - rect.height / 2
       
-      // @ts-expect-error gsap's type definitions do not include 'to' on the default import, but it works at runtime
       gsap.to(card, {
         x: x * 0.1,
         y: y * 0.1,
@@ -47,7 +49,6 @@ const GlassCard: React.FC<GlassCardProps> = ({
     }
 
     const handleMouseLeave = () => {
-      // @ts-expect-error gsap's type definitions do not include 'to' on the default import, but it works at runtime
       gsap.to(card, {
         x: 0,
         y: 0,
@@ -81,8 +82,12 @@ const GlassCard: React.FC<GlassCardProps> = ({
   }
 
   const hoverEffects = {
-    lift: "hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-blue-500/25",
-    glow: "hover:shadow-2xl hover:shadow-blue-500/30 hover:border-blue-400/50",
+    lift: tone === 'mono'
+      ? "hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-white/10"
+      : "hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-blue-500/25",
+    glow: tone === 'mono'
+      ? "hover:shadow-2xl hover:shadow-white/10 hover:border-white/40"
+      : "hover:shadow-2xl hover:shadow-blue-500/30 hover:border-blue-400/50",
     tilt: "hover:rotate-1 hover:scale-105",
     magnetic: "" // Handled by useEffect
   }
@@ -104,21 +109,27 @@ const GlassCard: React.FC<GlassCardProps> = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
     >
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Animated background gradient (disabled in mono tone) */}
+      {tone !== 'mono' && (
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      )}
       
-      {/* Sparkle effect */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-2 -right-2 w-4 h-4 bg-white/30 rounded-full animate-ping" />
-        <div className="absolute top-1/4 -left-1 w-2 h-2 bg-blue-400/40 rounded-full animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-purple-400/30 rounded-full animate-bounce" />
-      </div>
+      {/* Sparkle effect (disabled in mono tone) */}
+      {tone !== 'mono' && (
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-2 -right-2 w-4 h-4 bg-white/30 rounded-full animate-ping" />
+          <div className="absolute top-1/4 -left-1 w-2 h-2 bg-blue-400/40 rounded-full animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-purple-400/30 rounded-full animate-bounce" />
+        </div>
+      )}
       
-      {/* Border glow effect */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+      {/* Border glow effect (disabled in mono tone) */}
+      {tone !== 'mono' && (
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+      )}
       
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col h-full">
         {children}
       </div>
       

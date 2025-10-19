@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { SendHorizontal, Mic, MicOff, AlertCircle } from 'lucide-react';
+import { SendHorizontal, Mic, MicOff, BookOpen, HelpCircle, ClipboardList, GraduationCap, CalendarCheck, MessageSquare } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { sendChatMessage, checkBackendHealth } from '../utils/api';
+import GlassCard from '../components/ui/GlassCard';
 
 // Add these types at the top of the file for TypeScript support
 declare global {
@@ -34,6 +35,12 @@ interface Message {
   timestamp: Date;
 }
 
+interface HistoryItem {
+  id: string;
+  prompt: string;
+  time: string;
+}
+
 const getSpeechRecognition = () => {
   const Ctor = (window.SpeechRecognition || window.webkitSpeechRecognition) as
     | (new () => SpeechRecognitionType)
@@ -57,6 +64,22 @@ const AITutor: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef<SpeechRecognitionType | null>(null);
+  const [history, setHistory] = useState<HistoryItem[]>([]);
+
+  const quickPrompts: { label: string; text: string; icon: React.ReactNode }[] = [
+    { label: 'Homework help', text: 'Help me with this homework problem:', icon: <BookOpen className="w-4 h-4" /> },
+    { label: 'Explain topic', text: 'Explain this topic like I\'m new to it:', icon: <HelpCircle className="w-4 h-4" /> },
+    { label: 'Study plan', text: 'Create a 2-week study plan for:', icon: <ClipboardList className="w-4 h-4" /> },
+    { label: 'Quiz me', text: 'Quiz me with 5 questions on:', icon: <GraduationCap className="w-4 h-4" /> },
+    { label: 'Make schedule', text: 'Make a daily schedule to learn:', icon: <CalendarCheck className="w-4 h-4" /> },
+  ];
+
+  const featureTiles: { title: string; desc: string; icon: React.ReactNode }[] = [
+    { title: 'Explain concepts', desc: 'Clear, step-by-step explanations with examples.', icon: <HelpCircle className="w-5 h-5" /> },
+    { title: 'Generate quizzes', desc: 'Short quizzes to check your understanding.', icon: <GraduationCap className="w-5 h-5" /> },
+    { title: 'Study plans', desc: 'Structured plans tailored to your time.', icon: <ClipboardList className="w-5 h-5" /> },
+    { title: 'Writing help', desc: 'Outlines, drafts, and edits for essays.', icon: <BookOpen className="w-5 h-5" /> },
+  ];
 
   // Check backend health on component mount
   useEffect(() => {
@@ -80,12 +103,38 @@ const AITutor: React.FC = () => {
       };
       recognitionRef.current.onerror = () => {
         setIsListening(false);
+        // no-op: we simply stop listening on error
       };
       recognitionRef.current.onend = () => {
         setIsListening(false);
       };
     }
   }, []);
+
+  // Load history from localStorage
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem('ai_history');
+      if (raw) setHistory(JSON.parse(raw));
+    } catch {
+      /* ignore localStorage read errors */
+    }
+  }, []);
+
+  const saveHistory = (next: HistoryItem[]) => {
+    setHistory(next);
+    try {
+      localStorage.setItem('ai_history', JSON.stringify(next.slice(0, 20)));
+    } catch {
+      /* ignore localStorage write errors */
+    }
+  };
+
+  const addToHistory = (promptText: string) => {
+    const item: HistoryItem = { id: Date.now().toString(), prompt: promptText, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) };
+    const next = [item, ...history];
+    saveHistory(next);
+  };
 
   const startListening = () => {
     if (recognitionRef.current && !isListening) {
@@ -101,13 +150,14 @@ const AITutor: React.FC = () => {
     }
   };
 
-  const handleSendMessage = async () => {
-    if (!input.trim() || !isBackendAvailable) return;
+  const handleSendMessage = async (overrideText?: string) => {
+    const textToSend = (overrideText ?? input).trim();
+    if (!textToSend || !isBackendAvailable) return;
     
     // Add user message
     const userMessage: Message = {
       id: Date.now().toString(),
-      text: input,
+      text: textToSend,
       sender: 'user',
       timestamp: new Date(),
     };
@@ -115,11 +165,12 @@ const AITutor: React.FC = () => {
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
+    addToHistory(userMessage.text);
     
     try {
       // Get AI response using the API utility
       const response = await sendChatMessage(
-        input,
+        textToSend,
         messages
           .filter((msg, idx) => !(idx === 0 && msg.sender === 'bot')) // Remove initial bot greeting
           .map(msg => ({
@@ -159,30 +210,47 @@ const AITutor: React.FC = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  const handleQuickPrompt = (text: string) => {
+    setInput(text + ' ');
+  };
+
+  // Auto-load suggested prompt from localStorage and auto-send
+  useEffect(() => {
+    try {
+      const suggested = localStorage.getItem('ai_suggested_prompt');
+      if (suggested) {
+        localStorage.removeItem('ai_suggested_prompt');
+        setInput(suggested);
+        // slight delay to allow input to paint
+        setTimeout(() => handleSendMessage(suggested), 100);
+      }
+    } catch {
+      /* ignore localStorage read errors */
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div className="text-center mb-10">
-        <h1 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
-          {t('aiTutor.title')}
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300">
-          {t('aiTutor.subtitle')}
-        </p>
+      {/* Header removed per request */}
+
+      {/* Quick Actions */}
+      <div className="flex flex-wrap gap-3 justify-center mb-8">
+        {quickPrompts.map((qp, idx) => (
+          <button key={idx} onClick={() => handleQuickPrompt(qp.text)} className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 transition flex items-center gap-2">
+            {qp.icon}
+            <span className="text-sm">{qp.label}</span>
+          </button>
+        ))}
       </div>
       
-      {!isBackendAvailable && (
-        <div className="max-w-4xl mx-auto mb-6 p-4 bg-red-50 dark:bg-red-900/30 rounded-lg border border-red-200 dark:border-red-800">
-          <div className="flex items-center text-red-800 dark:text-red-200">
-            <AlertCircle className="w-5 h-5 mr-2" />
-            <p>
-              {t('aiTutor.connectionError')}
-            </p>
-          </div>
-        </div>
-      )}
-      
-      <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
-        <div className="h-[600px] flex flex-col">
+      {/* Connection error banner removed per request; logic retained */}
+
+      {/* Main layout: Chat (left) + Features/History (right) */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Chat area */}
+        <GlassCard tone="mono" variant="bordered" className="lg:col-span-2 h-[640px] p-0">
+          <div className="h-full flex flex-col">
           {/* Chat messages */}
           <div className="flex-1 p-4 overflow-y-auto">
             <div className="space-y-4">
@@ -192,18 +260,14 @@ const AITutor: React.FC = () => {
                   className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[80%] p-4 rounded-xl ${
+                    className={`max-w-[80%] p-4 rounded-xl border border-white/10 ${
                       message.sender === 'user'
-                        ? 'bg-[#219176] text-[#145968]'
-                        : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white'
+                        ? 'bg-white/10 text-white'
+                        : 'bg-white/5 text-white'
                     }`}
                   >
                     <p className="whitespace-pre-wrap">{message.text}</p>
-                    <span className={`text-xs mt-1 block ${
-                      message.sender === 'user'
-                        ? 'text-[#145968]'
-                        : 'text-gray-500 dark:text-gray-400'
-                    }`}>
+                    <span className={`text-xs mt-1 block text-white/50`}>
                       {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </span>
                   </div>
@@ -211,11 +275,11 @@ const AITutor: React.FC = () => {
               ))}
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="max-w-[80%] p-4 rounded-xl bg-gray-100 dark:bg-gray-700">
+                  <div className="max-w-[80%] p-4 rounded-xl bg-white/5">
                     <div className="flex space-x-2">
-                      <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                      <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                      <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                      <div className="w-2 h-2 rounded-full bg-white/50 animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                      <div className="w-2 h-2 rounded-full bg-white/50 animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                      <div className="w-2 h-2 rounded-full bg-white/50 animate-bounce" style={{ animationDelay: '300ms' }}></div>
                     </div>
                   </div>
                 </div>
@@ -223,10 +287,20 @@ const AITutor: React.FC = () => {
               <div ref={messagesEndRef} />
             </div>
           </div>
-          
-          {/* Input area */}
-          <div className="p-4 border-t dark:border-gray-700">
-            <div className="flex items-center space-x-2">
+
+          {/* Input area with quick tips */}
+          <div className="p-4 border-t border-white/10">
+            <div className="flex items-center gap-2">
+              <button
+                onClick={isListening ? stopListening : startListening}
+                disabled={isLoading || !isBackendAvailable}
+                className={`p-3 rounded-lg border border-white/10 text-white ${
+                  isListening ? 'bg-white/10' : 'bg-white/5 hover:bg-white/10'
+                }`}
+                title={isListening ? t('aiTutor.stopListening') : t('aiTutor.speak')}
+              >
+                {isListening ? <MicOff size={18} /> : <Mic size={18} />}
+              </button>
               <input
                 type="text"
                 value={input}
@@ -238,33 +312,60 @@ const AITutor: React.FC = () => {
                   }
                 }}
                 placeholder={t('aiTutor.placeholder')}
-                className="flex-1 p-3 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-[#219176]"
+                className="flex-1 p-3 bg-white/5 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white/20 border border-white/10"
                 disabled={isLoading || !isBackendAvailable}
               />
               <button
-                onClick={handleSendMessage}
+                onClick={() => handleSendMessage()}
                 disabled={isLoading || !input.trim() || !isBackendAvailable}
-                className="p-3 bg-[#219176] text-white rounded-r-lg hover:bg-[#30b58a] focus:outline-none focus:ring-2 focus:ring-[#219176] disabled:opacity-50 disabled:cursor-not-allowed"
+                className="p-3 rounded-lg bg-white/10 text-white hover:bg-white/20 border border-white/10 disabled:opacity-50 disabled:cursor-not-allowed"
+                title="Send"
               >
-                <SendHorizontal size={20} />
-              </button>
-              <button
-                onClick={isListening ? stopListening : startListening}
-                disabled={isLoading || !isBackendAvailable}
-                className={`p-3 rounded-lg focus:outline-none transition-colors duration-200 ${
-                  isListening
-                    ? 'bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-300'
-                    : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200 hover:bg-[#30b58a] dark:hover:bg-[#30b58a]'
-                }`}
-                title={isListening ? t('aiTutor.stopListening') : t('aiTutor.speak')}
-              >
-                {isListening ? <MicOff size={20} /> : <Mic size={20} />}
+                <SendHorizontal size={18} />
               </button>
             </div>
-            <div className="flex justify-center mt-2">
-              <span className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
-                {isListening ? 'Listening... Speak now!' : 'Speak (Click the mic to start)'}
-              </span>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {['Explain this', 'Summarize text', 'Give an example', 'List key points'].map((tip, i) => (
+                <button key={i} onClick={() => handleQuickPrompt(tip + ':')} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10 text-xs">
+                  {tip}
+                </button>
+              ))}
+            </div>
+          </div>
+          </div>
+        </GlassCard>
+
+        {/* Right rail: features + history */}
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-white font-semibold mb-3 flex items-center gap-2"><MessageSquare className="w-4 h-4" /> Suggested features</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {featureTiles.map((f, idx) => (
+                <GlassCard key={idx} tone="mono" variant="bordered" className="p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">{f.icon}</div>
+                    <div>
+                      <div className="text-white font-medium">{f.title}</div>
+                      <div className="text-white/60 text-sm">{f.desc}</div>
+                    </div>
+                  </div>
+                </GlassCard>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold mb-3">Recent</h3>
+            <div className="space-y-2">
+              {history.length === 0 && (
+                <div className="text-white/50 text-sm">No recent prompts yet.</div>
+              )}
+              {history.slice(0, 6).map(h => (
+                <button key={h.id} onClick={() => setInput(h.prompt)} className="w-full text-left px-3 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 text-white/80">
+                  <div className="text-sm truncate">{h.prompt}</div>
+                  <div className="text-xs text-white/40">{h.time}</div>
+                </button>
+              ))}
             </div>
           </div>
         </div>

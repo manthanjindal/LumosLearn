@@ -16,6 +16,39 @@ const Home: React.FC = () => {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
+  const testimonials = [
+    {
+      quote: "LumosLearn transformed my understanding of AI and coding. The gamified approach kept me engaged, and the AI tutor was like having a personal mentor!",
+      author: "Sarah K.",
+      role: "Software Engineer"
+    },
+    {
+      quote: "Short, focused lessons fit perfectly into my schedule. I finally feel consistent without getting overwhelmed.",
+      author: "Aman J.",
+      role: "University Student"
+    },
+    {
+      quote: "The AI tutor helped me unblock concepts fast. It’s like having help on call 24/7.",
+      author: "Priya S.",
+      role: "Data Analyst"
+    },
+    {
+      quote: "Quests make learning fun. I actually look forward to leveling up my streaks and badges.",
+      author: "Leo M.",
+      role: "Hobbyist"
+    },
+    {
+      quote: "Clean design, zero distractions, and practical explanations. Exactly what I needed.",
+      author: "Nina R.",
+      role: "Product Designer"
+    },
+    {
+      quote: "Community is welcoming and helpful—got great feedback and study tips.",
+      author: "Omar T.",
+      role: "Learner"
+    }
+  ];
+
   useEffect(() => {
     // GSAP animations for hero elements
     const tl = gsap.timeline();
@@ -107,7 +140,7 @@ const Home: React.FC = () => {
                 Get addicted to learning.
             </h1>
             <p className="hero-subtitle text-lg md:text-xl text-white/70 max-w-2xl mb-10">
-                Bite-sized lessons, an AI tutor when you need it, and a clean, distraction-free interface. Built for curious minds.
+        Bite-sized lessons, an AI tutor when you need it, and a clean, distraction-free interface. Created for everyone who wants to learn.
             </p>
             <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/lessons">
@@ -146,36 +179,37 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="display-heading text-4xl md:text-6xl font-semibold mb-6">What you can do</h2>
+            <h2 className="display-heading text-4xl md:text-6xl font-semibold mb-6">What we offer</h2>
             <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
               Move at your own pace. Stay focused. Learn the essentials the right way.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="floating"
+              className="h-full"
             >
-              <Link to="/lessons" className="block group">
+              <Link to="/lessons" className="block group h-full">
                 <GlassCard 
-                  className="h-full text-center"
+                  tone="mono"
+                  className="h-full text-center min-h-[360px]"
                   variant="bordered"
                 >
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-pink-500 
-                                rounded-2xl flex items-center justify-center transform group-hover:rotate-6 transition-transform">
+                  <div className="w-20 h-20 mx-auto mb-6 bg-white/10 
+                                rounded-2xl flex items-center justify-center">
                     <Clock size={40} className="text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-purple-300 transition-colors">
-                    5-Minute Lessons
+                  <h3 className="text-2xl font-bold mb-4">
+                    5-minute bite-sized bespoke lessons
                   </h3>
                   <p className="text-white/70 mb-6">
-                    Bite-sized lessons that fit into your busy schedule. Learn consistently without overwhelm.
+                    Personalized micro-lessons tailored to you—learn consistently without overwhelm.
                   </p>
-                  <div className="inline-flex items-center text-purple-300 font-medium">
+                  <div className="inline-flex items-center text-white/80 font-medium mt-auto">
                     Start Journey →
                   </div>
                 </GlassCard>
@@ -187,24 +221,25 @@ const Home: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="floating"
+              className="h-full"
             >
-              <Link to="/ai-tutor" className="block group">
+              <Link to="/ai-tutor" className="block group h-full">
                 <GlassCard 
-                  className="h-full text-center"
+                  tone="mono"
+                  className="h-full text-center min-h-[360px]"
                   variant="bordered"
                 >
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-cyan-500 
-                                rounded-2xl flex items-center justify-center transform group-hover:rotate-6 transition-transform">
+                  <div className="w-20 h-20 mx-auto mb-6 bg-white/10 
+                                rounded-2xl flex items-center justify-center">
                     <Brain size={40} className="text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-300 transition-colors">
-                    AI Tutor
+                  <h3 className="text-2xl font-bold mb-4">
+                    Flagship AI tutor
                   </h3>
                   <p className="text-white/70 mb-6">
-                    Get instant help from your personal AI tutor. Ask questions and get explanations 24/7.
+                    Get instant help from our flagship AI tutor. Ask questions and get explanations 24/7.
                   </p>
-                  <div className="inline-flex items-center text-blue-300 font-medium">
+                  <div className="inline-flex items-center text-white/80 font-medium mt-auto">
                     Chat with AI →
                   </div>
                 </GlassCard>
@@ -216,24 +251,25 @@ const Home: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="floating"
+              className="h-full"
             >
-              <Link to="/lessons" className="block group">
+              <Link to="/lessons" className="block group h-full">
                 <GlassCard 
-                  className="h-full text-center"
+                  tone="mono"
+                  className="h-full text-center min-h-[360px]"
                   variant="bordered"
                 >
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-500 
-                                rounded-2xl flex items-center justify-center transform group-hover:rotate-6 transition-transform">
+                  <div className="w-20 h-20 mx-auto mb-6 bg-white/10 
+                                rounded-2xl flex items-center justify-center">
                     <Code size={40} className="text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-green-300 transition-colors">
-                    Quests
+                  <h3 className="text-2xl font-bold mb-4">
+                    Highly gamified experience
                   </h3>
                   <p className="text-white/70 mb-6">
-                    Short, focused missions to build real intuition—no fluff.
+                    Quests, achievements, and progress tracking that make learning fun and engaging.
                   </p>
-                  <div className="inline-flex items-center text-green-300 font-medium">
+                  <div className="inline-flex items-center text-white/80 font-medium mt-auto">
                     Start quests →
                   </div>
                 </GlassCard>
@@ -245,29 +281,30 @@ const Home: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="floating"
+              className="h-full"
             >
               <a 
                 href="https://discord.gg/gfs9FZF8MC" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="block group"
+                className="block group h-full"
               >
                 <GlassCard 
-                  className="h-full text-center"
+                  tone="mono"
+                  className="h-full text-center min-h-[360px]"
                   variant="bordered"
                 >
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-indigo-500 to-purple-500 
-                                rounded-2xl flex items-center justify-center transform group-hover:rotate-6 transition-transform">
+                  <div className="w-20 h-20 mx-auto mb-6 bg-white/10 
+                                rounded-2xl flex items-center justify-center">
                     <MessageSquare size={40} className="text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-indigo-300 transition-colors">
-                    Discord Community
+                  <h3 className="text-2xl font-bold mb-4">
+                    Active community for help and guidance
                   </h3>
                   <p className="text-white/70 mb-6">
-                    Connect with learners worldwide. Share progress, get help, and learn together.
+                    Connect with learners and mentors worldwide. Get help, share progress, and learn together.
                   </p>
-                  <div className="inline-flex items-center text-indigo-300 font-medium">
+                  <div className="inline-flex items-center text-white/80 font-medium mt-auto">
                     Join Discord →
                   </div>
                 </GlassCard>
@@ -293,8 +330,7 @@ const Home: React.FC = () => {
                 whileInView={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 
-                          bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform"
+                className="text-6xl md:text-7xl font-bold text-white mb-4 group-hover:scale-110 transition-transform"
               >
                 10+
               </motion.div>
@@ -308,13 +344,11 @@ const Home: React.FC = () => {
                 whileInView={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 
-                          bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform"
+                className="text-6xl md:text-7xl font-bold text-white mb-4 group-hover:scale-110 transition-transform"
               >
                 4.9
               </motion.div>
               <div className="text-white/80 text-lg font-medium">Average Rating</div>
-              <div className="text-white/50 text-sm mt-2">⭐⭐⭐⭐⭐</div>
             </div>
 
             <div className="group">
@@ -323,33 +357,39 @@ const Home: React.FC = () => {
                 whileInView={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 100, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 
-                          bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform"
+                className="text-6xl md:text-7xl font-bold text-white mb-4 group-hover:scale-110 transition-transform"
               >
-                280+
+                1792+
               </motion.div>
               <div className="text-white/80 text-lg font-medium">Micro-Lessons</div>
               <div className="text-white/50 text-sm mt-2">Always expanding</div>
             </div>
           </motion.div>
 
+          {/* Monochrome testimonials marquee (full-bleed) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
-            className="mt-20 text-center"
+            className="mt-20"
           >
-            <GlassCard className="max-w-4xl mx-auto" variant="bordered">
-              <div className="relative">
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-4xl">💬</div>
-                <blockquote className="text-2xl md:text-3xl font-medium text-white/90 italic mb-6 pt-8">
-                  "LumosLearn transformed my understanding of AI and coding. The gamified approach 
-                  kept me engaged, and the AI tutor was like having a personal mentor!"
-                </blockquote>
-                <cite className="text-white/70 font-semibold">— Sarah K., Software Engineer</cite>
-              </div>
-            </GlassCard>
+            <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden">
+              <motion.div
+                className="flex gap-6"
+                animate={{ x: ['0%', '-50%'] }}
+                transition={{ duration: 40, ease: 'linear', repeat: Infinity }}
+              >
+                {[...testimonials, ...testimonials].map((t, idx) => (
+                  <GlassCard key={idx} tone="mono" variant="bordered" className="min-w-[320px] max-w-[320px]">
+                    <div className="text-left h-full flex flex-col">
+                      <blockquote className="text-white/90 italic mb-4">“{t.quote}”</blockquote>
+                      <cite className="text-white/60 text-sm mt-auto">— {t.author}, {t.role}</cite>
+                    </div>
+                  </GlassCard>
+                ))}
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>

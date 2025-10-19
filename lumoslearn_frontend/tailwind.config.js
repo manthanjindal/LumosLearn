@@ -36,8 +36,9 @@ export default {
         'sora': ['Sora', 'sans-serif'],
         'manrope': ['Manrope', 'sans-serif'],
         'montserrat': ['Montserrat', 'sans-serif'],
-        'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'Helvetica', 'Arial', 'sans-serif'],
-        'display': ['"Space Grotesk"', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+        'rubik': ['Rubik', 'sans-serif'],
+        'sans': ['Rubik', 'Inter', 'ui-sans-serif', 'system-ui', 'Helvetica', 'Arial', 'sans-serif'],
+        'display': ['"Space Grotesk"', 'Rubik', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
       },
       animation: {
         'bounce-slow': 'bounce 3s infinite',

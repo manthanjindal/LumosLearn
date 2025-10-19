@@ -11,8 +11,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import ProtectedRoute from './components/Auth/ProtectedRoute';
-import Lessons from './pages/Lessons';
-import LessonDetail from './pages/LessonDetail';
+import FlashLessons from './pages/FlashLessons';
 
 function App() {
   return (
@@ -40,8 +39,9 @@ function App() {
                             </ProtectedRoute>
                           } 
                         />
-                        <Route path="/lessons" element={<Lessons />} />
-                        <Route path="/lessons/:topic/:lessonIndex" element={<LessonDetail />} />
+                        <Route path="/lessons" element={<FlashLessons />} />
+                        <Route path="/lessons/:topic" element={<FlashLessons />} />
+                        <Route path="/lessons/:topic/:lessonId" element={<FlashLessons />} />
                         <Route path="*" element={<NotFound />} />
                       </Routes>
                     </Layout>
